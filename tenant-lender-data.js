@@ -1,9 +1,9 @@
-// Tenant & Lender News — Week of April 3, 2026
+// Tenant & Lender News — Week of April 1, 2026
 // Replace this file each week with updated scan results (same structure)
 
 const TENANT_LENDER_NEWS = {
-    date: "April 3, 2026",
-    last_scan: "2026-04-03T08:15:00Z",
+    date: "April 1, 2026",
+    last_scan: "2026-04-01T14:00:00Z",
 
     // Jackson Shaw watchlist — tenants, lenders, equity partners
     companies: [
@@ -43,111 +43,141 @@ const TENANT_LENDER_NEWS = {
             level: "HIGH",
             company: "International Paper",
             cat: "Tenant",
-            headline: "International Paper announces 3 plant closures amid demand slump",
-            summary: "IP will shutter facilities in Alabama, Ohio, and Oregon by Q3 2026, eliminating approximately 1,200 positions. The closures are part of a broader restructuring to right-size capacity following the DS Smith acquisition integration.",
-            relevance: "IP is a Jackson Shaw tenant. No Texas facilities are on the closure list, but reduced operational footprint could signal future lease consolidation.",
-            source: "Reuters",
-            date: "2026-04-01"
+            headline: "IP reports $2.84B net loss, plans company split, announces 7+ additional U.S. facility closures",
+            summary: "International Paper recorded a <b>$2.47B non-cash goodwill impairment</b> on its EMEA operations for FY2025, generating a net loss from continuing operations of $2.84B. On January 29, IP announced a plan to <b>split into two independent public companies</b> (North America and EMEA), targeting completion in 12–15 months. At least 7 additional U.S. facility closures are planned for 2026, including Georgetown, SC and Union Gap, WA — following 20+ closures and 4,500+ job cuts since October 2024.",
+            relevance: "Most urgent alert in this report. Active U.S. facility rationalization creates real risk of early lease termination or non-renewal. The planned company split adds counterparty uncertainty — it is unclear which successor entity will hold existing lease obligations. Any IP-occupied assets in the portfolio warrant immediate review.",
+            source: "Packaging Dive / PR Newswire",
+            date: "2026-01-29"
         },
         {
             level: "MEDIUM",
             company: "Clopay",
             cat: "Tenant",
-            headline: "Clopay parent Griffon Corp misses Q2 earnings, cuts guidance",
-            summary: "Griffon Corporation reported Q2 EPS of $0.82 vs $1.15 expected. Clopay's home & building products segment saw <b>revenue decline 11% YoY</b> on weaker housing starts and destocking by major retailers.",
-            relevance: "Earnings weakness at the parent level bears monitoring for lease renewal risk. Current Jackson Shaw lease runs through 2028.",
-            source: "Seeking Alpha",
-            date: "2026-03-29"
+            headline: "Griffon Corp cuts FY2026 guidance a second time — stock off ~24% past year on housing headwinds",
+            summary: "Griffon Corporation (NYSE: GFF), parent of Clopay Building Products, issued a second consecutive guidance reduction in early March 2026, citing weakening housing starts and difficult year-over-year comps. Shares fell <b>8.5%</b> on the announcement and are down approximately <b>24% over the past 12 months</b>, trading at ~$70.82 vs. an analyst consensus target of $114.14. FY2026 revenue guidance stands at ~$2.5B with EBITDA of $580–600M; the company is not in financial distress but is facing real volume pressure.",
+            relevance: "Consecutive guidance cuts tied to housing market softness are a monitoring flag for any Clopay industrial or manufacturing lease. If rent coverage assumptions relied on strong housing-sector throughput, continued demand softness warrants attention, particularly at lease renewal.",
+            source: "Yahoo Finance / PR Newswire",
+            date: "2026-03-05"
         },
         {
             level: "MEDIUM",
-            company: "Fifth Third Bank",
+            company: "Busey Bank",
             cat: "Lender",
-            headline: "Fifth Third tightens CRE underwriting standards effective April 1",
-            summary: "Fifth Third Bank raised minimum DSCR requirements to <b>1.40x from 1.30x</b> for new CRE construction loans and reduced maximum LTV to 60%. The bank cited rising rate volatility and office sector stress as catalysts.",
-            relevance: "Direct impact on Jackson Shaw's borrowing terms. Industrial loans may be treated more favorably than the headline suggests, but expect tighter terms on new facilities.",
-            source: "American Banker",
-            date: "2026-03-31"
+            headline: "Designated CEO successor abruptly terminated 10 months after CrossFirst acquisition — $9M separation charge",
+            summary: "First Busey Corp separated from Michael J. Maddox — the former Busey Bank president and the board-designated successor CEO of the holding company — effective <b>January 27, 2026</b>, only months after the $917M CrossFirst acquisition closed. Maddox received <b>$8.5M+ in cash severance</b> plus full equity vest acceleration, generating a ~$9M non-recurring pre-tax Q1 2026 charge. CEO Van Dukeman was reinstated to both roles. Q4 2025 net income was a solid $60.8M; the bank holds $18.1B in assets and is well-capitalized.",
+            relevance: "An abrupt CEO reversal so soon after a transformative acquisition signals potential integration friction and management instability at a key $18B lender. Monitor whether the CrossFirst integration affects lending appetite, underwriting consistency, or relationship continuity on any active or planned credit facilities.",
+            source: "StockTitan / TipRanks",
+            date: "2026-01-27"
         },
         {
-            level: "MEDIUM",
+            level: "LOW",
             company: "Huntington Bank",
             cat: "Lender",
-            headline: "Huntington Bancshares CFO departs amid strategic review",
-            summary: "CFO Zachary Wasserman resigned effective immediately, citing personal reasons. The bank named an interim CFO and said its strategic direction remains unchanged. Shares fell 4.2% on the news.",
-            relevance: "C-suite instability at a key lending partner. Monitor for any shifts in CRE lending appetite or relationship coverage changes.",
-            source: "Bloomberg",
-            date: "2026-03-28"
+            headline: "$7.4B Cadence Bank acquisition closed Feb. 1 — Huntington now 8th largest in Texas; integration underway",
+            summary: "Huntington Bancshares completed its <b>$7.4B acquisition of Cadence Bank</b> on February 1, 2026, adding $53B in assets, 390 branches, and approximately 1 million customers across the South and Texas. The combined institution is now the 8th-largest bank in Texas and the largest in Mississippi. System conversion is targeted for mid-2026, which carries standard integration risks: tangible book value dilution, customer retention, and operational disruption.",
+            relevance: "A more geographically expansive Huntington is positive for Texas-market CRE borrowers. However, the integration period through mid-2026 could create delays in loan processing and relationship coverage changes, particularly for borrowers inherited through Cadence. Monitor for any shifts in CRE credit appetite during the integration.",
+            source: "Huntington Investor Relations",
+            date: "2026-02-01"
         },
         {
             level: "LOW",
-            company: "Lincoln Tech",
-            cat: "Tenant",
-            headline: "Lincoln Tech faces DOE compliance review at 3 campuses",
-            summary: "The Department of Education initiated a standard compliance review of Lincoln Educational Services' financial aid practices at campuses in NJ, TX, and TN. Lincoln called it a routine periodic review.",
-            relevance: "Regulatory reviews are common in for-profit education but worth tracking. A negative finding could impact enrollment and tenant financial health.",
-            source: "Inside Higher Ed",
-            date: "2026-03-30"
-        },
-        {
-            level: "LOW",
-            company: "Crown Equipment",
-            cat: "Tenant",
-            headline: "Crown Equipment faces OSHA fine over warehouse safety violations",
-            summary: "OSHA proposed a <b>$340,000 fine</b> against Crown Equipment for repeated safety violations at its New Bremen, OH manufacturing facility. The company is contesting the findings.",
-            relevance: "Isolated to Ohio facility. No direct impact on Jackson Shaw properties, but reflects operational risk at the tenant level.",
-            source: "Dayton Daily News",
-            date: "2026-03-27"
-        },
-        {
-            level: "LOW",
-            company: "Simmons Bank",
+            company: "Fifth Third Bank",
             cat: "Lender",
-            headline: "Moody's revises Simmons Financial Group outlook to negative",
-            summary: "Moody's changed its outlook on Simmons Financial from stable to negative, citing elevated CRE concentration (340% of Tier 1 capital) and rising non-performing loans in the office segment.",
-            relevance: "Negative outlook could constrain Simmons' willingness to extend new CRE credit. Jackson Shaw's industrial exposure is lower-risk, but overall bank appetite may decrease.",
-            source: "Moody's Investors Service",
-            date: "2026-04-02"
+            headline: "$12.3B Comerica acquisition closed Feb. 2 — Fifth Third now 9th largest U.S. bank; credit chief retiring mid-integration",
+            summary: "Fifth Third Bancorp completed its all-stock acquisition of Comerica on <b>February 2, 2026</b>, creating the 9th-largest U.S. bank with <b>$294B in assets</b> and operations in 17 of the 20 fastest-growing large U.S. markets. The bank plans 150 new branches in Dallas, Houston, and Austin by 2029 ($600M investment). Chief Credit Officer Greg Schroeck is retiring after nearly 40 years, with Kristof Schneider as successor; system/brand conversions are expected Q3 2026. Approximately 76 branches (55 Comerica, 21 Fifth Third, primarily Michigan) will close H2 2026.",
+            relevance: "A significantly enlarged Fifth Third is now a top-tier regional lender with major Texas presence — relevant to Jackson Shaw's CRE pipeline. The credit leadership transition during active integration is a monitoring item. Q4 2025 EPS of $1.04 beat expectations; no financial distress.",
+            source: "Fifth Third Investor Relations",
+            date: "2026-02-02"
+        },
+        {
+            level: "LOW",
+            company: "Xingyu Lighting",
+            cat: "Tenant",
+            headline: "Filed Hong Kong IPO prospectus Jan. 26; strong FY2025 profits +15.3%; U.S.–China tariff exposure flagged",
+            summary: "Changzhou Xingyu Automotive Lighting Systems filed its <b>Hong Kong IPO prospectus on January 26, 2026</b>, seeking a dual listing on HKEX alongside its Shanghai Stock Exchange listing. FY2025 net profit rose <b>15.3% YoY</b>, with a Strong Buy consensus from 13 analysts. Xingyu supplies VW, BMW, GM, Toyota, NIO, and Li Auto from plants in Germany, Japan, Serbia, Mexico, and the U.S. The IPO prospectus explicitly flags <b>U.S.–China tariff escalation</b> as a material risk.",
+            relevance: "As a Chinese-headquartered manufacturer with U.S. operations, escalating auto-parts tariffs in the current trade environment could affect U.S. facility utilization and throughput. The HK IPO filing improves financial transparency. Monitor tariff developments as they could directly impact any U.S. lease locations.",
+            source: "HKEX / TradingView",
+            date: "2026-01-26"
         },
         {
             level: "GENERAL",
-            company: "Barings",
-            cat: "Lender",
-            headline: "Barings closes $4.1B commercial real estate debt fund",
-            summary: "Barings completed fundraising for its largest-ever CRE debt vehicle, with a focus on senior secured industrial and logistics lending. The fund will target the Sun Belt and Midwest markets.",
-            relevance: "Positive signal for Jackson Shaw's borrowing capacity. Barings is actively deploying capital into the industrial segment with geographic overlap.",
-            source: "PERE",
-            date: "2026-04-01"
+            company: "Lincoln Tech",
+            cat: "Tenant",
+            headline: "Record Q4 2025 results; 2026 revenue guidance raised to $580–590M; two new campuses already open",
+            summary: "Lincoln Educational Services exceeded Q4 2025 guidance with revenue up <b>19.7% YoY</b> and Q1 2026 student starts expected to rise <b>19%</b>. The company opened new campuses in Houston, TX (Feb. 18) and Levittown, PA (Feb. 13, 90,000 sq ft), with Hicksville, NY (Q4 2026) and Rowlett, TX (Q1 2027) slated next. At its March 19 Investor Day, management outlined a path to <b>$850M revenue by 2030</b>.",
+            relevance: "Lincoln Tech is an actively expanding, creditworthy tenant with strong cash flow and growing enrollment. New 65,000–90,000 sq ft campus builds represent both proof of financial health and potential new lease opportunities for industrial/flex space in Jackson Shaw markets.",
+            source: "GlobeNewsWire",
+            date: "2026-03-19"
+        },
+        {
+            level: "GENERAL",
+            company: "Tongrun International",
+            cat: "Tenant",
+            headline: "Platinum Equity acquires majority stake — PE backing signals strong growth outlook",
+            summary: "Platinum Equity (~<b>$50B AUM</b>) announced a significant majority investment in Tongrun International, the Bonham, TX-based precision sheet metal contract manufacturer (~3,500 employees). Tongrun specializes in custom enclosures for data centers, power generation, telecom, and medical sectors, and its customer base includes the world's largest tech firms with over $1 trillion in announced data center investment.",
+            relevance: "Platinum Equity backing by a major private equity firm is a strong positive for financial stability and growth trajectory. Surging data center/AI infrastructure demand may drive facility expansions at Tongrun's Bonham, TX location, presenting potential near-term lease opportunity.",
+            source: "PR Newswire",
+            date: "2026-01-15"
+        },
+        {
+            level: "GENERAL",
+            company: "Baer Manufacturing / Hunt Electric",
+            cat: "Tenant",
+            headline: "Baer Manufacturing expanding into Austin, TX — 73,000 sq ft initial facility, 606,000 sq ft planned",
+            summary: "Hunt Electric announced its subsidiary Baer Manufacturing is beginning operations in a <b>73,000 sq ft Austin, TX facility</b> in early 2026, with plans for a 606,000 sq ft building as the expansion matures. The expansion focuses exclusively on third-party manufacturing (duck bank and custom lines) separate from Hudson, WI operations. Hunt Electric is employee-owned with 1,900+ employees and 60 years in business.",
+            relevance: "Active large-format industrial expansion in Jackson Shaw's core Texas market is a direct positive signal — strong occupancy of existing space and possible new lease discussions for the next phase of growth.",
+            source: "Hunt Electric Newsroom",
+            date: "2026-02-01"
         },
         {
             level: "GENERAL",
             company: "Hartford Insurance",
             cat: "Tenant",
-            headline: "Hartford Financial reports record commercial lines growth",
-            summary: "The Hartford posted <b>12% growth in commercial property premiums</b> for Q1, driven by rate increases and new business wins in the middle-market segment. The company raised its full-year outlook.",
-            relevance: "Strong financial performance at a Jackson Shaw tenant. Supports lease stability and potential expansion discussions.",
-            source: "Hartford Investor Relations",
-            date: "2026-03-31"
+            headline: "Record FY2025 results — net income +23% to $3.8B; A+ rated; new Columbus tech hub opening",
+            summary: "The Hartford reported Q4 2025 net income of <b>$1.1B (+33% YoY)</b> and full-year 2025 net income of <b>$3.8B (+23% YoY)</b> — a record year. The insurer holds A+/A1 ratings from S&P, A.M. Best, and Moody's, returned $2.2B to shareholders in 2025, and was named Insurance Industry Leader by Just Capital/CNBC for 2026. A new Columbus, OH tech hub opened in January 2026 with ~75 AI/cloud engineering roles.",
+            relevance: "Exceptionally strong financial position with no occupancy or credit risk to a CRE landlord. The Columbus, OH expansion represents a direct new CRE footprint. Strong tenant covenant with investment-grade credit.",
+            source: "Insurance Business Magazine",
+            date: "2026-01-29"
         },
         {
             level: "GENERAL",
-            company: "Busey Bank",
+            company: "Barings",
             cat: "Lender",
-            headline: "Busey Bank expands DFW commercial lending team",
-            summary: "First Busey Corporation hired a 4-person CRE lending team in Dallas, signaling increased focus on the Texas industrial and multifamily markets. The bank's CRE portfolio grew 8% YoY.",
-            relevance: "Direct positive for Jackson Shaw. Expanded local team means faster decision-making and potentially more competitive terms on industrial loans.",
-            source: "Dallas Business Journal",
-            date: "2026-03-26"
+            headline: "Actively deploying CRE debt capital; 2026 strategy targets ~$1T refinancing wave as compelling opportunity",
+            summary: "Barings (MassMutual subsidiary, <b>$481B AUM</b>) published its 2026 real estate strategy, characterizing a looming ~$1 trillion CRE refinancing wall and rising delinquency rates as a compelling opportunity for non-bank lenders. Q4 2025 NAV for Barings Corporate Investors was <b>$16.63/share</b>; monthly high-yield distributions continue ($0.1223/share for March–May 2026). No adverse financial events or leadership changes identified.",
+            relevance: "Barings is actively positioning as a CRE lender in the current environment and appears healthy and well-capitalized. Their Sun Belt and industrial/logistics focus aligns well with Jackson Shaw's core markets. Positive signal for lending capacity and relationship continuity.",
+            source: "Barings.com",
+            date: "2026-02-26"
+        },
+        {
+            level: "GENERAL",
+            company: "Hall Group",
+            cat: "Lender",
+            headline: "$140M Frisco office tower breaking ground; $500M Texas office investment plan announced",
+            summary: "Hall Group (Dallas, TX) is breaking ground on a <b>$140M, 206,000 sq ft office tower at HALL Park in Frisco, TX</b> (completion February 2028). HALL Structured Finance is actively originating construction loans across asset classes, and Hall Group announced plans to invest <b>$500M in Texas office properties</b> over the next two years. Hall Group won recognition in D CEO's 2026 Commercial Real Estate Awards.",
+            relevance: "Hall Group is healthy, active, and expanding — the opposite of a distressed lender. Their aggressive Texas office investment plan signals continued market confidence. Strong counterparty for any CRE lending or equity relationships.",
+            source: "Commercial Property Executive",
+            date: "2026-01-01"
+        },
+        {
+            level: "GENERAL",
+            company: "PACE Equities",
+            cat: "Lender",
+            headline: "C-PACE reaches record $3.5B annual originations in 2025; described as 'mainstream' by industry",
+            summary: "C-PACE financing hit a record <b>~$3.5B in originations in 2025</b>, with cumulative volume approaching $10B, and is now described as \"mainstream\" by industry participants. The largest C-PACE transaction ever — <b>$465M</b> for an office-to-residential conversion in Washington, D.C. — was completed. The sector is active in 40 states with 2026 double-digit growth expected, shifting modestly toward new development and adaptive reuse.",
+            relevance: "If PACE Equities is a C-PACE lender in Jackson Shaw's capital stack, the sector is thriving and lender capacity is expanding. C-PACE's fixed-rate, long-term structure with deferred payments is increasingly used as a bridge/mezzanine alternative — favorable for development deals.",
+            source: "CNBC / Boston Real Estate Times",
+            date: "2026-01-23"
         },
         {
             level: "GENERAL",
             company: "Sammons Enterprise",
             cat: "Equity Partner",
-            headline: "Sammons Financial Group assets surpass $120 billion",
-            summary: "Sammons Financial Group reported total assets under management exceeded $120 billion for the first time, with strong contributions from its real estate and alternative investment portfolios.",
-            relevance: "Strong balance sheet at Jackson Shaw's equity partner supports continued investment capacity and partnership stability.",
-            source: "Business Wire",
-            date: "2026-03-28"
+            headline: "New CIO appointed March 2026; new President since Jan. 1; $135B investment portfolio; A+ ratings maintained",
+            summary: "Sammons Financial Group appointed Rob TeKolste as President effective <b>January 1, 2026</b>, and Sergi Turabelidze as SVP/CIO effective <b>March 2, 2026</b>, overseeing the <b>$135B investment portfolio</b>. Midland National (Sammons subsidiary) maintains A+ ratings from both AM Best and S&P Global. Sammons also signed a definitive agreement to acquire Wealthcare LLC, a registered investment advisory firm.",
+            relevance: "Leadership additions (not departures) at Sammons signal organizational growth and investment management focus. The new CIO appointment is relevant context — investment strategy for real estate equity could evolve. No immediate concerns; financial strength is robust with stable top-tier ratings.",
+            source: "Midland National Newsroom / Sammons Financial Group",
+            date: "2026-03-02"
         }
     ]
 };
