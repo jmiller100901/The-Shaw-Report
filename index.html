@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jackson Shaw Weekly Brief</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Ticker Bar -->
+    <div class="ticker-bar" id="ticker-bar"></div>
+
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="masthead-inner">
+            <div class="masthead-rule"></div>
+            <div class="masthead-top">
+                <span class="masthead-edition">Weekly Edition</span>
+                <span class="masthead-date" id="masthead-date"></span>
+            </div>
+            <h1 class="masthead-title">The Jackson Shaw Weekly Brief</h1>
+            <p class="masthead-subtitle">Market Intelligence &middot; Portfolio News &middot; Internal Distribution</p>
+            <div class="masthead-rule"></div>
+        </div>
+    </header>
+
+    <!-- Section Nav -->
+    <nav class="section-nav">
+        <div class="nav-inner">
+            <button class="nav-tab active" data-section="friday-finance">Friday Finance</button>
+            <button class="nav-tab" data-section="tenant-lender-news">Tenant & Lender News</button>
+        </div>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!-- FRIDAY FINANCE -->
+    <!-- ============================================================ -->
+    <main class="content-wrap">
+        <section id="friday-finance" class="section active">
+
+            <div class="two-col">
+                <!-- Main Column -->
+                <div class="col-main">
+                    <p class="greeting"><em>Good morning and happy Friday!</em></p>
+
+                    <h3 class="col-header">This week in markets</h3>
+                    <div id="ff-news-bullets" class="news-bullets"></div>
+
+                    <div class="watch-box">
+                        <h4 class="watch-header">What to watch next week</h4>
+                        <p id="ff-watch-text"></p>
+                    </div>
+
+                    <h3 class="col-header">Weekend reading</h3>
+                    <div id="ff-weekend-reading" class="weekend-reading"></div>
+
+                    <div class="signoff">
+                        <p><em>Have a great weekend, everyone!</em></p>
+                        <div class="signature">
+                            <strong>Jack Miller</strong><br>
+                            <span class="sig-role">Financial Analyst &middot; Jackson Shaw Company</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-sidebar">
+                    <div class="card">
+                        <h4 class="card-title">Key rates</h4>
+                        <table class="rate-table">
+                            <thead>
+                                <tr><th>Rate</th><th>Current</th><th>1M ago</th><th>1Y ago</th></tr>
+                            </thead>
+                            <tbody id="ff-rate-body"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="card-title">Forward curves</h4>
+                        <div id="ff-forward-curves" class="chart-slot"></div>
+                        <p class="chart-source">Source: Chatham Financial</p>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="card-title">EFFR, 10Y & 2Y Treasury</h4>
+                        <div id="ff-fred-chart" class="chart-slot"></div>
+                        <p class="chart-source">Source: FRED</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stock Table -->
+            <div class="stock-section">
+                <h3 class="stock-section-title">Stock & index performance</h3>
+                <p class="stock-section-sub" id="ff-stock-dateline"></p>
+                <div class="table-wrap">
+                    <table class="stock-table">
+                        <thead>
+                            <tr>
+                                <th class="al">Company</th>
+                                <th class="al">Ticker</th>
+                                <th class="ar">Price</th>
+                                <th class="ar">Day %</th>
+                                <th class="ar">YTD %</th>
+                                <th class="ar">52W high</th>
+                                <th class="ar">vs high</th>
+                                <th class="ar">52W low</th>
+                                <th class="ar">vs low</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ff-stock-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- TENANT & LENDER NEWS -->
+        <!-- ============================================================ -->
+        <section id="tenant-lender-news" class="section">
+            <div id="tl-content" class="tl-content"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="masthead-rule"></div>
+        <p>Friday Finance &middot; Jackson Shaw Company &middot; 4890 Alpha Road, Suite 100, Dallas, TX 75244</p>
+        <p class="footer-note">For internal distribution only. Not investment advice.</p>
+    </footer>
+
+    <script src="friday-finance-data.js"></script>
+    <script src="tenant-lender-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

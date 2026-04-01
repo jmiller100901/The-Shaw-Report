@@ -1,0 +1,521 @@
+/* ================================================================
+   Jackson Shaw Weekly Brief — Stylesheet
+   Design system: clean corporate, deep navy accent, 8px grid
+   ================================================================ */
+
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --bg:           #FFFFFF;
+    --surface:      #F4F5F7;
+    --border:       #E1E4E8;
+    --text:         #1A1A2E;
+    --text-sec:     #6B7280;
+    --text-ter:     #9CA3AF;
+    --accent:       #1B2A4A;
+    --accent-light: #EEF1F6;
+    --accent-dark:  #0F1A2E;
+    --success:      #059669;
+    --danger:       #DC2626;
+    --warning:      #D97706;
+    --radius:       8px;
+}
+
+html { font-size: 16px; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Ticker Bar --- */
+.ticker-bar {
+    background: var(--accent-dark);
+    height: 36px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-size: 0.75rem;
+    letter-spacing: 0.01em;
+    padding: 0 16px;
+    gap: 0;
+    white-space: nowrap;
+}
+
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 14px;
+    color: rgba(255,255,255,0.85);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    flex-shrink: 0;
+}
+.ticker-item:last-child { border-right: none; }
+.ticker-item .sym { font-weight: 600; color: #fff; }
+.ticker-item .pct.up   { color: #34d399; }
+.ticker-item .pct.down { color: #f87171; }
+
+/* --- Masthead --- */
+.masthead {
+    text-align: center;
+    padding: 40px 24px 0;
+}
+.masthead-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.masthead-rule {
+    height: 1px;
+    background: var(--text);
+    opacity: 0.2;
+}
+.masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0 4px;
+    font-size: 0.75rem;
+    color: var(--text-sec);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.masthead-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    line-height: 1.15;
+    padding: 8px 0;
+}
+.masthead-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-sec);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 16px;
+}
+
+/* --- Section Nav --- */
+.section-nav {
+    position: sticky;
+    top: 36px;
+    z-index: 90;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    padding: 0 32px;
+}
+.nav-tab {
+    background: none;
+    border: none;
+    padding: 14px 24px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-sec);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+.nav-tab:hover { color: var(--text); }
+.nav-tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    font-weight: 600;
+}
+
+/* --- Content Wrap --- */
+.content-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 32px 64px;
+}
+.section { display: none; }
+.section.active { display: block; animation: fadeIn 0.3s ease-out; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Two Column Layout --- */
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 40px;
+    align-items: start;
+}
+
+/* --- Main Column --- */
+.greeting {
+    font-size: 1.05rem;
+    color: var(--text);
+    margin-bottom: 28px;
+}
+
+.col-header {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+}
+
+/* News Bullets */
+.news-bullet {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    color: #374151;
+}
+.news-bullet::before {
+    content: '';
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 9px;
+}
+.news-bullet b, .news-bullet strong { color: var(--text); }
+
+/* Watch Box */
+.watch-box {
+    background: var(--accent-light);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 20px 24px;
+    margin: 28px 0 32px;
+}
+.watch-header {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+.watch-box p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #374151;
+}
+
+/* Weekend Reading */
+.reading-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--surface);
+}
+.reading-item:last-child { border-bottom: none; }
+.reading-num {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 28px;
+    text-align: center;
+}
+.reading-body a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.4;
+    display: block;
+    transition: color 0.15s ease;
+}
+.reading-body a:hover { color: var(--accent); }
+.reading-source {
+    font-size: 0.75rem;
+    color: var(--text-ter);
+    margin-top: 4px;
+}
+
+/* Signoff */
+.signoff {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+.signoff > p { margin-bottom: 20px; font-size: 1.05rem; }
+.signature {
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+}
+.signature strong { font-size: 0.95rem; }
+.sig-role { font-size: 0.8rem; color: var(--text-sec); }
+
+/* --- Sidebar --- */
+.col-sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+.card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+}
+.card-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Rate Table */
+.rate-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+.rate-table th {
+    text-align: left;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-sec);
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--border);
+}
+.rate-table th:not(:first-child) { text-align: right; }
+.rate-table td {
+    padding: 8px 8px;
+    border-bottom: 1px solid var(--surface);
+    color: #374151;
+}
+.rate-table td:first-child { font-weight: 500; color: var(--text); }
+.rate-table td:not(:first-child) {
+    text-align: right;
+    font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', Consolas, monospace;
+    font-size: 0.78rem;
+}
+
+/* Chart Slot */
+.chart-slot {
+    background: var(--surface);
+    border-radius: 4px;
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.chart-slot img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+.chart-source {
+    font-size: 0.65rem;
+    color: var(--text-ter);
+    margin-top: 8px;
+    text-align: center;
+}
+
+/* --- Stock Table --- */
+.stock-section {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+}
+.stock-section-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+.stock-section-sub {
+    font-size: 0.75rem;
+    color: var(--text-ter);
+    margin-bottom: 16px;
+}
+.table-wrap { overflow-x: auto; }
+
+.stock-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+.stock-table th {
+    padding: 10px 12px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-sec);
+    border-bottom: 2px solid var(--border);
+}
+.stock-table th.al { text-align: left; }
+.stock-table th.ar { text-align: right; }
+.stock-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--surface);
+    color: #374151;
+}
+.stock-table tr:hover { background: var(--surface); }
+
+.stock-table .cat-row td {
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 6px 12px;
+    border-bottom: none;
+}
+.stock-table .cat-row:hover td { background: var(--accent); }
+
+.stock-table td.company { font-weight: 500; color: var(--text); }
+.stock-table td.ticker  { color: var(--text-sec); font-size: 0.75rem; }
+.stock-table td.num {
+    text-align: right;
+    font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', Consolas, monospace;
+    font-size: 0.78rem;
+}
+.stock-table td.num.up   { color: var(--success); }
+.stock-table td.num.down { color: var(--danger); }
+
+/* --- Tenant & Lender News --- */
+.tl-content {
+    max-width: 800px;
+}
+
+.tl-section {
+    margin-bottom: 40px;
+}
+.tl-section-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+}
+
+.tl-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    transition: box-shadow 0.2s ease;
+}
+.tl-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.tl-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    gap: 12px;
+}
+.tl-card-company {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+.tl-card-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 3px 10px;
+    border-radius: 100px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+.tl-card-tag.tenant   { background: #DBEAFE; color: #1E40AF; }
+.tl-card-tag.lender   { background: #FEF3C7; color: #92400E; }
+.tl-card-tag.positive { background: #D1FAE5; color: #065F46; }
+.tl-card-tag.negative { background: #FEE2E2; color: #991B1B; }
+.tl-card-tag.neutral  { background: var(--surface); color: var(--text-sec); }
+
+.tl-card-body {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #374151;
+}
+.tl-card-body b, .tl-card-body strong { color: var(--text); }
+.tl-card-source {
+    font-size: 0.7rem;
+    color: var(--text-ter);
+    margin-top: 10px;
+}
+.tl-card-source a {
+    color: var(--accent);
+    text-decoration: none;
+}
+.tl-card-source a:hover { text-decoration: underline; }
+
+/* --- Footer --- */
+.site-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px 48px;
+    text-align: center;
+}
+.site-footer p {
+    font-size: 0.75rem;
+    color: var(--text-sec);
+    margin-top: 12px;
+}
+.footer-note {
+    color: var(--text-ter) !important;
+    font-size: 0.7rem !important;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+    .masthead-title { font-size: 2rem; }
+    .content-wrap { padding: 24px 16px 48px; }
+    .nav-inner { padding: 0 16px; }
+    .nav-tab { padding: 12px 16px; font-size: 0.8rem; }
+    .ticker-bar { font-size: 0.65rem; }
+    .ticker-item { padding: 0 8px; }
+}
+
+@media (max-width: 600px) {
+    .masthead-title { font-size: 1.6rem; }
+    .stock-table { font-size: 0.7rem; }
+    .stock-table th, .stock-table td { padding: 6px 6px; }
+}
