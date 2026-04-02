@@ -1,0 +1,52 @@
+name: Friday Brief Auto-Update
+
+on:
+  schedule:
+    # 8:00 AM CDT (13:00 UTC) every Friday
+    - cron: '0 13 * * 5'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for manual run'
+        required: false
+        default: 'Manual trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  update-brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Run Friday brief update
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          claude -p --dangerously-skip-permissions "$(cat .github/friday-brief-prompt.txt)"
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "Friday Brief Bot"
+          git config user.email "actions@github.com"
+          git add friday-finance-data.js tenant-lender-data.js
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update: Friday Brief $(date +'%B %d, %Y')"
+            git push origin main
+          fi

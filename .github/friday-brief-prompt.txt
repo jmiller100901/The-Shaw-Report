@@ -1,0 +1,142 @@
+You are updating "The Shaw Report" — an internal weekly financial briefing for Jackson Shaw, a Dallas-based commercial real estate developer. Today is Friday. Your job is to update two JavaScript data files with real, current information for this week's brief.
+
+IMPORTANT RULES:
+- Use WebSearch and WebFetch to research real current data before writing anything
+- Only update friday-finance-data.js and tenant-lender-data.js
+- Do NOT modify index.html, app.js, or styles.css
+- All data must be accurate — do not fabricate numbers or headlines
+- Write the complete updated file contents, not just diffs
+
+=============================================================
+STEP 1 — DETERMINE THIS WEEK'S DATE
+=============================================================
+Use today's date. The "date" field should be formatted like "April 4, 2025" and "date_short" like "Apr 4, 2025".
+
+=============================================================
+STEP 2 — UPDATE friday-finance-data.js
+=============================================================
+
+FILE LOCATION: /home/user/Shaw-Business/friday-finance-data.js
+
+Read the current file first, then update EVERY section with real data for this week.
+
+--- TICKER BAR (ticker_bar array) ---
+11 items. Each has: { label, value, change, up: true/false }
+Search for current week's closing values for:
+1. S&P 500 — label "S&P 500", ticker SPX
+2. Dow Jones — label "Dow", ticker DJIA
+3. NASDAQ — label "NASDAQ", ticker IXIC
+4. 10-Year Treasury yield — label "10Y Treasury"
+5. 2-Year Treasury yield — label "2Y Treasury"
+6. Fed Funds Rate (EFFR) — label "Fed Funds"
+7. 1-Month SOFR — label "1M SOFR"
+8. DSCR/bridge loan rate proxy — label "Avg DSCR Rate" (estimate based on 10Y + ~175bps spread)
+9. WTI Crude Oil — label "WTI Crude"
+10. Gold — label "Gold"
+11. US Dollar Index (DXY) — label "DXY"
+
+For change fields: use week-over-week change (e.g., "+12.4 pts", "+0.08%", "-$1.20"). Set up: true if positive for markets (stocks up, rates down for CRE context, oil movement).
+
+--- NEWS BULLETS (news_bullets array) ---
+5 items. Each has: { text } — HTML allowed (use <b> for key terms/numbers).
+Research the top 5 market-moving stories this week relevant to CRE and finance:
+- Fed decisions or Fed speakers
+- Economic data (CPI, jobs, GDP, housing)
+- Treasury market moves
+- Trade policy / tariffs
+- Banking / credit market news
+Keep each bullet to 1-2 sentences. Bold the key number or fact.
+
+--- WATCH NEXT WEEK (watch_next_week string) ---
+Single paragraph. HTML allowed. Research what economic data releases and Fed events are scheduled for next week. Bold the key events (e.g., <b>CPI</b>, <b>FOMC minutes</b>).
+
+--- READING LINKS (reading_links array) ---
+5 items. Each has: { title, url, source, description }
+Find 5 non-paywalled articles published THIS WEEK relevant to:
+- Commercial real estate trends
+- Interest rates / Fed policy
+- Industrial real estate / logistics
+- Capital markets / lending
+- Economic outlook
+
+Preferred sources (non-paywalled): CNBC, Reuters, Bloomberg (some free), CoStar News, Bisnow, The Real Deal, GlobeSt, Commercial Observer, Axios, Bankrate, Mortgage Bankers Association, CBRE Insights, JLL Research. Avoid WSJ, FT, Barron's (paywalled).
+
+--- KEY RATES (rates object) ---
+4 rows. Each has: { label, current, one_month_ago, one_year_ago }
+1. Fed Funds (EFFR) — upper bound of target range, format "X.XX%"
+2. 10Y Treasury — format "X.XX%"
+3. 1M SOFR — format "X.XX%"
+4. Prime Rate — always Fed Funds + 3.00%, format "X.XX%"
+
+For one_month_ago and one_year_ago: use approximate values based on historical data you know or can search.
+
+--- STOCKS (stocks object) ---
+This is a large object with 4 categories. READ the current file to get the full list of tickers and companies — do NOT change the ticker list, just update the data.
+
+Structure: stocks: { indexes: [...], cre_reits: [...], retail_tenants: [...], lenders: [...] }
+Each entry: { company, ticker, price, day_pct, ytd_pct, high_52w, low_52w }
+
+Search Yahoo Finance or similar for current week closing prices. Use real data.
+- price: number (e.g., 4521.30)
+- day_pct: string with sign (e.g., "+1.24%", "-0.87%")
+- ytd_pct: string with sign
+- high_52w: number
+- low_52w: number
+
+For INDEX entries (SPX, DJIA, IXIC, RUT): use index point values, not dollar amounts.
+
+=============================================================
+STEP 3 — UPDATE tenant-lender-data.js
+=============================================================
+
+FILE LOCATION: /home/user/Shaw-Business/tenant-lender-data.js
+
+Read the current file to see the full list of 23 monitored companies.
+
+MONITORED COMPANIES (do not add or remove any):
+Tenants: Lincoln Tech, Crown Equipment, Tongrun International, Canteen, Control Panels, Baer Manufacturing / Hunt Electric, Grander Distribution, Clopay, International Paper, Duroshox, Bright Events, Xingyu Lighting, Hartford Insurance, Triad Manufacturing
+Lenders: Busey Bank, Huntington Bank, Fifth Third Bank, Inwood National Bank, Simmons Bank, Barings, Hall Group, PACE Equities
+Equity Partner: Sammons Enterprise
+
+For EACH company, search: "[Company Name] news 2025 2026" and "[Company Name] earnings bankruptcy layoffs"
+
+Update any alerts where NEW significant developments have occurred since the last scan.
+Keep existing alerts if still relevant and no update needed.
+Add new alerts for any significant developments found.
+Remove or downgrade alerts that are no longer relevant.
+
+Alert levels:
+- HIGH: Bankruptcy filing, payment default, fraud, major legal action, facility closures affecting lease
+- MEDIUM: Credit downgrade, C-suite departure, earnings miss >10%, major regulatory action
+- LOW: Minor litigation, restructuring warning, analyst price target cut, acquisition integration risk
+- GENERAL: Positive news, expansions, record earnings, new leadership (positive)
+
+Each alert: { level, company, cat, headline, summary (HTML ok, use <b>), relevance, source, date }
+
+Update: date to today, last_scan to today's ISO timestamp.
+
+=============================================================
+STEP 4 — WRITE THE UPDATED FILES
+=============================================================
+
+After completing your research:
+
+1. Read /home/user/Shaw-Business/friday-finance-data.js to get the exact file structure
+2. Read /home/user/Shaw-Business/tenant-lender-data.js to get the exact file structure
+3. Write the complete updated friday-finance-data.js with all new data
+4. Write the complete updated tenant-lender-data.js with all new data
+
+Preserve the exact JavaScript variable names (FRIDAY_FINANCE and TENANT_LENDER_NEWS) and file structure. Only change the data values, dates, and content — not the structure.
+
+=============================================================
+VERIFICATION
+=============================================================
+
+After writing both files, confirm:
+- [ ] friday-finance-data.js date matches today's Friday date
+- [ ] All 11 ticker_bar items have current values
+- [ ] 5 news_bullets written with real this-week stories
+- [ ] 5 reading_links are non-paywalled and published this week
+- [ ] All stock prices updated with real data
+- [ ] tenant-lender-data.js last_scan updated to today
+- [ ] At least a scan pass done for HIGH/MEDIUM alert companies
