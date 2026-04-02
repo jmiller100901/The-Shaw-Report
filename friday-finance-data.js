@@ -32,11 +32,13 @@ const FRIDAY_FINANCE = {
     wsj_articles: [
         {
             title: "Trump Tells Aides He's Willing to End Iran Military Campaign Even if Strait of Hormuz Remains Closed",
-            url: "https://www.wsj.com/politics/national-security/trump-iran-military-campaign-hormuz-strait-2026"
+            url: "https://www.wsj.com/politics/national-security/trump-iran-military-campaign-hormuz-strait-2026",
+            description: "The single report that moved the S&P 500 +2.9% in one session. The WSJ revealed the White House's tolerance for a partial diplomatic resolution that stops short of full Hormuz reopening — reducing the geopolitical risk premium that had been embedded in oil prices since hostilities began."
         },
         {
             title: "Microsoft on Track to Invest $5.5 Billion in Singapore by 2029",
-            url: "https://www.wsj.com/tech/microsoft-singapore-5-billion-investment-ai-2026"
+            url: "https://www.wsj.com/tech/microsoft-singapore-5-billion-investment-ai-2026",
+            description: "Despite posting its worst quarterly stock decline since 2008, Microsoft is pressing ahead with a $5.5B data center and AI infrastructure commitment in Singapore — a signal that mega-cap tech capital expenditure is holding firm through broader market turbulence."
         }
     ],
 

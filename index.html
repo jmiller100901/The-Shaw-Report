@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jackson Shaw Weekly Brief</title>
+    <title>Shaw Business</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
                 <span class="masthead-edition">Weekly Edition</span>
                 <span class="masthead-date" id="masthead-date"></span>
             </div>
-            <h1 class="masthead-title">The Jackson Shaw Weekly Brief</h1>
+            <h1 class="masthead-title">Shaw Business</h1>
             <p class="masthead-subtitle">Market Intelligence &middot; Portfolio News &middot; Internal Distribution</p>
             <div class="masthead-rule"></div>
         </div>
@@ -29,23 +29,23 @@
     <nav class="section-nav">
         <div class="nav-inner">
             <button class="nav-tab active" data-section="friday-finance">Friday Finance</button>
-            <button class="nav-tab" data-section="tenant-lender-news">Tenant & Lender News</button>
+            <button class="nav-tab" data-section="stock-data">Stock Data</button>
+            <button class="nav-tab" data-section="tenant-lender-news">Tenant &amp; Lender News</button>
         </div>
     </nav>
 
-    <!-- ============================================================ -->
-    <!-- FRIDAY FINANCE -->
-    <!-- ============================================================ -->
     <main class="content-wrap">
-        <section id="friday-finance" class="section active">
 
+        <!-- ============================================================ -->
+        <!-- FRIDAY FINANCE -->
+        <!-- ============================================================ -->
+        <section id="friday-finance" class="section active">
             <div class="two-col">
+
                 <!-- Main Column -->
                 <div class="col-main">
-                    <p class="greeting"><em>Good morning and happy Friday!</em></p>
-
                     <h3 class="col-header">This week in markets</h3>
-                    <div id="ff-news-bullets" class="news-bullets"></div>
+                    <ul id="ff-news-bullets" class="news-bullets-list"></ul>
 
                     <div class="watch-box">
                         <h4 class="watch-header">What to watch next week</h4>
@@ -54,14 +54,6 @@
 
                     <h3 class="col-header">Weekend reading</h3>
                     <div id="ff-weekend-reading" class="weekend-reading"></div>
-
-                    <div class="signoff">
-                        <p><em>Have a great weekend, everyone!</em></p>
-                        <div class="signature">
-                            <strong>Jack Miller</strong><br>
-                            <span class="sig-role">Financial Analyst &middot; Jackson Shaw Company</span>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Sidebar -->
@@ -77,23 +69,43 @@
                     </div>
 
                     <div class="card">
-                        <h4 class="card-title">Forward curves</h4>
-                        <div id="ff-forward-curves" class="chart-slot"></div>
-                        <p class="chart-source">Source: Chatham Financial</p>
+                        <h4 class="card-title">SOFR &amp; Treasury Forward Curves</h4>
+                        <div id="ff-forward-curves" class="chart-slot chart-placeholder">
+                            <div class="chart-ph-inner">
+                                <p class="chart-ph-label">Chatham Financial Forward Curves</p>
+                                <p class="chart-ph-sub">1-Mo SOFR &middot; 10-Year Treasury</p>
+                                <a href="https://www.chathamfinancial.com/technology/us-forward-curves"
+                                   target="_blank" rel="noopener" class="chart-link-btn">View Live Chart &rarr;</a>
+                            </div>
+                        </div>
+                        <p class="chart-source">
+                            <a href="https://www.chathamfinancial.com/technology/us-forward-curves"
+                               target="_blank" rel="noopener">Source: Chatham Financial</a>
+                        </p>
                     </div>
 
                     <div class="card">
-                        <h4 class="card-title">EFFR, 10Y & 2Y Treasury</h4>
-                        <div id="ff-fred-chart" class="chart-slot"></div>
-                        <p class="chart-source">Source: FRED</p>
+                        <h4 class="card-title">EFFR, 10Y &amp; 2Y Treasury &mdash; 10 Years</h4>
+                        <div id="ff-fred-chart" class="chart-slot">
+                            <img id="fred-chart-img" src="" alt="EFFR, 10Y &amp; 2Y Treasury chart from FRED" />
+                        </div>
+                        <p class="chart-source">
+                            <a href="https://fred.stlouisfed.org/series/DFF" target="_blank" rel="noopener">Source: FRED / St. Louis Fed</a>
+                        </p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Stock Table -->
-            <div class="stock-section">
-                <h3 class="stock-section-title">Stock & index performance</h3>
-                <p class="stock-section-sub" id="ff-stock-dateline"></p>
+        <!-- ============================================================ -->
+        <!-- STOCK DATA -->
+        <!-- ============================================================ -->
+        <section id="stock-data" class="section">
+            <div class="stock-tab-wrap">
+                <div class="stock-tab-header">
+                    <h3 class="stock-section-title">Stock &amp; Index Performance</h3>
+                    <p class="stock-section-sub" id="ff-stock-dateline"></p>
+                </div>
                 <div class="table-wrap">
                     <table class="stock-table">
                         <thead>
@@ -103,10 +115,10 @@
                                 <th class="ar">Price</th>
                                 <th class="ar">Day %</th>
                                 <th class="ar">YTD %</th>
-                                <th class="ar">52W high</th>
-                                <th class="ar">vs high</th>
-                                <th class="ar">52W low</th>
-                                <th class="ar">vs low</th>
+                                <th class="ar">52W High</th>
+                                <th class="ar">vs High</th>
+                                <th class="ar">52W Low</th>
+                                <th class="ar">vs Low</th>
                             </tr>
                         </thead>
                         <tbody id="ff-stock-body"></tbody>
@@ -120,28 +132,22 @@
         <!-- ============================================================ -->
         <section id="tenant-lender-news" class="section">
             <div class="tl-content">
-                <!-- Filter tabs -->
                 <div class="tl-filters" id="tl-filters"></div>
-
-                <!-- Stats bar -->
                 <div class="tl-stats" id="tl-stats"></div>
-
-                <!-- Alert sections by severity -->
                 <div id="tl-alerts"></div>
-
-                <!-- Watchlist -->
                 <div class="tl-watchlist">
                     <h3 class="tl-watchlist-title">Monitored companies</h3>
                     <div class="tl-watchlist-grid" id="tl-watchlist"></div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
     <footer class="site-footer">
         <div class="masthead-rule"></div>
-        <p>Friday Finance &middot; Jackson Shaw Company &middot; 4890 Alpha Road, Suite 100, Dallas, TX 75244</p>
+        <p>Shaw Business &middot; 4890 Alpha Road, Suite 100, Dallas, TX 75244</p>
         <p class="footer-note">For internal distribution only. Not investment advice.</p>
     </footer>
 

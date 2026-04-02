@@ -1,5 +1,5 @@
 /* ================================================================
-   Jackson Shaw Weekly Brief — Stylesheet
+   Shaw Business — Stylesheet
    Design system: clean corporate, deep navy accent, 8px grid
    ================================================================ */
 
@@ -38,30 +38,37 @@ body {
     height: 36px;
     display: flex;
     align-items: center;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     position: sticky;
     top: 0;
     z-index: 100;
     font-size: 0.75rem;
     letter-spacing: 0.01em;
     padding: 0 16px;
-    gap: 0;
     white-space: nowrap;
+    scrollbar-width: none;
 }
+.ticker-bar::-webkit-scrollbar { display: none; }
 
-.ticker-item {
+a.ticker-item {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     padding: 0 14px;
+    height: 36px;
     color: rgba(255,255,255,0.85);
     border-right: 1px solid rgba(255,255,255,0.08);
     flex-shrink: 0;
+    text-decoration: none;
+    transition: background 0.15s ease;
 }
-.ticker-item:last-child { border-right: none; }
-.ticker-item .sym { font-weight: 600; color: #fff; }
-.ticker-item .pct.up   { color: #34d399; }
-.ticker-item .pct.down { color: #f87171; }
+a.ticker-item:hover { background: rgba(255,255,255,0.07); }
+a.ticker-item:last-child { border-right: none; }
+a.ticker-item .sym { font-weight: 600; color: #fff; }
+a.ticker-item .ticker-price { color: rgba(255,255,255,0.85); }
+a.ticker-item .pct.up   { color: #34d399; }
+a.ticker-item .pct.down { color: #f87171; }
 
 /* --- Masthead --- */
 .masthead {
@@ -69,7 +76,7 @@ body {
     padding: 40px 24px 0;
 }
 .masthead-inner {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 .masthead-rule {
@@ -89,7 +96,7 @@ body {
 }
 .masthead-title {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     color: var(--text);
@@ -113,16 +120,17 @@ body {
     border-bottom: 1px solid var(--border);
 }
 .nav-inner {
-    max-width: 1200px;
+    max-width: 1640px;
     margin: 0 auto;
     display: flex;
+    justify-content: center;
     gap: 0;
-    padding: 0 32px;
+    padding: 0 48px;
 }
 .nav-tab {
     background: none;
     border: none;
-    padding: 14px 24px;
+    padding: 14px 28px;
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--text-sec);
@@ -139,9 +147,9 @@ body {
 
 /* --- Content Wrap --- */
 .content-wrap {
-    max-width: 1200px;
+    max-width: 1640px;
     margin: 0 auto;
-    padding: 32px 32px 64px;
+    padding: 36px 48px 72px;
 }
 .section { display: none; }
 .section.active { display: block; animation: fadeIn 0.3s ease-out; }
@@ -154,18 +162,12 @@ body {
 /* --- Two Column Layout --- */
 .two-col {
     display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 40px;
+    grid-template-columns: 1fr 380px;
+    gap: 48px;
     align-items: start;
 }
 
 /* --- Main Column --- */
-.greeting {
-    font-size: 1.05rem;
-    color: var(--text);
-    margin-bottom: 28px;
-}
-
 .col-header {
     font-size: 0.75rem;
     font-weight: 600;
@@ -178,24 +180,25 @@ body {
     display: inline-block;
 }
 
-/* News Bullets */
+/* News Bullets — styled as distinct cards for readability */
+.news-bullets-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 8px 0;
+}
+
 .news-bullet {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 20px;
-    line-height: 1.6;
+    display: block;
+    margin-bottom: 14px;
+    line-height: 1.7;
     font-size: 0.9rem;
     color: #374151;
+    padding: 16px 20px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    border-left: 4px solid var(--accent);
 }
-.news-bullet::before {
-    content: '';
-    flex-shrink: 0;
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    margin-top: 9px;
-}
+.news-bullet:last-child { margin-bottom: 0; }
 .news-bullet b, .news-bullet strong { color: var(--text); }
 
 /* Watch Box */
@@ -217,16 +220,19 @@ body {
 }
 .watch-box p {
     font-size: 0.875rem;
-    line-height: 1.6;
+    line-height: 1.65;
     color: #374151;
 }
+.watch-box p b, .watch-box p strong { color: var(--text); }
 
 /* Weekend Reading */
+.weekend-reading { margin-bottom: 8px; }
+
 .reading-item {
     display: flex;
     gap: 16px;
     align-items: flex-start;
-    padding: 16px 0;
+    padding: 18px 0;
     border-bottom: 1px solid var(--surface);
 }
 .reading-item:last-child { border-bottom: none; }
@@ -249,26 +255,20 @@ body {
     display: block;
     transition: color 0.15s ease;
 }
-.reading-body a:hover { color: var(--accent); }
+.reading-body a:hover { color: var(--accent); text-decoration: underline; }
+.reading-desc {
+    font-size: 0.82rem;
+    color: var(--text-sec);
+    margin-top: 6px;
+    line-height: 1.55;
+}
 .reading-source {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     color: var(--text-ter);
-    margin-top: 4px;
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
 }
-
-/* Signoff */
-.signoff {
-    margin-top: 32px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-}
-.signoff > p { margin-bottom: 20px; font-size: 1.05rem; }
-.signature {
-    border-left: 3px solid var(--accent);
-    padding-left: 16px;
-}
-.signature strong { font-size: 0.95rem; }
-.sig-role { font-size: 0.8rem; color: var(--text-sec); }
 
 /* --- Sidebar --- */
 .col-sidebar { display: flex; flex-direction: column; gap: 24px; }
@@ -335,18 +335,63 @@ body {
     display: block;
     border-radius: 4px;
 }
+
+/* Chart placeholder (for Chatham — no embeddable image) */
+.chart-placeholder {
+    flex-direction: column;
+    padding: 24px 16px;
+    text-align: center;
+    gap: 0;
+}
+.chart-ph-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+.chart-ph-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+}
+.chart-ph-sub {
+    font-size: 0.72rem;
+    color: var(--text-sec);
+}
+.chart-link-btn {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 8px 18px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: background 0.15s ease;
+}
+.chart-link-btn:hover { background: var(--accent-dark); }
+
 .chart-source {
     font-size: 0.65rem;
     color: var(--text-ter);
     margin-top: 8px;
     text-align: center;
 }
+.chart-source a {
+    color: var(--text-ter);
+    text-decoration: none;
+}
+.chart-source a:hover { color: var(--accent); text-decoration: underline; }
 
-/* --- Stock Table --- */
-.stock-section {
-    margin-top: 48px;
-    padding-top: 32px;
-    border-top: 1px solid var(--border);
+/* --- Stock Data Tab --- */
+.stock-tab-wrap {
+    width: 100%;
+}
+.stock-tab-header {
+    margin-bottom: 20px;
 }
 .stock-section-title {
     font-size: 0.75rem;
@@ -359,14 +404,13 @@ body {
 .stock-section-sub {
     font-size: 0.75rem;
     color: var(--text-ter);
-    margin-bottom: 16px;
 }
 .table-wrap { overflow-x: auto; }
 
 .stock-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
 }
 .stock-table th {
     padding: 10px 12px;
@@ -376,6 +420,7 @@ body {
     letter-spacing: 0.03em;
     color: var(--text-sec);
     border-bottom: 2px solid var(--border);
+    white-space: nowrap;
 }
 .stock-table th.al { text-align: left; }
 .stock-table th.ar { text-align: right; }
@@ -384,7 +429,7 @@ body {
     border-bottom: 1px solid var(--surface);
     color: #374151;
 }
-.stock-table tr:hover { background: var(--surface); }
+.stock-table tr:hover td { background: var(--surface); }
 
 .stock-table .cat-row td {
     background: var(--accent);
@@ -399,7 +444,20 @@ body {
 .stock-table .cat-row:hover td { background: var(--accent); }
 
 .stock-table td.company { font-weight: 500; color: var(--text); }
-.stock-table td.ticker  { color: var(--text-sec); font-size: 0.75rem; }
+.stock-table td.company a {
+    color: var(--text);
+    text-decoration: none;
+}
+.stock-table td.company a:hover { color: var(--accent); text-decoration: underline; }
+
+.stock-table td.ticker { color: var(--text-sec); font-size: 0.75rem; }
+.stock-table td.ticker a {
+    color: var(--text-sec);
+    text-decoration: none;
+    font-weight: 600;
+}
+.stock-table td.ticker a:hover { color: var(--accent); }
+
 .stock-table td.num {
     text-align: right;
     font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', Consolas, monospace;
@@ -409,7 +467,7 @@ body {
 .stock-table td.num.down { color: var(--danger); }
 
 /* --- Tenant & Lender News --- */
-.tl-content { max-width: 900px; }
+.tl-content { width: 100%; }
 
 /* Stats bar */
 .tl-stats {
@@ -423,11 +481,14 @@ body {
     border-radius: var(--radius);
     padding: 16px;
     text-align: center;
+    background: var(--sev-bg, var(--surface));
+    border-color: var(--sev-border, var(--border));
 }
 .tl-stat-num {
     font-size: 2rem;
     font-weight: 800;
     line-height: 1;
+    color: var(--sev-text, var(--text));
 }
 .tl-stat-label {
     font-size: 0.6rem;
@@ -455,7 +516,7 @@ body {
     border: 1px solid var(--sev-border);
     border-radius: var(--radius) var(--radius) 0 0;
     user-select: none;
-    transition: background 0.15s ease;
+    transition: filter 0.15s ease;
 }
 .tl-level-header.collapsed { border-radius: var(--radius); }
 .tl-level-header:hover { filter: brightness(0.97); }
@@ -545,7 +606,7 @@ body {
     color: var(--sev-text);
     margin-bottom: 8px;
     line-height: 1.5;
-    padding-left: 18px;
+    padding-left: 22px;
     position: relative;
 }
 .tl-alert-relevance::before {
@@ -585,7 +646,7 @@ body {
 /* Level section wrapper */
 .tl-level-section { margin-bottom: 12px; }
 
-/* Watchlist sidebar (within tenant/lender section) */
+/* Watchlist */
 .tl-watchlist {
     margin-top: 32px;
     padding-top: 24px;
@@ -601,7 +662,7 @@ body {
 }
 .tl-watchlist-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 8px;
 }
 .tl-watchlist-item {
@@ -626,7 +687,7 @@ body {
 .cat-Lender         { background: #FEF3C7; color: #92400E; }
 .cat-Equity-Partner { background: #E0E7FF; color: #3730A3; }
 
-/* Filter tabs for TL section */
+/* Filter tabs */
 .tl-filters {
     display: flex;
     gap: 6px;
@@ -654,9 +715,9 @@ body {
 
 /* --- Footer --- */
 .site-footer {
-    max-width: 1200px;
+    max-width: 1640px;
     margin: 0 auto;
-    padding: 0 32px 48px;
+    padding: 0 48px 48px;
     text-align: center;
 }
 .site-footer p {
@@ -670,20 +731,25 @@ body {
 }
 
 /* --- Responsive --- */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
     .two-col {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 340px;
+        gap: 36px;
     }
-    .masthead-title { font-size: 2rem; }
-    .content-wrap { padding: 24px 16px 48px; }
-    .nav-inner { padding: 0 16px; }
+}
+@media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; }
+    .masthead-title { font-size: 2.1rem; }
+    .content-wrap { padding: 24px 20px 48px; }
+    .nav-inner { padding: 0 20px; }
     .nav-tab { padding: 12px 16px; font-size: 0.8rem; }
     .ticker-bar { font-size: 0.65rem; }
-    .ticker-item { padding: 0 8px; }
+    a.ticker-item { padding: 0 10px; }
+    .site-footer { padding: 0 20px 40px; }
 }
-
 @media (max-width: 600px) {
-    .masthead-title { font-size: 1.6rem; }
-    .stock-table { font-size: 0.7rem; }
+    .masthead-title { font-size: 1.7rem; }
+    .stock-table { font-size: 0.72rem; }
     .stock-table th, .stock-table td { padding: 6px 6px; }
+    .tl-stats { grid-template-columns: repeat(2, 1fr); }
 }

@@ -1,20 +1,34 @@
 // ================================================================
-// Jackson Shaw Weekly Brief — Application Logic
+// Shaw Business — Application Logic
 // ================================================================
 
 (function () {
     'use strict';
+
+    // Yahoo Finance symbol map (indices use caret symbols)
+    var YAHOO_MAP = {
+        'SPX':  '^GSPC',
+        'DJIA': '^DJI',
+        'DJI':  '^DJI',
+        'IXIC': '^IXIC',
+        'COMP': '^IXIC'
+    };
+
+    function yahooUrl(sym) {
+        return 'https://finance.yahoo.com/quote/' + encodeURIComponent(YAHOO_MAP[sym] || sym);
+    }
 
     // --- Init ---
     document.addEventListener('DOMContentLoaded', function () {
         renderTickerBar();
         renderMasthead();
         renderFridayFinance();
+        renderFredChart();
         renderTenantLenderNews();
         initNav();
     });
 
-    // --- Ticker Bar ---
+    // --- Ticker Bar (clickable links to Yahoo Finance) ---
     function renderTickerBar() {
         var bar = document.getElementById('ticker-bar');
         if (!bar || !FRIDAY_FINANCE.ticker_bar) return;
@@ -23,11 +37,11 @@
             var up = t.change_pct >= 0;
             var arrow = up ? '\u25B2' : '\u25BC';
             var cls = up ? 'up' : 'down';
-            return '<span class="ticker-item">' +
-                '<span class="sym">' + t.symbol + '</span> ' +
-                t.price +
-                ' <span class="pct ' + cls + '">' + arrow + Math.abs(t.change_pct).toFixed(1) + '%</span>' +
-                '</span>';
+            return '<a class="ticker-item" href="' + yahooUrl(t.symbol) + '" target="_blank" rel="noopener">' +
+                '<span class="sym">' + t.symbol + '</span>' +
+                '<span class="ticker-price">' + t.price + '</span>' +
+                '<span class="pct ' + cls + '">' + arrow + Math.abs(t.change_pct).toFixed(1) + '%</span>' +
+                '</a>';
         }).join('');
 
         bar.innerHTML = html;
@@ -46,7 +60,6 @@
             tab.addEventListener('click', function () {
                 tabs.forEach(function (t) { t.classList.remove('active'); });
                 tab.classList.add('active');
-
                 var target = tab.getAttribute('data-section');
                 document.querySelectorAll('.section').forEach(function (s) {
                     s.classList.remove('active');
@@ -57,23 +70,53 @@
         });
     }
 
+    // --- FRED Chart (live image from FRED API, 10-year window) ---
+    function renderFredChart() {
+        var img = document.getElementById('fred-chart-img');
+        if (!img) return;
+
+        var today = new Date();
+        var tenYrsAgo = new Date(today);
+        tenYrsAgo.setFullYear(today.getFullYear() - 10);
+
+        function fmt(d) { return d.toISOString().split('T')[0]; }
+
+        img.src = 'https://fred.stlouisfed.org/graph/fredgraph.png' +
+            '?id=DFF,DGS10,DGS2' +
+            '&cosd=' + fmt(tenYrsAgo) +
+            '&coed=' + fmt(today) +
+            '&width=640&height=320' +
+            '&bgcolor=%23FFFFFF&graph_bgcolor=%23FFFFFF';
+
+        img.onerror = function () {
+            var slot = document.getElementById('ff-fred-chart');
+            if (slot) {
+                slot.innerHTML =
+                    '<div class="chart-placeholder chart-ph-inner">' +
+                    '<p class="chart-ph-label">EFFR &middot; 10Y &middot; 2Y Treasury</p>' +
+                    '<a href="https://fred.stlouisfed.org/series/DFF" target="_blank" rel="noopener" class="chart-link-btn">View on FRED &rarr;</a>' +
+                    '</div>';
+            }
+        };
+    }
+
     // --- Friday Finance ---
     function renderFridayFinance() {
         var data = FRIDAY_FINANCE;
 
-        // News bullets
+        // News bullets — rendered as <li> inside the <ul> in index.html
         var bulletsEl = document.getElementById('ff-news-bullets');
         if (bulletsEl && data.news_bullets) {
             bulletsEl.innerHTML = data.news_bullets.map(function (b) {
-                return '<div class="news-bullet">' + b + '</div>';
+                return '<li class="news-bullet">' + b + '</li>';
             }).join('');
         }
 
-        // Watch text
+        // Watch text (innerHTML to support <b> tags)
         var watchEl = document.getElementById('ff-watch-text');
-        if (watchEl) watchEl.textContent = data.watch_next_week || '';
+        if (watchEl) watchEl.innerHTML = data.watch_next_week || '';
 
-        // Weekend reading
+        // Weekend reading (title + description blurb + source)
         var readingEl = document.getElementById('ff-weekend-reading');
         if (readingEl && data.wsj_articles) {
             readingEl.innerHTML = data.wsj_articles.map(function (a, i) {
@@ -81,12 +124,13 @@
                     '<span class="reading-num">' + (i + 1) + '</span>' +
                     '<div class="reading-body">' +
                     '<a href="' + a.url + '" target="_blank" rel="noopener">' + a.title + '</a>' +
+                    (a.description ? '<p class="reading-desc">' + a.description + '</p>' : '') +
                     '<div class="reading-source">Wall Street Journal</div>' +
                     '</div></div>';
             }).join('');
         }
 
-        // Rates
+        // Rates table
         var rateBody = document.getElementById('ff-rate-body');
         if (rateBody && data.rates) {
             var rateHtml = '';
@@ -106,16 +150,17 @@
         var dateline = document.getElementById('ff-stock-dateline');
         if (dateline) dateline.textContent = 'Data as of market close, ' + data.date;
 
-        // Stock table
+        // Stock table (company + ticker both link to Yahoo Finance)
         var stockBody = document.getElementById('ff-stock-body');
         if (stockBody && data.stocks) {
             var html = '';
             for (var cat in data.stocks) {
                 html += '<tr class="cat-row"><td colspan="9">' + cat + '</td></tr>';
                 data.stocks[cat].forEach(function (s) {
+                    var yurl = yahooUrl(s.ticker);
                     html += '<tr>' +
-                        '<td class="company">' + s.company + '</td>' +
-                        '<td class="ticker">' + s.ticker + '</td>' +
+                        '<td class="company"><a href="' + yurl + '" target="_blank" rel="noopener">' + s.company + '</a></td>' +
+                        '<td class="ticker"><a href="' + yurl + '" target="_blank" rel="noopener">' + s.ticker + '</a></td>' +
                         '<td class="num">' + fmtPrice(s.price) + '</td>' +
                         pctCell(s.day_pct) +
                         pctCell(s.ytd_pct) +
@@ -139,7 +184,7 @@
         HIGH:    { icon: '\uD83D\uDD34', desc: 'Bankruptcy \u00b7 Default \u00b7 Fraud \u00b7 Major Legal Action' },
         MEDIUM:  { icon: '\uD83D\uDFE0', desc: 'Downgrade \u00b7 C-Suite Exit \u00b7 Earnings Miss \u00b7 Regulatory' },
         LOW:     { icon: '\uD83D\uDFE1', desc: 'Minor Litigation \u00b7 Restructuring Warning \u00b7 Analyst Cuts' },
-        GENERAL: { icon: '\u26AA',        desc: 'Neutral or Positive Developments' },
+        GENERAL: { icon: '\u26AA',        desc: 'Neutral or Positive Developments' }
     };
 
     function renderTenantLenderNews() {
@@ -171,30 +216,26 @@
         var data = TENANT_LENDER_NEWS;
         var alerts = data.alerts || [];
 
-        // Filter by category
         var filtered = tlFilter === 'All' ? alerts : alerts.filter(function (a) { return a.cat === tlFilter; });
 
-        // Group by level
         var byLevel = {};
         LEVELS.forEach(function (l) { byLevel[l] = []; });
         filtered.forEach(function (a) { if (byLevel[a.level]) byLevel[a.level].push(a); });
 
-        // Stats
         var statsEl = document.getElementById('tl-stats');
         if (statsEl) {
             statsEl.innerHTML = [
-                { lvl: 'HIGH',   count: byLevel.HIGH.length,   label: 'High alerts' },
-                { lvl: 'MEDIUM', count: byLevel.MEDIUM.length, label: 'Medium alerts' },
-                { lvl: 'LOW',    count: byLevel.LOW.length,    label: 'Low alerts' },
-                { lvl: 'GENERAL',count: byLevel.GENERAL.length,label: 'General' },
+                { lvl: 'HIGH',    count: byLevel.HIGH.length,    label: 'High alerts' },
+                { lvl: 'MEDIUM',  count: byLevel.MEDIUM.length,  label: 'Medium alerts' },
+                { lvl: 'LOW',     count: byLevel.LOW.length,     label: 'Low alerts' },
+                { lvl: 'GENERAL', count: byLevel.GENERAL.length, label: 'General' }
             ].map(function (s) {
-                return '<div class="tl-stat severity-' + s.lvl + '" style="background: var(--sev-bg); border-color: var(--sev-border);">' +
-                    '<div class="tl-stat-num" style="color: var(--sev-text);">' + s.count + '</div>' +
+                return '<div class="tl-stat severity-' + s.lvl + '">' +
+                    '<div class="tl-stat-num">' + s.count + '</div>' +
                     '<div class="tl-stat-label">' + s.label + '</div></div>';
             }).join('');
         }
 
-        // Alert sections
         var alertsEl = document.getElementById('tl-alerts');
         if (!alertsEl) return;
 
@@ -206,8 +247,6 @@
             var col = tlCollapsed[lvl];
 
             html += '<div class="tl-level-section severity-' + lvl + '">';
-
-            // Header
             html += '<div class="tl-level-header' + (col ? ' collapsed' : '') + '" data-level="' + lvl + '">' +
                 '<div class="tl-level-left">' +
                 '<span class="tl-level-badge">' + lvl + '</span>' +
@@ -219,7 +258,6 @@
                 '<span class="tl-level-chevron">' + (col ? '\u25BC' : '\u25B2') + '</span>' +
                 '</div></div>';
 
-            // Body
             if (!col) {
                 html += '<div class="tl-level-body">';
                 if (items.length === 0) {
@@ -248,7 +286,6 @@
 
         alertsEl.innerHTML = html;
 
-        // Attach collapse listeners
         alertsEl.querySelectorAll('.tl-level-header').forEach(function (hdr) {
             hdr.addEventListener('click', function () {
                 var lvl = hdr.getAttribute('data-level');
@@ -279,8 +316,8 @@
     // --- Helpers ---
     function fmtPrice(val) {
         if (val == null) return '';
-        if (val >= 1000) return '$' + val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        return '$' + val.toFixed(2);
+        if (val >= 1000) return val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        return val.toFixed(2);
     }
 
     function pctCell(val) {
