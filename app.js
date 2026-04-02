@@ -226,7 +226,7 @@
     }
 
     // ----------------------------------------------------------------
-    // Live Data — Financial Modeling Prep API
+    // Phase 1: /quote → price, day%, 52W (all symbols)
     // Two calls: /quote (price, day%, 52W) + /stock-price-change (YTD)
     // ----------------------------------------------------------------
     function initLiveStockData() {
