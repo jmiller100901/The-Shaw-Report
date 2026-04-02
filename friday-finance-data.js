@@ -29,16 +29,36 @@ const FRIDAY_FINANCE = {
 
     watch_next_week: "Markets face one of the highest-risk Monday opens of 2026 as traders digest the <b>March NFP report</b> (released Good Friday with markets closed) — consensus expects +57K following February's shocking –92K print. <b>Trump's April 6 Iran diplomatic deadline</b> expires over the weekend, with renewed strikes or genuine de-escalation both plausible. <b>FOMC minutes</b> (Wednesday) will be scrutinized for internal debate on the stagflation risk, and <b>March CPI</b> (Friday) will be the most market-moving data of the week — a hot print would reinvigorate rate-hike speculation already visible in the options market.",
 
-    wsj_articles: [
+    reading_links: [
         {
-            title: "Trump Tells Aides He's Willing to End Iran Military Campaign Even if Strait of Hormuz Remains Closed",
-            url: "https://www.wsj.com/politics/national-security/trump-iran-military-campaign-hormuz-strait-2026",
-            description: "The single report that moved the S&P 500 +2.9% in one session. The WSJ revealed the White House's tolerance for a partial diplomatic resolution that stops short of full Hormuz reopening — reducing the geopolitical risk premium that had been embedded in oil prices since hostilities began."
+            title: "Markets Rally on Iran Ceasefire Signals as Oil Steadies Near $100",
+            url: "https://www.cnbc.com/2026/04/01/cnbc-daily-open-us-iran-war-markets-rally-oil-ai-oracle-layoffs.html",
+            source: "CNBC",
+            description: "The S&P 500 posted its third rally in four sessions after the WSJ reported Trump told aides he would accept ending the Iran campaign even without a Hormuz reopening. Nine of eleven S&P sectors finished positive; industrials led with +1.9%."
         },
         {
-            title: "Microsoft on Track to Invest $5.5 Billion in Singapore by 2029",
-            url: "https://www.wsj.com/tech/microsoft-singapore-5-billion-investment-ai-2026",
-            description: "Despite posting its worst quarterly stock decline since 2008, Microsoft is pressing ahead with a $5.5B data center and AI infrastructure commitment in Singapore — a signal that mega-cap tech capital expenditure is holding firm through broader market turbulence."
+            title: "Gas Prices Hit $4 a Gallon for the First Time Since 2022 Amid Iran War",
+            url: "https://time.com/article/2026/03/31/gas-prices-us-iran-war/",
+            source: "TIME",
+            description: "The national average reached $4.018/gallon — the highest since August 2022 — as the Strait of Hormuz closure cuts off roughly 20% of global crude supply. Diesel hit $5.45/gallon, with direct consequences for logistics costs and CRE operating budgets."
+        },
+        {
+            title: "Does the Iran War Change the Outlook for the Fed?",
+            url: "https://www.morningstar.com/economy/does-iran-war-change-outlook-fed",
+            source: "Morningstar",
+            description: "Morningstar's economic team argues the oil shock creates a genuine stagflation risk — slowing growth while pushing energy-driven CPI higher. The piece examines how the Fed could be forced to choose between fighting inflation and supporting a weakening labor market."
+        },
+        {
+            title: "What the Iran War Means for Oil, Inflation, and Your Portfolio",
+            url: "https://www.morganstanley.com/insights/articles/iran-war-oil-inflation-stock-market-2026",
+            source: "Morgan Stanley",
+            description: "Morgan Stanley's strategists assess three scenarios for Hormuz — reopening within 30 days, 60–90 day closure, and extended disruption — and their respective impacts on Brent crude, core PCE, and equity sector positioning."
+        },
+        {
+            title: "Weekly Market Commentary — March 30, 2026",
+            url: "https://blog.swbc.com/investmenthub/market-commentary-week-of-march-30-2026",
+            source: "SWBC Investment Hub",
+            description: "A concise institutional wrap of the week's macro events covering Fed posture, Q1 equity performance, credit market conditions, and the key economic releases on the calendar for the week of April 6."
         }
     ],
 

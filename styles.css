@@ -374,6 +374,15 @@ a.ticker-item .pct.down { color: #f87171; }
 }
 .chart-link-btn:hover { background: var(--accent-dark); }
 
+.chart-btn-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.chart-link-btn-sm {
+    font-size: 0.72rem;
+    padding: 6px 14px;
+}
 .chart-source {
     font-size: 0.65rem;
     color: var(--text-ter);
@@ -385,6 +394,44 @@ a.ticker-item .pct.down { color: #f87171; }
     text-decoration: none;
 }
 .chart-source a:hover { color: var(--accent); text-decoration: underline; }
+
+/* Live data status badges */
+.live-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: #D1FAE5;
+    color: #065F46;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.loading-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: #FEF3C7;
+    color: #92400E;
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+.error-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: #FEE2E2;
+    color: #991B1B;
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+.refresh-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+.refresh-link:hover { text-decoration: underline; }
 
 /* --- Stock Data Tab --- */
 .stock-tab-wrap {
