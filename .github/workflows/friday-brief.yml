@@ -36,8 +36,9 @@ jobs:
       - name: Run Friday brief update
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: claude-sonnet-4-5
         run: |
-          claude -p --dangerously-skip-permissions "$(cat .github/friday-brief-prompt.txt)"
+          claude -p --dangerously-skip-permissions --model sonnet "$(cat .github/friday-brief-prompt.txt)"
 
       - name: Commit and push changes
         run: |
