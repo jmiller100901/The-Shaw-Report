@@ -1,9 +1,13 @@
 name: Friday Brief Auto-Update
 
+# NOTE: The weekly cron schedule is intentionally disabled.
+# This Action authenticates via ANTHROPIC_API_KEY (Tier 1), and Claude Code's
+# startup context exceeds the 10K-input-tokens/min org rate limit on the first
+# request, so every scheduled run 429'd before doing any work (failed every
+# Friday since ~April 2026). The weekly auto-update now runs as a free,
+# subscription-authed Claude Code Routine instead. This workflow is kept for
+# manual (workflow_dispatch) runs only.
 on:
-  schedule:
-    # 8:00 AM CDT (13:00 UTC) every Friday
-    - cron: '0 13 * * 5'
   workflow_dispatch:
     inputs:
       reason:
@@ -36,9 +40,8 @@ jobs:
       - name: Run Friday brief update
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          ANTHROPIC_MODEL: claude-sonnet-4-5
         run: |
-          claude -p --dangerously-skip-permissions --model sonnet "$(cat .github/friday-brief-prompt.txt)"
+          claude -p --dangerously-skip-permissions "$(cat .github/friday-brief-prompt.txt)"
 
       - name: Commit and push changes
         run: |
