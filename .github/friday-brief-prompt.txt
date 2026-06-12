@@ -79,10 +79,11 @@ The file exports `const TENANT_LENDER_NEWS = { ... };`
 - date: This Friday's date (e.g., "April 4, 2026")
 - last_scan: ISO 8601 timestamp (e.g., "2026-04-04T13:00:00Z")
 
---- COMPANIES ARRAY (23 entries — NEVER change) ---
-Tenants (14): Lincoln Tech, Crown Equipment, Tongrun International, Canteen, Control Panels, Baer Manufacturing / Hunt Electric, Grander Distribution, Clopay, International Paper, Duroshox, Bright Events, Xingyu Lighting, Hartford Insurance, Triad Manufacturing
-Lenders (8): Busey Bank, Huntington Bank, Fifth Third Bank, Inwood National Bank, Simmons Bank, Barings, Hall Group, PACE Equities
+--- COMPANIES ARRAY (24 entries — NEVER change) ---
+Tenants (13): Lincoln Tech, Crown Equipment, Tongrun International, Canteen, Control Panels, Baer Manufacturing / Hunt Electric, Grander Distribution, Clopay, International Paper, Duroshox, Bright Events, Xingyu Lighting, Triad Manufacturing
+Lenders (10): Busey Bank, Huntington Bank, Fifth Third Bank, Inwood National Bank, Simmons Bank, Barings, Hall Group, PACE Equities, Hartford Insurance, Pinnacle Bank
 Equity Partner (1): Sammons Enterprise
+NOTE: Hartford Insurance is categorized as a Lender (insurance-company lending relationship), NOT a tenant. Pinnacle Bank was added June 2026. Bank OZK was removed from the watchlist June 2026 — do not re-add it or carry its alerts.
 
 --- ALERTS ARRAY ---
 Search for each company: "[Company Name]" news {current month} {current year}
@@ -121,7 +122,7 @@ VERIFICATION CHECKLIST
 - [ ] reading_links has 4-5 non-paywalled articles
 - [ ] rates has all 4 entries with current, one_mo_ago, one_yr_ago
 - [ ] stocks has all 5 categories, ~44 tickers unchanged
-- [ ] companies array has exactly 23 entries, unchanged
+- [ ] companies array has exactly 24 entries, unchanged
 - [ ] last_scan updated to today's ISO timestamp
 - [ ] All alert dates use YYYY-MM-DD format
 - [ ] No alerts older than 75 days remain in the file

@@ -19,7 +19,6 @@ const TENANT_LENDER_NEWS = {
         { id: "10", name: "Duroshox",                            cat: "Tenant" },
         { id: "11", name: "Bright Events",                       cat: "Tenant" },
         { id: "12", name: "Xingyu Lighting",                     cat: "Tenant" },
-        { id: "13", name: "Hartford Insurance",                  cat: "Tenant" },
         { id: "23", name: "Triad Manufacturing",                 cat: "Tenant" },
         { id: "14", name: "Busey Bank",                          cat: "Lender" },
         { id: "15", name: "Huntington Bank",                     cat: "Lender" },
@@ -29,7 +28,8 @@ const TENANT_LENDER_NEWS = {
         { id: "19", name: "Barings",                             cat: "Lender" },
         { id: "20", name: "Hall Group",                          cat: "Lender" },
         { id: "21", name: "PACE Equities",                       cat: "Lender" },
-        { id: "24", name: "Bank OZK",                            cat: "Lender" },
+        { id: "13", name: "Hartford Insurance",                  cat: "Lender" },
+        { id: "25", name: "Pinnacle Bank",                       cat: "Lender" },
         { id: "22", name: "Sammons Enterprise",                  cat: "Equity Partner" },
     ],
 
@@ -43,16 +43,6 @@ const TENANT_LENDER_NEWS = {
             relevance: "ACTIVE HIGH WATCH — June 2026 closures show the restructuring is accelerating, not stabilizing. Marion, Ohio (packaging) and Wichita, Kansas (recycling) are non-core facilities; the Mexico sale further simplifies the North American portfolio. The critical question for Jackson Shaw remains: is the Jackson Shaw-held IP facility in or near any current or planned closure pipeline? The North America / EMEA separation will create two separate public company management teams with their own real estate strategies — increasing the probability of additional footprint rationalization post-separation. <b>Actionable before Q2 earnings (late July):</b> Request written confirmation from IP's regional real estate contact that the <b>Jackson Shaw-held IP facility is not in any current or planned closure or consolidation pipeline under either the North America or EMEA entity</b>. The stock's +16% recovery this week is a valuation normalization event — the structural lease risk from the accelerating closure program has not changed.",
             source: "Packaging Dive / Manufacturing Dive / Recycling Today / Simply Wall St / Yahoo Finance / IP Investor Relations",
             date: "2026-06-11"
-        },
-        {
-            level: "MEDIUM",
-            company: "Bank OZK",
-            cat: "Lender",
-            headline: "Stock at ~$50.20 (+2.0% today, +4.2% YTD); CRE portfolio concentration falls to ~60% as strategic pivot to Corporate and Institutional Banking accelerates; Q1 2026 NPA elevated at 1.08%; Q2 2026 earnings expected mid-July — next critical read on credit quality stabilization",
-            summary: "Bank OZK (<b>NASDAQ: OZK</b>) shares are at approximately <b>$50.20 (+2.0% today)</b>, up <b>+4.2% YTD</b> from the $48.20 year-start price. The underlying credit and strategic narrative from Q1 2026 (reported April 22) remains the key driver: <b>nonperforming assets more than doubled YoY to 1.08% of portfolio</b> (~$451M); <b>highest loan charge-off rate since 2010</b>; <b>allowance for credit losses doubled to $600M</b>. The bank's <b>Real Estate Specialties Group (RESG)</b> originated only <b>$1.0B in Q1</b> — a five-year low — while repayments surged to a record <b>$1.6B</b>. The <b>Corporate and Institutional Bank (CIB)</b> is now being positioned to <b>match or surpass RESG by portfolio size by 2027</b>, with RESG's share of total loans falling toward <b>60%</b> (from a 70% peak). Problem assets in Q1 include Boston, Chicago, Santa Monica, Baltimore, Seattle, and Milwaukee. OZK raised its quarterly dividend to <b>$0.47/share</b> (from $0.46) earlier this month — a modest confidence signal. <b>Q2 2026 results are expected mid-July</b> — the next critical read on NPA stabilization vs. further deterioration, Q2 origination pace, and any explicit CRE geographic guidance.",
-            relevance: "The strategic pivot away from CRE is structural, not cyclical. OZK is deliberately reducing CRE concentration through record repayments, a five-year origination low, and a deliberate CIB expansion — removing one historically aggressive construction lender from Jackson Shaw's competitive lending pool. The mid-July Q2 results will be a pivotal read: NPA stabilization would be the first positive credit signal in 3 quarters. If NPA continues rising, OZK may further tighten CRE exposure criteria. Monitor specifically for any Texas CRE credit quality commentary in the Q2 call — OZK has historically had Dallas multifamily and mixed-use in its problem asset bucket.",
-            source: "Bank OZK IR / Bisnow / CRE Daily / Yahoo Finance / June 12 2026 scan",
-            date: "2026-06-12"
         },
         {
             level: "MEDIUM",
@@ -117,10 +107,10 @@ const TENANT_LENDER_NEWS = {
         {
             level: "GENERAL",
             company: "Hartford Insurance",
-            cat: "Tenant",
+            cat: "Lender",
             headline: "Q1 2026 record results: net income +36% to $851M, core ROE 20.3%, $617M returned to shareholders; higher-for-longer rate environment (May CPI 4.2%, no 2026 cuts priced) is net positive for Hartford's investment float; HIG at ~$135.80 (+6.2% YTD); no new adverse news",
             summary: "The Hartford (<b>NYSE: HIG</b>) reported Q1 2026 on April 23: <b>net income $851M (+36% YoY)</b>, diluted EPS <b>$3.04</b>, core ROE <b>20.3%</b>. Total revenues <b>$7.23B (+6.1%)</b>. Business Insurance written premium growth +6% at an 89.2 underlying combined ratio. Returned <b>$617M to shareholders</b> in Q1. HIG at approximately <b>$135.80</b>, up <b>+6.2% YTD</b>. The May CPI 4.2% print and complete elimination of 2026 rate cut expectations is incrementally <b>positive for Hartford's investment portfolio</b> — insurance companies benefit directly from higher-for-longer rates through their investment float (bonds held against policy liabilities earn more at higher yields). No company-specific adverse news this week.",
-            relevance: "Hartford remains a fortress credit tenant. Net income +36%, 20.3% ROE, and $617M capital return in a single quarter confirm institutional financial health. The higher-for-longer rate scenario following May CPI/PPI is net positive for Hartford's NIM and investment portfolio yield. The zero-cut probability priced for 2026 is a meaningful ongoing tailwind for insurance company profitability. No lease concerns.",
+            relevance: "Hartford is tracked as a lending relationship. Net income +36%, 20.3% ROE, and $617M capital return in a single quarter confirm institutional financial health and lending capacity. The higher-for-longer rate scenario following May CPI/PPI is net positive for Hartford's investment portfolio yield — insurance company lenders typically expand CRE debt allocations in this environment. The zero-cut probability priced for 2026 is a meaningful ongoing tailwind for insurance company profitability. No relationship concerns.",
             source: "Hartford IR / StockTitan / Motley Fool",
             date: "2026-04-23"
         },
