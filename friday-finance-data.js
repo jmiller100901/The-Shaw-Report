@@ -46,17 +46,17 @@ const FRIDAY_FINANCE = {
             date: "2026-10-15"
         },
         {
-            headline: "Regional bank earnings begin with Fifth Third, Huntington next",
-            body: "Fifth Third reported third-quarter results on Monday, October 19, with analysts expecting <b>$0.82 per share</b>. Early coverage described a solid quarter with higher net interest income, steady deposit growth and stable credit. Huntington reports Thursday, October 22, with consensus near <b>$0.38 per share</b> and a net interest margin around 3.2%. Analysts have trimmed Huntington estimates about 7% over the past month. Pinnacle is expected to report October 21 after the close with consensus near $2.66 per share, though the date is not firmly confirmed. Commercial real estate credit quality is the line investors are watching across all three.",
+            headline: "Fifth Third opens regional bank earnings with a beat; Huntington next",
+            body: "Fifth Third reported third-quarter results on Monday, October 19, with adjusted earnings of <b>$1.13 per share</b> against consensus near $1.09. Reported EPS was $0.90 after $0.23 of merger-related charges tied to the Comerica deal. Net interest income rose 3% on the quarter to <b>$2.27 billion</b>, and the net interest margin eased 2 basis points to 3.34%. The net charge-off ratio held near <b>0.31%</b>, and period-end loans reached $180.3 billion. Huntington reports Thursday, October 22, with consensus near $0.38 per share, and Pinnacle follows on Wednesday after the close. Commercial real estate credit quality is the line investors are watching across all three.",
             jsc_angle: "Three of the company's construction lenders report within days of each other, so their CRE credit and origination commentary is the best read on 2027 loan availability.",
-            source: { name: "Yahoo Finance", title: "Earnings Preview: Huntington Bancshares (HBAN) Q3 Earnings Expected to Decline", url: "https://finance.yahoo.com/markets/stocks/articles/earnings-preview-huntington-bancshares-hban-130004310.html" },
+            source: { name: "SEC (Fifth Third 8-K)", title: "Fifth Third Bancorp third-quarter 2026 earnings release", url: "https://www.sec.gov/Archives/edgar/data/0000035527/000003552726000229/q32026earningsrelease.htm" },
             date: "2026-10-19"
         }
     ],
 
     // 3-6 dated items. Short.
     watch_next_week: [
-        { when: "Wed Oct 21", what: "<b>Pinnacle Financial Q3 earnings</b> expected after the close, with the call the next morning. Watch net interest margin and deposit costs." },
+        { when: "Wed Oct 21", what: "<b>Pinnacle Financial Q3 earnings</b> confirmed for after the close, with the call Thursday at 8 a.m. ET. Watch net interest margin and deposit costs." },
         { when: "Thu Oct 22", what: "<b>Huntington Bancshares Q3 earnings.</b> First full quarter after the Cadence deal: CRE delinquencies, margin versus the 3.20% guide and construction lending appetite." },
         { when: "Tue-Wed Oct 27-28", what: "<b>FOMC meeting.</b> Markets price about an 84% hold, so the statement language on December is the real event." },
         { when: "Wed Oct 28", what: "<b>International Paper Q3 earnings.</b> First full quarter after the Georgia mill closures." }

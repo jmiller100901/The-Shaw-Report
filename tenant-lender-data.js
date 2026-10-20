@@ -4,7 +4,7 @@
 
 const TENANT_LENDER_NEWS = {
     date: "October 23, 2026",
-    last_scan: "2026-10-20T15:30:00Z",
+    last_scan: "2026-10-20T15:45:00Z",
 
     // Jackson Shaw watchlist. Fixed — see WATCHLIST in validate-data.js.
     companies: [
@@ -68,6 +68,16 @@ const TENANT_LENDER_NEWS = {
             relevance: "Huntington is a CrossPoint construction lender. Credit-quality disclosure on the CRE book and any comment on construction originations are the two things to listen for.",
             source: "Huntington Bancshares IR / Yahoo Finance",
             date: "2026-10-16"
+        },
+        {
+            level: "GENERAL",
+            company: "Fifth Third Bank",
+            cat: "Lender",
+            headline: "Q3 adjusted EPS of $1.13 beats as Comerica integration continues",
+            summary: "Fifth Third Bancorp (<b>NASDAQ: FITB</b>) reported third-quarter adjusted earnings of <b>$1.13 per share</b> on October 19, ahead of consensus near $1.09. Reported EPS was $0.90 after merger-related charges. Net interest income rose 3% on the quarter to $2.27 billion. The net charge-off ratio was <b>0.31%</b> and the nonperforming loan ratio 0.59%.",
+            relevance: "Fifth Third is a CrossPoint construction lender. Stable credit and 1% sequential loan growth point to continued appetite for well-capitalized borrowers.",
+            source: "Fifth Third SEC filing",
+            date: "2026-10-19"
         }
     ],
 
@@ -87,7 +97,6 @@ const TENANT_LENDER_NEWS = {
         "W Industries",
         "Xingyu Lighting",
         "Busey Bank",
-        "Fifth Third Bank",
         "Inwood National Bank",
         "Barings",
         "Hall Group",
