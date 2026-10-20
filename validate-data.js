@@ -70,7 +70,7 @@ const LEVELS    = ['HIGH', 'MEDIUM', 'LOW', 'GENERAL'];
 const PAYWALLED = ['wsj.com', 'ft.com', 'bloomberg.com', 'barrons.com'];
 
 const LIMITS = {
-    stories:            { min: 3, max: 6 },
+    stories:            { min: 5, max: 6 },
     storyHeadlineWords: 14,
     storyBodySentences: { min: 3, max: 10 },
     storyAngleSentences: 2,

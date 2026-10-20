@@ -46,7 +46,7 @@ Actions cron and no local scheduled task; the routine is the only writer.
 
 ## Content contract (enforced by the validator)
 
-- 3 to 6 stories. Headline at most 14 words. Body 3 to 10 sentences of prose.
+- 5 or 6 stories. Headline at most 14 words. Body 3 to 10 sentences of prose.
   Optional one or two sentence `jsc_angle`. One source, dated within 7 days.
 - 3 to 6 dated `watch_next_week` items, at most 2 sentences each.
 - 3 to 5 reading links, none from WSJ, FT, Bloomberg or Barron's.

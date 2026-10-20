@@ -62,12 +62,13 @@ ticker_bar  (10-12 items)
   big earnings movers, deal names, macro-sensitive stocks. Live data
   overwrites these on page load, so they are fallbacks.
 
-stories  (3 to 6 — pick the BIG ones)
+stories  (5 or 6 — pick the BIG ones)
   The week's most important finance, economics and geopolitics stories,
   the ones a CFO would mention at the Friday lunch. Markets and rates,
   the Fed, inflation and jobs data, a major geopolitical or trade event,
   a big corporate story, and a CRE story when there is a real one.
-  Do not pad to six; three strong stories beat six thin ones.
+  Five is the floor. Reach for the week's five biggest; add a sixth only
+  when it earns the space.
   Each story:
     headline   plain English, at most 14 words, sentence case
     body       prose, 3 to 10 sentences, data-rich, <b> around the two or
