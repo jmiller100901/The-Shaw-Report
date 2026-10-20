@@ -98,17 +98,39 @@
     function renderFridayFinance() {
         var data = FRIDAY_FINANCE;
 
-        // News bullets
-        var bulletsEl = document.getElementById('ff-news-bullets');
-        if (bulletsEl && data.news_bullets) {
-            bulletsEl.innerHTML = data.news_bullets.map(function (b) {
-                return '<li class="news-bullet">' + b + '</li>';
+        // Stories — a few big pieces, prose, one source each
+        var storiesEl = document.getElementById('ff-stories');
+        if (storiesEl && data.stories) {
+            storiesEl.innerHTML = data.stories.map(function (s, i) {
+                var src = s.source || {};
+                return '<article class="story">' +
+                    '<div class="story-kicker"><span class="story-num">' + (i + 1) + '</span>' +
+                    (s.date ? '<span class="story-date">' + fmtStoryDate(s.date) + '</span>' : '') + '</div>' +
+                    '<h2 class="story-headline">' + s.headline + '</h2>' +
+                    '<p class="story-body">' + s.body + '</p>' +
+                    (s.jsc_angle ? '<p class="story-angle"><span class="story-angle-label">Why it matters</span>' + s.jsc_angle + '</p>' : '') +
+                    (src.url ? '<div class="story-source">Source: <a href="' + src.url + '" target="_blank" rel="noopener">' +
+                        (src.title || src.name || src.url) + '</a>' + (src.name && src.title ? ' &middot; ' + src.name : '') + '</div>' : '') +
+                    '</article>';
             }).join('');
         }
 
-        // Watch next week
-        var watchEl = document.getElementById('ff-watch-text');
-        if (watchEl) watchEl.innerHTML = data.watch_next_week || '';
+        // Watch next week — short dated list
+        var watchEl = document.getElementById('ff-watch-list');
+        if (watchEl) {
+            var w = data.watch_next_week;
+            if (Array.isArray(w)) {
+                watchEl.innerHTML = w.map(function (item) {
+                    return '<li class="watch-item"><span class="watch-when">' + item.when + '</span>' +
+                        '<span class="watch-what">' + item.what + '</span></li>';
+                }).join('');
+            } else if (typeof w === 'string') {
+                watchEl.innerHTML = '<li class="watch-item"><span class="watch-what">' + w + '</span></li>';
+            }
+        }
+
+        // Live FRED charts
+        renderFredCharts();
 
         // Weekend reading — supports reading_links (new) or wsj_articles (legacy)
         var articles  = data.reading_links || data.wsj_articles || [];
@@ -140,6 +162,39 @@
         // Stock table — show loading state until live data arrives
         setStockStatus('<span class="loading-badge">&#8635; Loading live data&hellip;</span>');
         renderStockTable();
+    }
+
+    function fmtStoryDate(iso) {
+        var d = new Date(iso + 'T00:00:00');
+        if (isNaN(d)) return iso;
+        return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+    }
+
+    // ----------------------------------------------------------------
+    // FRED charts — live PNGs from fred.stlouisfed.org, no API key.
+    // Each card: <img data-fred-series="A,B" data-fred-years="N">
+    // ----------------------------------------------------------------
+    function renderFredCharts() {
+        var imgs = document.querySelectorAll('img[data-fred-series]');
+        imgs.forEach(function (img) {
+            var series = img.getAttribute('data-fred-series');
+            var years  = parseInt(img.getAttribute('data-fred-years'), 10) || 10;
+            var start  = new Date();
+            start.setFullYear(start.getFullYear() - years);
+            var cosd   = start.toISOString().slice(0, 10);
+            // Small requested size keeps FRED's labels legible once scaled into the sidebar card
+            var qs     = 'id=' + encodeURIComponent(series) + '&cosd=' + cosd + '&width=420&height=280';
+            img.src = 'https://fred.stlouisfed.org/graph/fredgraph.png?' + qs;
+            var link = img.closest('a');
+            if (link) link.href = 'https://fred.stlouisfed.org/graph/?id=' + encodeURIComponent(series);
+            img.addEventListener('error', function () {
+                img.style.display = 'none';
+                var card = img.closest('.chart-slot');
+                if (card) card.innerHTML = '<div class="chart-ph-inner"><p class="chart-ph-sub">Chart unavailable</p>' +
+                    '<a href="https://fred.stlouisfed.org/graph/?id=' + encodeURIComponent(series) +
+                    '" target="_blank" rel="noopener" class="chart-link-btn">View on FRED &rarr;</a></div>';
+            });
+        });
     }
 
     // ----------------------------------------------------------------
@@ -458,9 +513,12 @@
         var alertsEl = document.getElementById('tl-alerts');
         if (!alertsEl) return;
         var html = '';
+        if (filtered.length === 0) {
+            html += '<div class="tl-none">No alerts this week' + (tlFilter === 'All' ? '' : ' for ' + tlFilter.toLowerCase() + 's') + '.</div>';
+        }
         LEVELS.forEach(function (lvl) {
             var items = byLevel[lvl];
-            if (lvl === 'GENERAL' && items.length === 0) return;
+            if (items.length === 0) return;   // only show levels that have something
             var meta = LEVEL_META[lvl];
             var col  = tlCollapsed[lvl];
 
@@ -507,6 +565,18 @@
                 renderTLContent();
             });
         });
+
+        // Quiet list — scanned, nothing material
+        var quietEl = document.getElementById('tl-quiet');
+        if (quietEl) {
+            var catOf = {};
+            (data.companies || []).forEach(function (c) { catOf[c.name] = c.cat; });
+            var quiet = (data.quiet || []).filter(function (n) { return tlFilter === 'All' || catOf[n] === tlFilter; });
+            quietEl.innerHTML = quiet.length
+                ? '<span class="tl-quiet-label">No material news this week</span>' +
+                  quiet.map(function (n) { return '<span class="tl-quiet-name">' + n + '</span>'; }).join('')
+                : '';
+        }
     }
 
     function renderTLWatchlist() {

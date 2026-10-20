@@ -44,12 +44,12 @@
 
                 <!-- Main Column -->
                 <div class="col-main">
-                    <h3 class="col-header">This week in markets</h3>
-                    <ul id="ff-news-bullets" class="news-bullets-list"></ul>
+                    <h3 class="col-header">The week's big stories</h3>
+                    <div id="ff-stories" class="stories"></div>
 
                     <div class="watch-box">
                         <h4 class="watch-header">What to watch next week</h4>
-                        <p id="ff-watch-text"></p>
+                        <ul id="ff-watch-list" class="watch-list"></ul>
                     </div>
 
                     <h3 class="col-header">Weekend reading</h3>
@@ -69,27 +69,26 @@
                     </div>
 
                     <div class="card">
-                        <h4 class="card-title">Chatham Forward Curves</h4>
-                        <div class="chart-slot chart-placeholder">
-                            <div class="chart-ph-inner">
-                                <p class="chart-ph-sub">1-Mo SOFR &middot; 10-Year Treasury &middot; Fed Dot Plot</p>
-                                <a href="https://www.chathamfinancial.com/technology/us-forward-curves"
-                                   target="_blank" rel="noopener" class="chart-link-btn">View Forward Curves &rarr;</a>
-                            </div>
+                        <h4 class="card-title">Treasury Curve &mdash; 2Y, 10Y &amp; 30Y, 2 Years</h4>
+                        <div class="chart-slot">
+                            <a href="https://fred.stlouisfed.org/graph/?id=DGS2,DGS10,DGS30" target="_blank" rel="noopener">
+                                <img class="chart-img" alt="2-year, 10-year and 30-year Treasury yields, past two years"
+                                     data-fred-series="DGS2,DGS10,DGS30" data-fred-years="2">
+                            </a>
                         </div>
-                        <p class="chart-source">Source: Chatham Financial</p>
+                        <p class="chart-source">Live from FRED / St. Louis Fed &middot;
+                            <a href="https://www.chathamfinancial.com/technology/us-forward-curves" target="_blank" rel="noopener">Chatham forward curves &rarr;</a></p>
                     </div>
 
                     <div class="card">
                         <h4 class="card-title">EFFR, 10Y &amp; 2Y Treasury &mdash; 10 Years</h4>
-                        <div class="chart-slot chart-placeholder">
-                            <div class="chart-ph-inner">
-                                <p class="chart-ph-sub">Effective Federal Funds Rate &middot; 10-Year &middot; 2-Year</p>
-                                <a href="https://fred.stlouisfed.org/graph/?id=DFF,DGS10,DGS2"
-                                   target="_blank" rel="noopener" class="chart-link-btn">View FRED Chart &rarr;</a>
-                            </div>
+                        <div class="chart-slot">
+                            <a href="https://fred.stlouisfed.org/graph/?id=DFF,DGS10,DGS2" target="_blank" rel="noopener">
+                                <img class="chart-img" alt="Effective federal funds rate, 10-year and 2-year Treasury yields, past ten years"
+                                     data-fred-series="DFF,DGS10,DGS2" data-fred-years="10">
+                            </a>
                         </div>
-                        <p class="chart-source">Source: FRED / St. Louis Fed</p>
+                        <p class="chart-source">Live from FRED / St. Louis Fed</p>
                     </div>
                 </div>
             </div>
@@ -133,6 +132,7 @@
                 <div class="tl-filters" id="tl-filters"></div>
                 <div class="tl-stats" id="tl-stats"></div>
                 <div id="tl-alerts"></div>
+                <div id="tl-quiet" class="tl-quiet"></div>
                 <div class="tl-watchlist">
                     <h3 class="tl-watchlist-title">Monitored companies</h3>
                     <div class="tl-watchlist-grid" id="tl-watchlist"></div>

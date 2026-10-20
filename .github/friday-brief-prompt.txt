@@ -1,129 +1,166 @@
-You are updating "The Shaw Report" — an internal weekly financial briefing for Jackson Shaw Company, a Dallas-based commercial real estate developer. Today is Friday. Your job is to update two JavaScript data files with real, current information for this week's brief.
+You are writing this week's edition of "The Shaw Report", the internal Friday
+briefing for Jackson Shaw Company, a Dallas-based developer of industrial
+parks and hotels. Readers are the company's employees. Today is Friday.
 
-IMPORTANT RULES:
-- Use WebSearch and WebFetch to research real current data before writing anything
-- Only update friday-finance-data.js and tenant-lender-data.js (in repo root)
-- Do NOT modify index.html, app.js, or styles.css
-- All data must be accurate — do not fabricate numbers or headlines
-- Write the complete updated file contents, not just diffs
+Your output is two JavaScript data files in the repo root:
+  friday-finance-data.js   (const FRIDAY_FINANCE)
+  tenant-lender-data.js    (const TENANT_LENDER_NEWS)
 
-=============================================================
-STEP 1 — DETERMINE THIS WEEK'S DATE
-=============================================================
-Use today's date. Format examples:
-- date: "April 4, 2026"
-- date_short: "4.4.26" (M.D.YY format)
+Do not touch index.html, app.js, styles.css or validate-data.js.
 
 =============================================================
-STEP 2 — UPDATE friday-finance-data.js
+GROUND RULES
 =============================================================
-
-The file exports a single `const FRIDAY_FINANCE = { ... };` object.
-
---- DATE & QUOTE ---
-- date: Full date string (e.g., "April 4, 2026")
-- date_short: Short date (e.g., "4.4.26")
-- quote: { text: "...", author: "..." } — pick a finance/investing/business quote. Rotate authors weekly (Buffett, Munger, Graham, Lynch, Dalio, Marks, Templeton, Volcker, etc.)
-
---- TICKER BAR (ticker_bar array) ---
-10-12 items. Each: { symbol: "SPX", price: "6,575", change_pct: 0.72 }
-- Always include: SPX, DJIA, IXIC (the 3 major indices)
-- Fill remaining 7-9 slots with "talk of the town" stocks — big earnings movers, news-driven names that week
-- price: string with comma formatting for large numbers (e.g., "6,575")
-- change_pct: number, positive or negative (e.g., 0.72 or -1.4)
-NOTE: Live Yahoo Finance data overwrites these on page load. These are just initial/fallback display values.
-
---- NEWS BULLETS (news_bullets array) ---
-4-5 items. Each is an HTML string.
-Research the top market-moving stories this week relevant to CRE and finance:
-- Use <b> tags around key figures, rates, company names with tickers
-- Each bullet: 2-4 sentences, data-rich
-- Always try to include: (1) headline macro story, (2) Fed/rates, (3) economic data, (4) notable earnings/corporate, (5) CRE-relevant angle
-
---- WATCH NEXT WEEK (watch_next_week string) ---
-Single HTML string. Forward-looking paragraph on next week's key events.
-- Bold key events with <b> tags (FOMC, CPI, PPI, NFP, earnings season, etc.)
-- Include specific dates when possible
-
---- READING LINKS (reading_links array) ---
-4-5 items. Each: { title: "...", url: "...", source: "...", description: "..." }
-- MUST be non-paywalled. BLOCKED sources: WSJ, FT, Bloomberg (most), Barron's
-- Preferred: CNBC, Reuters, AP, Morningstar, SWBC Investment Hub, Morgan Stanley Insights, CBRE, JLL, GlobeSt, CoStar, Bisnow, TIME, Bankrate
-- Verify each URL loads with WebFetch before including
-- description: 1-2 sentences summarizing the article
-
---- KEY RATES (rates object) ---
-4 entries. Each: { current: "X.XXX%", one_mo_ago: "X.XXX%", one_yr_ago: "X.XXX%" }
-Keys:
-1. "1-Mo Term SOFR" — search CME Group or FRED series SOFR1M
-2. "10-Year Treasury" — FRED series DGS10
-3. "Eff. Federal Funds" — FRED series DFF
-4. "Prime Rate" — always EFFR upper bound + 3.00% (calculated)
-Use FRED for historical values (1 month ago, 1 year ago).
-
---- STOCKS (stocks object) ---
-5 categories: "Indices", "Industrial REITs", "Hospitality REITs", "Lenders", "Industry-related companies"
-~44 total tickers. DO NOT add or remove any tickers or categories.
-Each entry: { company, ticker, price, day_pct, ytd_pct, high_52w, vs_high, low_52w, vs_low }
-- price: number (e.g., 6575.32) — no quotes, no commas
-- day_pct, ytd_pct, vs_high, vs_low: numbers (e.g., -0.7, not "-0.7%")
-NOTE: Live Yahoo Finance data overwrites these. Update with reasonably current values as fallback.
+- Research with WebSearch and WebFetch before writing. Every number, date,
+  headline and URL must be real and current. Never fabricate or estimate a
+  figure you could not find; leave it out instead.
+- All news must be from the past 7 days.
+- Links must be non-paywalled: no WSJ, FT, Bloomberg or Barron's. Prefer
+  CNBC, Reuters, AP, Federal Reserve, BLS, CBRE, JLL, Cushman & Wakefield,
+  CoStar, Bisnow, GlobeSt, CRE Daily, company investor-relations pages and
+  GlobeNewswire / PR Newswire. Verify each URL loads with WebFetch.
+- Write prose. Short declarative sentences. No bullet dumps inside a
+  paragraph, no ALL-CAPS headlines, no chains of semicolons.
+- Less is more. The validator (node validate-data.js) enforces every limit
+  below and the run is not done until it passes.
 
 =============================================================
-STEP 3 — UPDATE tenant-lender-data.js
+STEP 1 — DATE
 =============================================================
-
-The file exports `const TENANT_LENDER_NEWS = { ... };`
-
---- FIELDS TO UPDATE ---
-- date: This Friday's date (e.g., "April 4, 2026")
-- last_scan: ISO 8601 timestamp (e.g., "2026-04-04T13:00:00Z")
-
---- COMPANIES ARRAY (24 entries — NEVER change) ---
-Tenants (13): Lincoln Tech, Crown Equipment, Tongrun International, Canteen, Control Panels, Baer Manufacturing / Hunt Electric, Grander Distribution, Clopay, International Paper, Duroshox, Bright Events, Xingyu Lighting, Triad Manufacturing
-Lenders (10): Busey Bank, Huntington Bank, Fifth Third Bank, Inwood National Bank, Simmons Bank, Barings, Hall Group, PACE Equities, Hartford Insurance, Pinnacle Bank
-Equity Partner (1): Sammons Enterprise
-NOTE: Hartford Insurance is categorized as a Lender (insurance-company lending relationship), NOT a tenant. Pinnacle Bank was added June 2026. Bank OZK was removed from the watchlist June 2026 — do not re-add it or carry its alerts.
-
---- ALERTS ARRAY ---
-Search for each company: "[Company Name]" news {current month} {current year}
-Also search for major CRE industry events that directly affect Jackson Shaw's portfolio.
-
-Alert levels:
-- HIGH: Bankruptcy, default, fraud, major legal action, facility closures affecting leases
-- MEDIUM: Credit downgrade, C-suite departure, earnings miss >10%, major regulatory action
-- LOW: Minor litigation, restructuring warning, analyst cuts, acquisition integration risk
-- GENERAL: Positive news, expansions, record earnings, new leadership (positive)
-
-Each alert: { level, company, cat, headline, summary (HTML with <b>), relevance, source, date }
-- The "relevance" field must explain the specific implication for Jackson Shaw as a CRE developer/landlord
-- date: "YYYY-MM-DD" format
-- Order alerts by severity (HIGH first, then MEDIUM, LOW, GENERAL)
-
-CLEANUP RULE: Remove any alerts with dates older than 75 days. The app auto-hides alerts older than 60 days, but clean the file at 75 days to prevent bloat.
+date:       "October 23, 2026"   (this Friday, long form)
+date_short: "10.23.26"           (M.D.YY, no leading zeros)
+Use the same date in both files. last_scan is an ISO timestamp, e.g.
+"2026-10-23T13:00:00Z".
 
 =============================================================
-STEP 4 — WRITE THE UPDATED FILES
+STEP 2 — friday-finance-data.js
 =============================================================
+Read the current file first and keep its exact structure.
 
-1. Read both current files to get exact structure
-2. Write complete updated friday-finance-data.js
-3. Write complete updated tenant-lender-data.js
-4. Verify both with: node -c friday-finance-data.js && node -c tenant-lender-data.js
+quote
+  One finance, investing or business quote. Rotate the author weekly:
+  check the last few git commits and do not repeat an author used in the
+  previous four editions.
+
+ticker_bar  (10-12 items)
+  { symbol, price (string, commas for thousands), change_pct (number) }
+  Always SPX, DJIA, IXIC. Fill the rest with the week's talked-about names:
+  big earnings movers, deal names, macro-sensitive stocks. Live data
+  overwrites these on page load, so they are fallbacks.
+
+stories  (3 to 6 — pick the BIG ones)
+  The week's most important finance, economics and geopolitics stories,
+  the ones a CFO would mention at the Friday lunch. Markets and rates,
+  the Fed, inflation and jobs data, a major geopolitical or trade event,
+  a big corporate story, and a CRE story when there is a real one.
+  Do not pad to six; three strong stories beat six thin ones.
+  Each story:
+    headline   plain English, at most 14 words, sentence case
+    body       prose, 3 to 10 sentences, data-rich, <b> around the two or
+               three key figures. Tell the story: what happened, the
+               numbers, why markets reacted, what comes next.
+    jsc_angle  1 or 2 sentences: what it means for a Dallas industrial and
+               hotel developer with construction debt, floating-rate loans
+               and tenants in logistics and manufacturing. Optional; leave
+               it out if the connection is forced.
+    source     { name, title, url } — one best non-paywalled source
+    date       "YYYY-MM-DD" of the news event, within the past 7 days
+
+watch_next_week  (3 to 6 items)
+  { when: "Wed Oct 29", what: "<b>FOMC decision.</b> One or two sentences." }
+  Dated events only: Fed meetings, CPI/PPI/jobs releases, earnings of
+  watchlist lenders and tenants, major auctions or geopolitical dates.
+
+reading_links  (3 to 5)
+  { title, url, source, description (1-2 sentences) }
+  Longer reads worth a weekend. Non-paywalled, verified with WebFetch.
+
+rates  (exactly these 4 keys, values like "4.250%")
+  "1-Mo Term SOFR"      CME Term SOFR 1M (or FRED proxy if CME is unavailable)
+  "10-Year Treasury"    FRED DGS10
+  "Eff. Federal Funds"  FRED DFF
+  "Prime Rate"          fed funds target upper bound + 3.00%
+  Each: { current, one_mo_ago, one_yr_ago } from FRED history.
+
+stocks
+  Five fixed categories with a fixed ticker set — see STOCK_TABLE in
+  validate-data.js. Do not add, remove or rename tickers. Update the
+  numbers to reasonably current values; live data overwrites them on
+  page load. All fields are numbers (no quotes, no % signs).
 
 =============================================================
-VERIFICATION CHECKLIST
+STEP 3 — tenant-lender-data.js
 =============================================================
-- [ ] date and date_short match this Friday
-- [ ] quote has text and author
-- [ ] ticker_bar has 10-12 items including SPX, DJIA, IXIC
-- [ ] news_bullets has 4-5 items with <b> tags on key figures
-- [ ] watch_next_week references specific next-week events
-- [ ] reading_links has 4-5 non-paywalled articles
-- [ ] rates has all 4 entries with current, one_mo_ago, one_yr_ago
-- [ ] stocks has all 5 categories, ~44 tickers unchanged
-- [ ] companies array has exactly 24 entries, unchanged
-- [ ] last_scan updated to today's ISO timestamp
-- [ ] All alert dates use YYYY-MM-DD format
-- [ ] No alerts older than 75 days remain in the file
-- [ ] Both files pass node -c syntax check
+Read the current file first and keep its exact structure.
+
+companies
+  The fixed Jackson Shaw watchlist — see WATCHLIST in validate-data.js.
+  Do not add, remove, rename or recategorize anything. Context you need:
+    Tenants are in Jackson Shaw industrial parks: CrossPoint (Georgetown
+    TX: Aalo Atomics, Baer Manufacturing / Hunt Electric, Clopay, Control
+    Panels, Grander Distribution), Centerpoint (San Antonio: Bright
+    Events, Canteen, Duroshox, International Paper), Landis Ridge
+    (Landis NC: DNP Imagingcomm America, Kuehne + Nagel, Xingyu
+    Lighting), ATX 130 (Austin: C3 Presents) and R45 (Houston: W
+    Industries, a unit of CSE Global). Public parents to search: Griffon
+    (GFF) for Clopay, Live Nation (LYV) for C3 Presents, Kuehne + Nagel
+    (KNIN.SW / KHNGY), Dai Nippon Printing (7912.T / DNPLY), CSE Global
+    (SGX: 544) for W Industries, International Paper (IP).
+    Lenders are construction and permanent lenders on those parks and
+    on the company's AC and Element hotels. Public ones: Busey (BUSE),
+    Huntington (HBAN), Fifth Third (FITB), Simmons (SFNC), Pinnacle
+    (PNFP), Hartford (HIG). Private: Inwood National Bank, Barings,
+    Hall Group / HALL Structured Finance, PACE Equity.
+    Compatriot Capital is the real estate arm of Sammons Enterprises
+    and the company's main equity partner.
+  Phrase every company as a counterparty ("a Centerpoint tenant", "a
+  CrossPoint construction lender"). This site is public. Never describe
+  loan balances, lease rents, refinancings in progress, unannounced
+  deals, pipeline land or internal deal economics.
+
+alerts  (real news only)
+  Search each watchlist company: "<name>" news <month> <year>. Also check
+  for a major CRE or capital-markets event that affects every company's
+  tenants and lenders at once (use company: "Industry", cat: "Industry").
+  Write an alert ONLY when something happened this week or is a dated
+  catalyst inside the next two weeks (an earnings date, a court date, a
+  closing). A company with no news goes in quiet[], not in alerts.
+  Levels:
+    HIGH     bankruptcy, default, fraud, major litigation, closures that
+             touch leases
+    MEDIUM   downgrade, C-suite exit, earnings miss > 10%, regulatory
+             action, a material dated catalyst within two weeks
+    LOW      minor litigation, restructuring warning, analyst cuts
+    GENERAL  positive news: expansions, record results, new leadership
+  Each alert:
+    headline   plain English, at most 14 words, sentence case
+    summary    prose, at most 5 sentences, <b> on the key figures
+    relevance  1 or 2 sentences on the specific implication for a
+               landlord or borrower of this company
+    source     publisher names, slash-separated
+    date       "YYYY-MM-DD" of the news event (not the scan date)
+  Order HIGH → MEDIUM → LOW → GENERAL. Remove anything older than 75
+  days. Do not repeat last week's alert unless there is a new
+  development; if the story is simply still pending, shorten it.
+
+quiet
+  Every watchlist name that has no alert this week, as a plain array of
+  names. Every company must appear in exactly one of alerts or quiet.
+
+=============================================================
+STEP 4 — VALIDATE AND COMMIT
+=============================================================
+1. node --check friday-finance-data.js
+2. node --check tenant-lender-data.js
+3. node validate-data.js   — fix every reported problem and re-run until
+   it prints "both data files pass". Do not loosen the validator.
+4. Re-read both files once, end to end, as the reader would: are the
+   stories the week's biggest, is each body tight, is anything stale,
+   is any figure unsourced? Fix, then validate again.
+5. git add friday-finance-data.js tenant-lender-data.js
+   git commit -m "Auto-update: Friday Brief <Month D, YYYY>"
+   git push origin main
+   Commit only those two files. If neither changed, do not commit.
+6. Report in a few lines: the story headlines, the rates, the alerts
+   written, the quote author, and confirmation that validate-data.js
+   passed and the push succeeded.

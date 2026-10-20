@@ -1,208 +1,99 @@
 // Tenant & Lender News — Week of October 16, 2026
-// Replace this file each week with updated scan results (same structure)
+// Rewritten each Friday by the auto-update. Schema and limits are enforced
+// by validate-data.js — run `node validate-data.js` before committing.
 
 const TENANT_LENDER_NEWS = {
     date: "October 16, 2026",
     last_scan: "2026-10-16T13:00:00Z",
 
-    // Jackson Shaw watchlist — tenants, lenders, equity partners
+    // Jackson Shaw watchlist. Fixed — see WATCHLIST in validate-data.js.
     companies: [
-        { id: "1",  name: "Lincoln Tech",                        cat: "Tenant" },
-        { id: "2",  name: "Crown Equipment",                     cat: "Tenant" },
-        { id: "3",  name: "Tongrun International",               cat: "Tenant" },
-        { id: "4",  name: "Canteen",                             cat: "Tenant" },
-        { id: "5",  name: "Control Panels",                      cat: "Tenant" },
-        { id: "6",  name: "Baer Manufacturing / Hunt Electric",  cat: "Tenant" },
-        { id: "7",  name: "Grander Distribution",                cat: "Tenant" },
-        { id: "8",  name: "Clopay",                              cat: "Tenant" },
-        { id: "9",  name: "International Paper",                 cat: "Tenant" },
-        { id: "10", name: "Duroshox",                            cat: "Tenant" },
-        { id: "11", name: "Bright Events",                       cat: "Tenant" },
-        { id: "12", name: "Xingyu Lighting",                     cat: "Tenant" },
-        { id: "23", name: "Triad Manufacturing",                 cat: "Tenant" },
-        { id: "14", name: "Busey Bank",                          cat: "Lender" },
-        { id: "15", name: "Huntington Bank",                     cat: "Lender" },
-        { id: "16", name: "Fifth Third Bank",                    cat: "Lender" },
-        { id: "17", name: "Inwood National Bank",                cat: "Lender" },
-        { id: "18", name: "Simmons Bank",                        cat: "Lender" },
-        { id: "19", name: "Barings",                             cat: "Lender" },
-        { id: "20", name: "Hall Group",                          cat: "Lender" },
-        { id: "21", name: "PACE Equities",                       cat: "Lender" },
-        { id: "13", name: "Hartford Insurance",                  cat: "Lender" },
-        { id: "25", name: "Pinnacle Bank",                       cat: "Lender" },
-        { id: "22", name: "Sammons Enterprise",                  cat: "Equity Partner" },
+        { id: "t01", name: "Aalo Atomics",                        cat: "Tenant" },
+        { id: "t02", name: "Baer Manufacturing / Hunt Electric",  cat: "Tenant" },
+        { id: "t03", name: "Bright Events",                       cat: "Tenant" },
+        { id: "t04", name: "C3 Presents",                         cat: "Tenant" },
+        { id: "t05", name: "Canteen",                             cat: "Tenant" },
+        { id: "t06", name: "Clopay",                              cat: "Tenant" },
+        { id: "t07", name: "Control Panels",                      cat: "Tenant" },
+        { id: "t08", name: "DNP Imagingcomm America",             cat: "Tenant" },
+        { id: "t09", name: "Duroshox",                            cat: "Tenant" },
+        { id: "t10", name: "Grander Distribution",                cat: "Tenant" },
+        { id: "t11", name: "International Paper",                 cat: "Tenant" },
+        { id: "t12", name: "Kuehne + Nagel",                      cat: "Tenant" },
+        { id: "t13", name: "W Industries",                        cat: "Tenant" },
+        { id: "t14", name: "Xingyu Lighting",                     cat: "Tenant" },
+        { id: "l01", name: "Busey Bank",                          cat: "Lender" },
+        { id: "l02", name: "Huntington Bank",                     cat: "Lender" },
+        { id: "l03", name: "Fifth Third Bank",                    cat: "Lender" },
+        { id: "l04", name: "Inwood National Bank",                cat: "Lender" },
+        { id: "l05", name: "Simmons Bank",                        cat: "Lender" },
+        { id: "l06", name: "Barings",                             cat: "Lender" },
+        { id: "l07", name: "Hall Group",                          cat: "Lender" },
+        { id: "l08", name: "PACE Equity",                         cat: "Lender" },
+        { id: "l09", name: "Hartford Insurance",                  cat: "Lender" },
+        { id: "l10", name: "Pinnacle Bank",                       cat: "Lender" },
+        { id: "e01", name: "Compatriot Capital (Sammons)",        cat: "Equity Partner" }
     ],
 
+    // Only real news goes here. HIGH → MEDIUM → LOW → GENERAL.
+    // headline ≤ 14 words · summary ≤ 5 sentences · relevance ≤ 2 sentences
+    // date = the date of the news, YYYY-MM-DD. Nothing older than 75 days.
     alerts: [
-        {
-            level: "HIGH",
-            company: "Lincoln Tech",
-            cat: "Tenant",
-            headline: "SECURITIES FRAUD CLASS ACTION FILED — BACHA v. LINCOLN EDUCATIONAL SERVICES, No. 26-cv-11842 (D.N.J.); LINC –60.7% FROM MAY HIGH OF $56.34 TO ~$22.15; AUG 10 DROP –24.9% ON Q2 STUDENT STARTS MISS (~1% GROWTH vs. 9% ENROLLMENT GROWTH); ALLEGATIONS: MANAGEMENT CONCEALED FEDERAL LOAN REPAYMENT REINSTATEMENT DRIVING ENROLLEE NO-SHOWS; LEAD PLAINTIFF DEADLINE NOV 10, 2026; OUR ROWLETT TX CAMPUS (88K SF, Q1 2027) DIRECTLY AT RISK IF STARTS GAP IS STRUCTURAL",
-            summary: "Lincoln Educational Services Corporation (<b>NASDAQ: LINC</b>) is now the subject of multiple securities fraud class action lawsuits, with a lead plaintiff deadline of <b>November 10, 2026</b>. The pending case is captioned <b>Bacha v. Lincoln Educational Services Corporation, et al., No. 26-cv-11842, U.S. District Court for the District of New Jersey</b>. The class period covers investors who purchased LINC shares between <b>May 11, 2026 and August 9, 2026</b>. <b>Trigger:</b> On August 10, 2026, Lincoln reported Q2 2026 results revealing that <b>student starts grew approximately 1%</b> despite enrollment growing approximately 9% and despite management's May 11 guidance raising full-year student start growth to <b>10%–14%</b> and touting Q1 starts growth of <b>+19.5%</b>. The stock fell <b>–24.9% ($10.22) to $30.77</b> on August 10; LINC now trades at approximately <b>$22.15 this week</b> — <b>down 60.7% from the class period high of $56.34 on July 7, 2026</b>. <b>Core fraud allegation:</b> Plaintiff counsel (Hagens Berman, BFA Law, Levi &amp; Korsinsky) allege that management publicly touted 19.5% Q1 starts growth and raised full-year guidance while concealing: (1) a widening and accelerating gap between students who enrolled (signed intent forms) and students who actually showed up for class; and (2) that the <b>reinstatement of federal student loan repayment obligations</b> — after the pandemic moratorium ended — was generating borrower defaults among Lincoln Tech's enrollment base, causing students to withdraw before starting classes. Lincoln Tech's defense: management stated the company's corporate partnership (WorkforceLinc) pipeline was 'designed to begin yielding meaningful contributions as we turn into 2027.' <b>Next catalyst:</b> Q3 2026 earnings (estimated November 9, 2026) — the first student starts data released post-class-action filing. Q3 starts vs. enrollment gap is the definitive test of whether the August collapse was temporary or structural. <b>No adverse news on the Hicksville, NY Q4 2026 campus opening timeline reported this week.</b>",
-            relevance: "<b>HIGH WATCH — Our Rowlett TX campus (88,000 SF, Q1 2027) is directly exposed to the structural risk the class action reveals.</b> The fraud allegation rests entirely on the gap between enrolled students (sign-ups) and student starts (those who actually attend class and generate tuition revenue). Our lease economics at Rowlett depend on Lincoln Tech generating the tuition revenue to support lease obligations — and tuition revenue is driven by starts, not enrollment. If the Q2 starts gap (~1% actual vs. 10%–14% guided) reflects a structural enrollment-to-attendance conversion problem accelerated by federal loan repayment reinstatement, the Q1 2027 Rowlett campus utilization could be materially lower than the lease model assumed. <b>Recommended immediate actions:</b> (1) Confirm with Lincoln Tech's real estate and operations teams that Rowlett construction and Q1 2027 enrollment launch plan remain on schedule; (2) Clarify whether Rowlett enrollment targets are based on starts (attendance) or enrollment (sign-ups); (3) Monitor November 10 lead plaintiff selection and resulting complaint for any DFW campus-specific disclosures; (4) Track Q3 2026 earnings (est. Nov 9) — Q3 starts data is the pivotal metric. The securities class action itself (alleging fraud under Exchange Act §§10(b) and 20(a)) is a 'major legal action' and 'fraud allegation' that meets the HIGH threshold under Jackson Shaw watchlist criteria.",
-            source: "GlobeNewswire / Hagens Berman / BFA Law / Levi & Korsinsky / PRNewswire / SEC EDGAR / Yahoo Finance / Swingtradebot",
-            date: "2026-10-16"
-        },
         {
             level: "MEDIUM",
             company: "International Paper",
             cat: "Tenant",
-            headline: "IP Q3 2026 EARNINGS OCT 28 — 12 DAYS AWAY; FIRST FULL QUARTER POST-GEORGIA CLOSURES; IP ~$32.40 (–36.1% YTD); 10-YEAR FALLS TO 5.09% (WARSH NO-OCTOBER-HIKE, OCT 15) — MODEST REFINANCING RELIEF; ZACKS Q3 EPS EST. $0.48; CARROLLTON SOUTH TX (64 EMPLOYEES) REMAINS ONLY ACTIVE JACKSON SHAW-MARKET CONCERN; DFW VACANCY 7.8% Q3",
-            summary: "International Paper (<b>NYSE: IP</b>) trades at approximately <b>$32.40 this week</b> — down approximately <b>–36.1% year-to-date</b>. The two rate events this week have opposing short-term implications: (1) <b>September CPI (+3.7% YoY, released October 14) briefly drove the 10-Year back above 5.30%</b> — adding pressure to IP's floating-rate restructuring debt serviceability; (2) <b>Chair Warsh's October 15 refusal to signal October hike urgency</b> pulled the 10-Year back to <b>5.09% by Friday</b> — down –19bps from last week's 5.28% and the most significant single-week yield decline since the September hike. At 5.09%, IP's floating-rate refinancing costs ease marginally relative to last week, though they remain at historically elevated levels. <b>Q3 2026 earnings are now 12 days away — scheduled October 28</b>. This is the first full-quarter report following the completed Georgia (Savannah, Riceboro) mill closures and Pine Hill restart. Analyst consensus: <b>Zacks Q3 2026 EPS estimate remains $0.48</b>; Q3 2026 revenue expected down approximately <b>–7.90% year-over-year</b>. IP has missed estimates in each of the past four quarters. Q2 2026 non-GAAP EPS was $0.04 (vs. –$0.04 estimate), against revenue of $6.00B (vs. $6.22B estimate). European EBITDA (Packaging Solutions EMEA) guided to <b>$230–250M for Q3</b>, up from Q2's $182M. <b>The Carrollton South, TX packaging facility closure (64 employees, Q3 2026)</b> remains the only active Jackson Shaw-market IP facility closure — <b>no new DFW-area IP closures announced this week</b>. <b>DFW industrial vacancy tightened to 7.8% in Q3 2026</b>, supporting collateral values for IP's Texas real estate footprint.",
-            relevance: "<b>WATCH ELEVATED — Q3 2026 earnings (October 28, now 12 days away) are the critical next IP catalyst for Jackson Shaw.</b> Monitor: (1) Pine Hill restart production contribution and Riverdale renovation timeline; (2) European EBITDA recovery ($230–250M Q3 guide vs. $182M Q2 actual); (3) Any forward guidance on Texas-market asset strategy; (4) CEO commentary on DFW-area (Carrollton South TX, 64 employees) closure completion and any additional closures. The 10-Year falling to 5.09% this week (from 5.28% last week) provides modest refinancing-cost relief for IP's restructuring debt load — the most meaningful rate improvement in weeks. However, IP is still down –36.1% YTD with four consecutive earnings misses, so October 28 remains a high-uncertainty event.",
-            source: "International Paper IR / Zacks Research / MarketBeat / Nasdaq Earnings Calls / Federal Reserve / BLS",
+            headline: "Q3 earnings due October 28 after four straight misses",
+            summary: "International Paper (<b>NYSE: IP</b>) reports third-quarter results on October 28, its first full quarter after closing the Savannah and Riceboro, Georgia mills. The stock is near <b>$32.40, down about 36% year to date</b>, and the company has missed estimates in each of the last four quarters. Consensus is for EPS of $0.48 on revenue down roughly 8% year over year. Guidance for European packaging EBITDA is $230-250 million for the quarter, up from $182 million in Q2. The 64-employee Carrollton South, Texas facility closure remains the only announced Texas action.",
+            relevance: "IP is a Centerpoint tenant, so the call is the next read on whether the restructuring reaches the San Antonio footprint. Any new Texas closure list is the item to watch.",
+            source: "International Paper IR / Zacks",
             date: "2026-10-16"
         },
         {
             level: "MEDIUM",
             company: "Simmons Bank",
             cat: "Lender",
-            headline: "26 BRANCH CLOSURES EFFECTIVE DEC 4 — NOW 7 WEEKS OUT; 6 TEXAS LOCATIONS STILL UNDISCLOSED; CHAIR WARSH REFUSES OCTOBER HIKE (OCT 15) — ~84% NOVEMBER HOLD — MOST CONSTRUCTIVE NIM SIGNAL OF CYCLE; 10-YEAR FALLS TO 5.09%; SFNC ~$24.00; KBW PT $26.00; no adverse lease signals",
-            summary: "Simmons First National Corp (<b>NASDAQ: SFNC</b>) enters the final <b>seven weeks before its 26-branch closure plan takes effect December 4, 2026</b>. The week's two dominant rate events define the forward outlook: (1) <b>September CPI (+3.7% YoY, October 14)</b> briefly spiked October FOMC hike odds to ~44%, introducing temporary CRE origination headwinds; (2) <b>Chair Warsh explicitly refused to signal October hike urgency on October 15</b>, pulling hike odds back to ~16% and restoring <b>approximately 84% probability of an October hold</b> — the most constructive November rate signal for SFNC's cost-of-funds trajectory since the September 16 hike. The <b>10-Year Treasury fell to approximately 5.09% by Friday</b> — down –19bps from last week's 5.28% — providing further deposit competition relief. If the October 27–28 FOMC holds, SFNC's deposit repricing pressure plateaus entering Q4, directly improving the economics of the post-closure cost savings plan. The <b>26-branch closure</b> targets <b>$37–42M in annual revenue uplift</b>; approximately 100 employees affected with ~70% expected retention. CEO Jay Brogdon has confirmed no market exits. <b>SFNC trades at approximately $24.00</b>. KBW maintains a <b>price target of $26.00</b>. <b>Six of the 26 closures remain in Texas — specific locations not publicly released.</b> <b>No adverse news this week.</b>",
-            relevance: "MONITORING — December 4 closure effective date is now 7 weeks away. Chair Warsh's October 15 no-October-hike signal (~84% hold probability) combined with the 10-Year falling to 5.09% is the most constructive dual-rate signal for SFNC's cost-of-funds trajectory this cycle. <b>Six of the 26 closures remain in Texas — specific branch locations not yet publicly disclosed.</b> Confirm with SFNC relationship bankers before December 4 that no DFW-area branches supporting active Jackson Shaw accounts are included in the closure list. October 27–28 FOMC hold (if confirmed) would be the defining rate event for SFNC's Q4 deposit cost outlook.",
-            source: "Simmons First National IR / SEC EDGAR 8-K / Arkansas Business / Keefe Bruyette & Woods / Federal Reserve / BLS",
+            headline: "26 branch closures take effect December 4, six in Texas",
+            summary: "Simmons First National (<b>NASDAQ: SFNC</b>) is seven weeks from its December 4 closure of 26 branches, which management expects to add <b>$37-42 million</b> of annual pre-tax benefit. About 100 employees are affected and roughly 70% are expected to be retained elsewhere in the bank. Six of the 26 locations are in Texas and the specific addresses have not been published. CEO Jay Brogdon has said there are no market exits. KBW carries a $26 price target against a share price near $22.",
+            relevance: "Simmons is an active Jackson Shaw construction lender, so confirm no DFW branch supporting company accounts is on the list before December 4.",
+            source: "Simmons First National IR / Arkansas Business",
             date: "2026-10-16"
         },
         {
             level: "MEDIUM",
             company: "Huntington Bank",
             cat: "Lender",
-            headline: "Q3 2026 EARNINGS OCTOBER 22 — NOW 6 DAYS AWAY; CRE DELINQUENCIES AT 8-YEAR HIGH POST-CADENCE INTEGRATION (FEB 2026); CRE BOOK JUMPED 60% QoQ TO $24.3B; BRANT STANDRIDGE NAMED PRESIDENT (SEP 9); CHARLOTTE REGIONAL HQ EXPANSION; ~84% OCTOBER HOLD (WARSH OCT 15); 10-YEAR FALLS TO 5.09%; HBAN ~$16.10; $3B BUYBACK ACTIVE",
-            summary: "Huntington Bancshares (<b>NASDAQ: HBAN</b>) faces its most consequential quarterly event in <b>6 trading days: Q3 2026 earnings scheduled for October 22, 2026</b>. Critical context that makes this report exceptionally high-stakes for Jackson Shaw: the <b>Cadence Bank acquisition (closed February 1, 2026)</b> — an all-stock deal at approximately <b>$8.1 billion</b> adding $54B in assets and $37B in loans — expanded HBAN's commercial real estate book by approximately <b>60% quarter-over-quarter to $24.3 billion</b>. Post-integration data shows <b>CRE delinquencies at an 8-year high</b> for the combined institution. Q3 2026 is the first full post-integration quarter and the definitive test of whether HBAN is digesting the Cadence CRE exposure or experiencing further deterioration. <b>HBAN trades at approximately $16.10 this week</b>. Separately, <b>Brant Standridge was named President of Huntington Bancshares and The Huntington National Bank effective September 9, 2026</b> — part of a structured succession planning process. Charlotte regional HQ expanding to floors 39–40 of One South tower. <b>Chair Warsh's October 15 refusal to signal October hike urgency</b> provides the first constructive rate signal for HBAN's NIM trajectory: <b>~84% October hold probability</b> means deposit repricing pressure — the primary driver of the prior guidance cut — is more likely to plateau. The <b>10-Year fell to 5.09%</b> by Friday (-19bps from last week), further easing deposit competition dynamics. NIM guidance remains at the low-to-high <b>3.20% range</b>; 2026 NII growth guidance cut from 39%–43% to ~35%; 2027 EPS guidance $1.75–$1.83. <b>$3B share buyback active. No additional adverse news this week.</b>",
-            relevance: "<b>HIGH WATCH — HBAN Q3 2026 earnings (October 22, 6 days away) is the defining near-term event for Huntington's 2026 story AND for Jackson Shaw's CRE construction lending relationship.</b> The Cadence integration's CRE delinquency signal (8-year high) makes the Q3 credit quality disclosure the most important datapoint in the report. Three key questions: (1) Did NIM stabilize at 3.20% or deteriorate further? (2) Have CRE delinquencies peaked post-Cadence or continued rising? (3) What is management's Q4 construction lending appetite with October hold at ~84% probability? Chair Warsh's no-October-hike signal (Oct 15) and the 10-Year falling to 5.09% provide the most constructive setup for HBAN's Q4 guidance in months. Standridge's appointment as President signals leadership continuity — monitor for any changes in CRE strategy commentary.",
-            source: "Huntington Bancshares IR / Risk.net / PYMNTS / SEC EDGAR / ABL Advisor / Federal Reserve / BLS",
-            date: "2026-10-16"
-        },
-        {
-            level: "GENERAL",
-            company: "Clopay",
-            cat: "Tenant",
-            headline: "GFF ~$90.50 (±); 10-YEAR FALLS TO 5.09% (WARSH OCT 15) — RESIDENTIAL DEMAND SIGNAL MODESTLY IMPROVING; Q3 FY2026 BEAT (AUG 12) REV $481.4M (+7%), EPS $1.51 vs $1.33; NET LEVERAGE BELOW 2.4x; SEPTEMBER CPI HOT (+3.7%) — MORTGAGE RATES REMAIN ELEVATED NEAR 7.80%+; no adverse lease signals",
-            summary: "Griffon Corporation (<b>NYSE: GFF</b>) trades near <b>$90.50</b> this week. The week's rate narrative has two competing implications for Clopay's residential demand outlook: (1) <b>September CPI (+3.7% YoY, October 14)</b> reinforced that mortgage rates above 7.80% will persist through Q4, suppressing the home-sale and residential construction demand that drives Clopay's garage door business; (2) <b>Chair Warsh's October 15 refusal to signal October hike urgency</b> — and the resulting <b>10-Year Treasury falling to 5.09%</b> by Friday — provides the most constructive mortgage-rate trajectory signal of the past several weeks. At 5.09% vs. last week's 5.28%, the 10-Year's –19bp decline will modestly reduce mortgage rate pressure on residential demand margins into Q4 if sustained. Despite sustained rate headwinds, <b>GFF's Q3 FY2026 results (August 12) confirmed operational strength: revenue $481.4M (+7% YoY), EPS $1.51 vs. $1.33 consensus</b>. <b>Net leverage below 2.4x net debt-to-EBITDA</b>. Clopay's <b>commercial door business</b> (C-Power Click-to-Conceal Panels) provides non-residential demand diversification. DFW industrial vacancy tightening to <b>7.8% in Q3 2026</b> remains supportive of commercial garage door demand in Jackson Shaw-adjacent markets. <b>No adverse news specific to Clopay lease obligations.</b>",
-            relevance: "Q3 FY2026 beat and sub-2.4x leverage remain the financial resilience signals. The 10-Year falling to 5.09% (from 5.28% last week) is the most meaningful single-week mortgage rate relief signal in months — if CPI moderates in October and the FOMC holds October 28 (~84% probability), Q4 residential demand conditions could improve marginally from Q3. DFW industrial Q3 vacancy at 7.8% supports commercial garage door demand in the Jackson Shaw portfolio footprint. No adverse lease signals.",
-            source: "Griffon Corporation IR / Benzinga / Yahoo Finance / Federal Reserve / BLS / Cushman & Wakefield",
-            date: "2026-10-16"
-        },
-        {
-            level: "GENERAL",
-            company: "Tongrun International",
-            cat: "Tenant",
-            headline: "NVDA ~$202.80 (–5.0% WEEK, AI/TECH SELLOFF ON HOT CPI OCT 14); AWS +37%, AZURE +35% (Q2) — AI CAPEX STRUCTURALLY INTACT; 10-YEAR FALLS TO 5.09% (WARSH OCT 15); PRIME 7.00%; TRUMP-XI TRADE TRUCE EXTENDED TO JAN 2027; ~84% OCTOBER HOLD CONSTRUCTIVE FOR PLATINUM EQUITY FINANCING; no adverse lease signals",
-            summary: "Tongrun International (precision contract manufacturer, Bonham TX, Platinum Equity-backed) navigates a week in which AI/tech stocks bore the brunt of hot CPI selling. <b>NVIDIA traded at approximately $202.80 (–5.0% on the week)</b> — the steepest single-week AI-sector decline in months, driven by the October 14 CPI print (+3.7% YoY) spiking rate fears and triggering a broad rotation out of AI/growth stocks. Despite the rate-fear episode, the underlying AI capex pipeline remains structurally intact: <b>Amazon Web Services (AWS) grew +37% YoY and Microsoft Azure posted +35% YoY growth</b> in Q2 2026, with both hyperscalers reaffirming multi-year capital expenditure commitments for data center infrastructure. The constructive development: <b>Chair Warsh's October 15 refusal to revive October hike bets</b> pulled the <b>10-Year to 5.09%</b> by Friday (down –19bps from last week) — directly constructive for Platinum Equity's floating-rate expansion financing costs into Q4. <b>October hold at ~84% probability</b> means Platinum Equity's financing costs are more likely to plateau than escalate in Q4. The <b>Trump-Xi trade truce extension to January 2027</b> continues to reduce tariff escalation risk on Tongrun's cross-border component sourcing. <b>No adverse news for the Bonham TX lease.</b>",
-            relevance: "AI capex pipeline (AWS +37%, Azure +35%) remains structurally intact despite NVDA's –5.0% week — Tongrun's enclosure/rack manufacturing demand base is well-supported. The 10-Year falling to 5.09% (from 5.28% last week) is the most constructive single-week rate signal for Platinum Equity's expansion financing costs this cycle. ~84% October hold probability further reduces expansion cost escalation risk. Trade truce (January 2027) supports cross-border component sourcing. No adverse signals for the Bonham TX lease.",
-            source: "CNBC / Reuters / Nvidia IR / Amazon IR / Microsoft IR / Federal Reserve / BLS / ActionForex",
-            date: "2026-10-16"
-        },
-        {
-            level: "GENERAL",
-            company: "Fifth Third Bank",
-            cat: "Lender",
-            headline: "FITB ~$52.80 (+2.5% FROM LAST WEEK; +12.1% YTD); Q3 2026 EARNINGS PENDING; CHAIR WARSH ~84% OCTOBER HOLD (OCT 15); 10-YEAR FALLS TO 5.09%; 150 TX BRANCHES BY 2029; COMERICA INTEGRATION $360M NET COST SAVES ON TRACK; PRIME 7.00%; no adverse news",
-            summary: "Fifth Third Bancorp (<b>NYSE: FITB</b>) trades at approximately <b>$52.80 this week</b> — up approximately <b>+2.5% from last week's $51.50</b>, continuing its recovery. The week's rate narrative is the most constructive for FITB in months: (1) <b>Chair Warsh's October 15 refusal to signal October hike urgency</b> pushed <b>October hold probability to approximately 84%</b> — the strongest confirmation yet that deposit repricing pressure on FITB's NIM will moderate into Q4; (2) the <b>10-Year Treasury fell to 5.09% by Friday</b> (-19bps from last week) — easing deposit competition headwinds. Meanwhile, FITB's peers reported Q3 results this week: JPM's EPS miss and WFC's revenue miss provide competitive context ahead of FITB's own Q3 2026 report (timing to be confirmed). <b>Comerica integration: $360M in net cost savings on track for 2026</b>; <b>NIM 3.30%</b> — meaningfully above HBAN's 3.20% guided range; <b>Texas expansion: 150 new branches by 2029</b>. <b>Prime Rate at 7.00%</b> remains constructive for FITB's floating-rate commercial and consumer loan assets. <b>No company-specific adverse news this week.</b>",
-            relevance: "FITB's +2.5% recovery reflects the constructive Warsh/hold signal outweighing CPI shock. The 10-Year falling to 5.09% (most significant single-week yield decline since September hike) is directly constructive for FITB's deposit cost moderation. Monitor Q3 earnings for NIM trajectory: if FITB's 3.30% NIM held or improved vs. HBAN's 3.20% guided range, it confirms Comerica integration is providing NIM resilience. Texas 150-branch expansion through 2029 signals long-term Jackson Shaw home-market confidence. No adverse signals for the Jackson Shaw lending relationship.",
-            source: "Fifth Third IR / StockAnalysis / SEC EDGAR / Federal Reserve / BLS / Reuters",
-            date: "2026-10-16"
-        },
-        {
-            level: "GENERAL",
-            company: "Busey Bank",
-            cat: "Lender",
-            headline: "CHAIR WARSH ~84% OCTOBER HOLD — MOST CONSTRUCTIVE COST-OF-FUNDS SIGNAL OF CYCLE; 10-YEAR FALLS TO 5.09% (WARSH OCT 15); PRIME 7.00%; Q2 2026: net income $63.2M, adj. EPS $0.69 (beat); ROAA 1.43%; BUSE ~$27.80; CrossFirst integration ongoing; NPAs 0.28%; no adverse news",
-            summary: "First Busey Corp (<b>NASDAQ: BUSE</b>) trades at approximately <b>$27.80</b> this week — up from $27.35 last week. The dominant rate event: <b>Chair Warsh's October 15 refusal to signal October hike urgency</b> pushed <b>October hold probability to approximately 84%</b> — the most constructive forward rate signal for Busey's cost-of-funds trajectory this cycle. If October 27–28 delivers a hold, Busey's deposit repricing cycle plateaus entering Q4 — directly improving NIM economics on its CRE-concentrated loan book. The concurrent <b>10-Year Treasury fell to 5.09%</b> (from 5.28% last week, –19bps) — the largest single-week yield improvement in months and directly constructive for the serviceability of CRE borrowers in Busey's portfolio. The week's CPI shock (October 14, +3.7% YoY) introduced temporary intraweek volatility but the Warsh-driven reversal dominated by week-end. <b>Prime Rate at 7.00%</b> simultaneously improves NIM on Busey's floating-rate commercial loan portfolio. <b>Q2 2026 results</b>: net income <b>$63.2M</b>, adjusted EPS <b>$0.69 (beat consensus)</b>, ROAA <b>1.43%</b>, CrossFirst integration ongoing, total assets $18.04B. <b>NPAs at 0.28% of total assets</b> — exceptional credit quality. <b>No adverse news this week.</b>",
-            relevance: "Q2 ROAA of 1.43% and NPAs at 0.28% remain the credit-quality leadership signals for Busey as a Jackson Shaw lending partner. Warsh's ~84% October hold signal combined with the 10-Year falling to 5.09% is the most constructive dual-rate signal for Busey's cost-of-funds and CRE borrower serviceability this cycle. October 28 FOMC hold (if confirmed) solidifies the Q4 rate-plateau thesis. No actionable concerns for the Jackson Shaw lending relationship.",
-            source: "First Busey IR / GlobeNewswire / Federal Reserve / BLS",
-            date: "2026-10-16"
-        },
-        {
-            level: "GENERAL",
-            company: "Inwood National Bank",
-            cat: "Lender",
-            headline: "10-YEAR FALLS TO 5.09% (WARSH OCT 15) — SINGLE-WEEK CRE BORROWER RELIEF SIGNAL; ~84% OCTOBER HOLD PROBABILITY; PRIME 7.00%; Texas Ratio 3.74%; DFW INDUSTRIAL VACANCY 7.8% Q3 (TIGHTEST SINCE 2022); Rowlett/Garland offices active; LINC CLASS ACTION — ROWLETT COLLATERAL CONTEXT WATCH; no adverse news",
-            summary: "Inwood National Bank (Dallas TX, $4.39B assets, founded 1964) navigates the week's most consequential rate pivot of the post-September-hike period. <b>Chair Warsh's October 15 remarks</b> — explicitly refusing to revive October hike urgency — pulled <b>October hold probability to approximately 84%</b> and drove the <b>10-Year Treasury to 5.09% by Friday</b> (-19bps from last week's 5.28%). This is the single most constructive weekly yield decline for Inwood's CRE borrower serviceability since the September hike. For DFW industrial collateral quality: <b>Q3 2026 DFW industrial vacancy tightened to 7.8%</b> — down 100bps from Q2's 8.8% and approaching the cycle's tightest level — with South Dallas (Rowlett/I-30 corridor) submarkets maintaining exceptionally strong fundamentals. The <b>Lincoln Tech securities class action</b> introduces a watch note for Rowlett collateral underwriting: if Lincoln Tech's business model proves impaired (student starts vs. enrollment gap structural), the collateral backing our Rowlett project carries lease execution risk through Q1 2027. Inwood's Rowlett proximity, DFW-dominant loan book, and exceptional credit quality: <b>Texas Ratio 3.74%</b>, non-current loans <b>$18.4M</b>, $0 owned real estate, Return on Equity <b>11.76%</b>. <b>No adverse news this week.</b>",
-            relevance: "Inwood's CRE-dominant loan book benefits materially from the 10-Year falling to 5.09% (most significant single-week yield decline in months) and the Warsh-driven ~84% October hold probability. DFW industrial vacancy at 7.8% (Q3, tightest in years) sustains collateral quality for Jackson Shaw originations. Watch note added: the Lincoln Tech securities class action introduces indirect collateral risk for Rowlett — the 88K SF lease's occupancy economics depend on Lincoln Tech's student starts trajectory. No adverse signals for Inwood directly.",
-            source: "Inwood National Bank / Visbanking / BestCashCow / Cushman & Wakefield DFW Q3 2026 / GlobeNewswire / Federal Reserve / BLS",
-            date: "2026-10-16"
-        },
-        {
-            level: "GENERAL",
-            company: "Hartford Insurance",
-            cat: "Lender",
-            headline: "10-YEAR FALLS TO 5.09% (WARSH OCT 15) — REINVESTMENT YIELD MODERATES FROM 5.28% PEAK; ~84% OCTOBER HOLD PROBABILITY — CAP-RATE STABILIZATION SIGNAL; PRIME 7.00%; Q2 2026: core earnings $945M ($3.42/share, beat); investment income +22% YoY; $4.2B share buyback; HIG ~$146.20 (NEW 52-WEEK HIGH); no adverse news",
-            summary: "The Hartford (<b>NYSE: HIG</b>) trades at approximately <b>$146.20 this week — a new 52-week high</b>. The two rate events have mixed implications for Hartford's reinvestment strategy: (1) <b>September CPI (+3.7% YoY, October 14)</b> briefly spiked the 10-Year above 5.30%, setting a new near-cycle reinvestment high; (2) <b>Chair Warsh's October 15 remarks</b> pulled the <b>10-Year back to 5.09% by Friday</b> — moderating the reinvestment yield ceiling from last week's 5.28%. Net effect: Hartford's new-money reinvestment environment remains exceptional (5.09% vs. a 24-year average near 3.50–4.00%) but the rate ceiling appears to be plateauing as Warsh signals a potential hold. <b>~84% October hold probability</b> is constructive for CRE asset quality (reduced cap-rate expansion pressure) — and moderately limits the duration of the high-yield reinvestment window, as the rate cycle may be near its terminal rate. <b>Prime Rate at 7.00%</b> supports short-duration floating-rate holdings. <b>Q2 2026 results</b>: core earnings <b>$945M ($3.42/share, beat)</b> — a record quarter; investment income <b>+22% YoY</b>; Board authorized a <b>$4.2B share buyback</b>. HIG shares at a new 52-week high reflect institutional confidence in Hartford's rate-cycle positioning. <b>No company-specific adverse news this week.</b>",
-            relevance: "Hartford's new 52-week high ($146.20) and record Q2 core earnings confirm exceptional financial health as a Jackson Shaw lending partner. The 10-Year at 5.09% (post-Warsh) remains near historically elevated reinvestment levels, though down –19bps from last week's 5.28% peak. ~84% October hold probability is directly constructive for Compatriot Capital and Hartford CRE portfolio valuations — reduced cap-rate expansion pressure into Q4. No adverse signals for the Jackson Shaw lending relationship.",
-            source: "Hartford IR / Federal Reserve / BLS / Reuters / Benzinga / ActionForex",
-            date: "2026-10-16"
-        },
-        {
-            level: "GENERAL",
-            company: "Pinnacle Bank",
-            cat: "Lender",
-            headline: "FOMC WARSH ~84% OCTOBER HOLD (OCT 15) — CONSTRUCTIVE FOR NIM; 10-YEAR FALLS TO 5.09%; JPMorgan PT $125; Q2 (JUL 22): adj. EPS $2.50 beat; NIM 3.44%; loans $88.1B (+$2.9B QoQ); NCOs 22bps; SYNOVUS → PINNACLE REBRAND EARLY 2027; Q3 EARNINGS APPROACHING; no adverse news",
-            summary: "Pinnacle Financial Partners (<b>NASDAQ: PNFP</b>) receives the week's most constructive rate setup in months. <b>Chair Warsh's October 15 refusal to signal October hike urgency</b> pushed <b>October hold probability to approximately 84%</b> — directly moderating deposit repricing pressure on Pinnacle's <b>3.44% NIM</b>, the primary metric at risk if deposit costs accelerate further. The <b>10-Year Treasury fell to 5.09% by Friday</b> (-19bps from 5.28% last week) — the most significant single-week yield improvement in months. Together, the Warsh remarks and yield decline represent the best near-term NIM trajectory signal for Pinnacle since the September hike. <b>JPMorgan's $125 price target</b> remains active. <b>Q2 2026 results (July 22)</b>: adjusted EPS <b>$2.50 beat $2.46 consensus</b>; period-end loans <b>$88.1B (+$2.9B QoQ)</b>; deposits <b>$100.9B</b>; NCOs <b>22bps</b>; CET1 <b>9.93%</b>. <b>Greystar bridge lending partnership</b> active. Full brand consolidation from Synovus to <b>Pinnacle expected early 2027</b>. <b>Q3 2026 earnings</b> are the next major data point — timing to be confirmed. <b>No adverse news this week.</b>",
-            relevance: "Warsh's ~84% October hold probability is the most constructive forward signal for Pinnacle's NIM trajectory — deposit cost acceleration slows as the rate plateau becomes more likely. 10-Year at 5.09% (from 5.28%) further eases deposit competition dynamics. Monitor Q3 earnings for NIM stabilization at 3.44%: if maintained in Q3, it confirms Pinnacle's superior deposit franchise vs. HBAN's 3.20% guided floor. No adverse signals for the Jackson Shaw lending relationship.",
-            source: "Pinnacle Financial Partners IR / GuruFocus / Federal Reserve / BLS / Reuters / ActionForex",
-            date: "2026-10-16"
-        },
-        {
-            level: "GENERAL",
-            company: "Barings",
-            cat: "Lender",
-            headline: "10-YEAR FALLS TO 5.09% (WARSH OCT 15) — FLOATING-RATE CRE ORIGINATION YIELDS MODERATE FROM PEAK; ~84% OCTOBER HOLD; PRIME 7.00%; $481B+ AUM; ARTEMIS RE ACQUISITION COMPLETE; $500M MUBADALA GLOBAL RE DEBT PARTNERSHIP ACTIVE; Dallas multifamily (Rosewood JV) delivered summer 2026; no adverse news",
-            summary: "Barings navigates a week that delivers the most constructive rate signal for CRE debt origination economics since the September hike. The dominant event: <b>Chair Warsh's October 15 refusal to signal October hike urgency</b> — combined with the <b>10-Year Treasury falling to 5.09%</b> (-19bps from last week's 5.28%) — means floating-rate CRE construction and bridge loan coupons on new originations moderate from last week's near-24-year high. Borrower serviceability improves marginally as the rate ceiling appears to be plateauing. <b>~84% October hold probability</b> extends the timeline for borrower refinancing capacity and reduces the near-term distressed-borrower pipeline. <b>Barings' Dallas multifamily project</b> (Rosewood partnership) was delivered during <b>summer 2026</b>. Barings manages <b>$481B+ in AUM</b>. The <b>Artemis Real Estate Partners acquisition ($11B+ AUM)</b> is complete. The <b>$500M global real estate debt partnership with Mubadala</b> targets $1B in senior and subordinated loans. <b>No adverse news this week.</b>",
-            relevance: "The 10-Year falling to 5.09% (from 5.28% last week) provides the first meaningful weekly yield relief for Barings' CRE debt borrower serviceability this cycle. ~84% October hold probability means the rate ceiling for new originations appears near — constructive for borrower economics and new-deal pipeline quality. Dallas delivery confirms active DFW engagement. Artemis acquisition and Mubadala partnership signal continuing institutional capital commitment to CRE debt. No adverse signals for the Jackson Shaw lending relationship.",
-            source: "Barings.com / GlobeNewswire / CRE Daily / Federal Reserve / BLS / Reuters / ActionForex",
-            date: "2026-10-16"
-        },
-        {
-            level: "GENERAL",
-            company: "Hall Group",
-            cat: "Lender",
-            headline: "10-YEAR FALLS TO 5.09% (WARSH OCT 15) — CONSTRUCTION BORROWER COST PEAK MAY BE IN; ~84% OCTOBER HOLD PROBABILITY; PRIME 7.00%; Texas CRE foreclosure auction volume ~$900M (declining from $1B+ peak); Mark Klipsch (President, HALL Structured Finance) active; no adverse news",
-            summary: "HALL Structured Finance (a <b>Hall Group Dallas TX company</b>) receives the week's most constructive borrower-economics signal since the September hike. <b>Chair Warsh's October 15 refusal to revive October hike urgency</b> — pulling the <b>10-Year to 5.09%</b> (-19bps from last week's 5.28%) — suggests construction borrower carrying costs on HALL's lending book may have peaked at the 5.28%–5.35% range seen over the past two weeks. <b>~84% October hold probability</b> at the October 27–28 FOMC reinforces the rate-plateau thesis. Texas CRE distress directionally improving: approximately <b>$900M in CRE loans flagged for foreclosure auction</b> — down from $1B+ peaks in May/June 2026 — while multifamily origination volume climbs and hotel debt markets attract fresh capital. <b>Mark Klipsch</b> continues as President of HALL Structured Finance (appointed April 2026). <b>No adverse news this week.</b>",
-            relevance: "Declining Texas foreclosure auction volume ($900M vs. $1B+ in May/June) combined with the 10-Year falling to 5.09% (from 5.28% last week) represents the best concurrent market and rate signal for HALL's construction borrower portfolio this quarter. ~84% October hold probability at October 28 FOMC would confirm the rate-plateau thesis and potentially unlock Q4 construction lending that was delayed by rate uncertainty. No adverse signals for the Jackson Shaw lending relationship.",
-            source: "HALL Structured Finance Newsroom / The Real Deal Texas / hallgroup.com / Federal Reserve / BLS / ActionForex",
-            date: "2026-10-16"
-        },
-        {
-            level: "GENERAL",
-            company: "PACE Equities",
-            cat: "Lender",
-            headline: "10-YEAR FALLS TO 5.09% (WARSH OCT 15) — C-PACE BLENDED-RATE ADVANTAGE BEGINS TO RECOVER FROM PEAK COMPRESSION; ~84% OCTOBER HOLD — RATE CEILING LIKELY NEAR; PRIME 7.00%; 29 Texas C-PACE jurisdictions active; $23.5M Celina TX (Jefferson Ownsby) confirmed; national C-PACE originations $3.5B record (2025); no adverse news",
-            summary: "PACE Equity's Lone Star PACE network remains at <b>29 Texas jurisdictions</b>. National C-PACE originations hit a record <b>$3.5B in 2025</b>. The week's rate pivot is directly constructive for C-PACE blended-rate economics: <b>Chair Warsh's October 15 refusal to signal October hike urgency</b> combined with the <b>10-Year falling to 5.09%</b> (-19bps from last week's 5.28%) begins to restore the blended-rate spread advantage that was compressed during the 5.28%–5.35% yield range of the past two weeks. At 5.09%, the cost-spread between C-PACE absolute yield and senior construction debt cost widens modestly — improving the relative capital-stacking advantage for Jackson Shaw project financing. <b>~84% October hold probability</b> reinforces that the rate ceiling is likely near, further supporting Q4 C-PACE structuring decisions. PACE Equity's <b>$23.5M C-PACE capital commitment</b> for the <b>Jefferson Ownsby Complex</b> in Celina, TX (436-unit Class A multifamily, north DFW) remains the most recent confirmed local transaction. <b>No adverse news this week.</b>",
-            relevance: "10-Year falling to 5.09% (most significant single-week yield decline in months) is the most constructive C-PACE blended-rate economics signal since peak compression hit at 5.28%–5.35% over the prior two weeks. ~84% October hold probability reinforces the rate-ceiling thesis — if October 28 FOMC holds, C-PACE stacking economics stabilize into Q4. Monitor how the improved rate environment affects Jackson Shaw project C-PACE structuring decisions in the November 2026 pipeline. No adverse signals.",
-            source: "PACE Equity / GlobeNewswire / Lone Star PACE / Bisnow / Federal Reserve / BLS / ActionForex",
-            date: "2026-10-16"
-        },
-        {
-            level: "GENERAL",
-            company: "Triad Manufacturing",
-            cat: "Tenant",
-            headline: "10-YEAR FALLS TO 5.09% (WARSH OCT 15); PRIME 7.00% — WORKING CAPITAL COSTS REMAIN NEAR CYCLE HIGH; SEPTEMBER CPI HOT (+3.7% YoY, OCT 14) — SERVICE/ENERGY INFLATION PERSISTS; ST. LOUIS EXPANSION ($1.78M, 32 NEW JOBS) ONGOING; ~84% OCTOBER HOLD — MODEST Q4 FINANCING RELIEF SIGNAL; no adverse news",
-            summary: "Triad Manufacturing's <b>St. Louis expansion ($1.78M investment, 32 new jobs</b>) remains confirmed and ongoing. The week delivers the most constructive working-capital rate signal in months: <b>Chair Warsh's October 15 refusal to signal October hike urgency</b> pushed <b>October hold probability to approximately 84%</b>, and the <b>10-Year fell to 5.09%</b> (-19bps from last week's 5.28%). At <b>Prime Rate 7.00%</b>, borrowing costs on floating-rate working capital facilities remain near a 24-year high — but if October 28 FOMC holds, Q4 financing cost escalation is deferred. The offsetting headwind: <b>September CPI (+3.7% YoY, +0.6% MoM, October 14)</b> confirms that service-sector energy and logistics costs remain elevated into Q4, compressing Triad's manufacturing input margins. ISM Prices Paid (manufacturing 77.9, services 74.0 last month) signal persistent upstream cost pressure that Triad passes through its product pricing or absorbs in margins. The <b>Trump-Xi trade truce extension to January 2027</b> continues to reduce near-term tariff escalation risk on imported material components. <b>No adverse news this week.</b>",
-            relevance: "St. Louis capacity expansion ($1.78M/32 jobs) remains a positive tenant signal. Warsh's ~84% October hold probability and 10-Year falling to 5.09% represent the first meaningful Q4 working capital financing relief signal for Triad. Hot CPI (+3.7%) confirms manufacturing input cost persistence — monitor whether Triad's product pricing in Q4 keeps pace with materials/energy inflation. No actionable lease concerns.",
-            source: "Missouri Business Alert / Woodworking Network / ISM / Federal Reserve / BLS / Reuters / ActionForex",
-            date: "2026-10-16"
-        },
-        {
-            level: "GENERAL",
-            company: "Crown Equipment",
-            cat: "Tenant",
-            headline: "AI-FORK VISION-GUIDED PALLET ENTRY SYSTEM (RR5700, AUG 2026) AND INFOLINK UPGRADE (JUL 2026) — TECH LEADERSHIP INTACT; 10-YEAR FALLS TO 5.09% (WARSH OCT 15) — FORKLIFT FLEET FINANCING COSTS MODERATE; ~84% OCTOBER HOLD; ISM MFRING PRICES PAID 77.9 — COMPONENT COST PRESSURE; FOMC OCT 28; no adverse news",
-            summary: "Crown Equipment Corporation has no adverse news in <b>October 2026</b>. Crown's product innovation cycle remains intact: <b>the Ai-Fork Vision-Guided Pallet Entry system</b> (RR5700 reach trucks, August 2026) and <b>InfoLink universal fleet management upgrade</b> (July 2026) continue to deepen Crown's competitive position in DFW-area industrial facilities. The week's rate signal is meaningfully constructive: <b>Chair Warsh's October 15 refusal to signal October hike urgency</b> — pushing <b>October hold probability to approximately 84%</b> and driving the <b>10-Year to 5.09%</b> (from 5.28% last week, –19bps) — is the most positive signal for Crown's commercial customers' fleet financing affordability since the September hike. At 5.09%, financing costs on industrial forklift fleet purchases moderate from last week's near-24-year high. <b>ISM Manufacturing Prices Paid at 77.9</b> signals persistent steel, electronics, and materials cost pressure on Crown's forklift component supply chain. The <b>Trump-Xi trade truce extension to January 2027</b> reduces near-term tariff risk on Crown's international component sourcing. <b>Jim Mozer</b> (SVP and ITA Chairman of the Board) continues to lead the Industrial Truck Association. <b>No adverse news this week.</b>",
-            relevance: "Ai-Fork and InfoLink launches confirm Crown's sustained technology leadership through the rate cycle. 10-Year falling to 5.09% (most significant single-week yield decline in months) is the most constructive commercial fleet financing signal in months for Crown's customers — at 84% October hold probability, Q4 fleet purchase decisions should improve. ISM Prices Paid at 77.9 remains the peak concurrent component cost pressure — monitor whether Crown's pricing power offsets this in Q3 results. Trade truce extension (January 2027) continues to support cross-border sourcing. No adverse signals for the Jackson Shaw tenancy relationship.",
-            source: "Crown Equipment Newsroom / MHW Magazine / ITA / ISM / Federal Reserve / BLS / Reuters / ActionForex",
-            date: "2026-10-16"
-        },
-        {
-            level: "GENERAL",
-            company: "Sammons Enterprise",
-            cat: "Equity Partner",
-            headline: "10-YEAR FALLS TO 5.09% (WARSH OCT 15) — CAP-RATE STABILIZATION SIGNAL FOR COMPATRIOT CRE EQUITY; ~84% OCTOBER HOLD; Mike Lafitte (ex-Trammell Crow CEO) on Board; A+ ratings AM Best/S&P; $143B+ AUM; HIG AT NEW 52-WEEK HIGH ($146.20); no adverse news",
-            summary: "Sammons Enterprises' real estate investment arm, <b>Compatriot Capital</b>, receives the week's most constructive cap-rate signal since the September hike. <b>Chair Warsh's October 15 refusal to signal October hike urgency</b> — driving <b>~84% October hold probability</b> and pulling the <b>10-Year to 5.09%</b> (-19bps from last week's 5.28%) — provides the clearest signal yet that cap-rate expansion pressure on CRE equity valuations is approaching its ceiling. For <b>Midland National's fixed-income portfolio</b>, the 5.09% weekly closing yield remains near historically elevated reinvestment levels (above the 24-year average by ~130–150bps); the –19bp decline from last week modestly narrows the new-money reinvestment window relative to last week's 5.28% peak. For <b>Compatriot Capital's CRE equity strategy</b>, the October hold at ~84% probability is directly constructive: if October 27–28 delivers a hold, the CRE discount rate ceiling is likely in place and mark-to-market valuations on Compatriot's equity positions may begin to stabilize into Q4. <b>Sergi Turabelidze</b> remains SVP and CIO of Sammons Financial Group. <b>Michael J. 'Mike' Lafitte</b> (ex-Trammell Crow CEO, CBRE Executive Committee 15+ years) serves as Independent Director. <b>Midland National maintains A+ ratings from AM Best and S&amp;P Global</b>. <b>No company-specific adverse news this week.</b>",
-            relevance: "The 10-Year falling to 5.09% (from 5.28%, –19bps) combined with ~84% October hold probability is the most constructive dual-rate signal for Compatriot Capital's CRE equity mark-to-market trajectory this cycle — if October 28 FOMC holds, the rate ceiling for cap-rate expansion appears near and CRE equity valuations may stabilize. Midland National continues to benefit from elevated reinvestment yields. Lafitte's DFW CRE network remains a core strategic asset for Jackson Shaw's equity partnership. No adverse signals.",
-            source: "GlobeNewswire / Sammons Enterprises / Sammons Financial Group / Compatriot Capital / Federal Reserve / BLS / Reuters / ActionForex",
+            headline: "Q3 report October 22 is the first full post-Cadence quarter",
+            summary: "Huntington Bancshares (<b>NASDAQ: HBAN</b>) reports third-quarter results on October 22. The February Cadence Bank acquisition grew its commercial real estate book about 60% to <b>$24.3 billion</b>, and combined CRE delinquencies are at an eight-year high. Net interest margin guidance sits in the low-to-high 3.20% range after a cut to 2026 net interest income growth from 39-43% to about 35%. Brant Standridge became president of the holding company and the bank on September 9. A $3 billion buyback is active.",
+            relevance: "Huntington is a CrossPoint construction lender. Credit-quality disclosure on the CRE book and any comment on construction originations are the two things to listen for.",
+            source: "Huntington Bancshares IR / SEC filings",
             date: "2026-10-16"
         }
+    ],
+
+    // Watchlist names scanned this week with nothing material to report.
+    quiet: [
+        "Aalo Atomics",
+        "Baer Manufacturing / Hunt Electric",
+        "Bright Events",
+        "C3 Presents",
+        "Canteen",
+        "Clopay",
+        "Control Panels",
+        "DNP Imagingcomm America",
+        "Duroshox",
+        "Grander Distribution",
+        "Kuehne + Nagel",
+        "W Industries",
+        "Xingyu Lighting",
+        "Busey Bank",
+        "Fifth Third Bank",
+        "Inwood National Bank",
+        "Barings",
+        "Hall Group",
+        "PACE Equity",
+        "Hartford Insurance",
+        "Pinnacle Bank",
+        "Compatriot Capital (Sammons)"
     ]
 };

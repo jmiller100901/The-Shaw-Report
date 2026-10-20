@@ -1,0 +1,36 @@
+name: Validate data files
+
+# Safety net behind the Friday routine: every push to main must leave the
+# two data files syntactically valid and inside the content contract.
+# No API keys, no secrets — this is pure Node.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'friday-finance-data.js'
+      - 'tenant-lender-data.js'
+      - 'validate-data.js'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Syntax check
+        run: |
+          node --check friday-finance-data.js
+          node --check tenant-lender-data.js
+          node --check app.js
+      - name: Validate content contract
+        run: node validate-data.js
