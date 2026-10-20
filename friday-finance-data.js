@@ -7,8 +7,8 @@ const FRIDAY_FINANCE = {
     date_short: "10.23.26",
 
     quote: {
-        text: "Price is what you pay. Value is what you get.",
-        author: "Warren Buffett"
+        text: "Don't look for the needle in the haystack. Just buy the haystack!",
+        author: "John C. Bogle"
     },
 
     // 10-12 symbols. Always SPX, DJIA, IXIC; the rest are the week's movers.
@@ -32,6 +32,27 @@ const FRIDAY_FINANCE = {
     // to a Dallas industrial and hotel developer. One source per story.
     stories: [
         {
+            headline: "Brent hits a five-month high near $110 as Hormuz tanker attacks mount",
+            body: "Brent crude settled at <b>$109.55 a barrel</b> on Monday, within a few cents of a five-month high. U.S. crude traded near <b>$98</b>. Kpler counted at least 18 tanker attacks in the Strait of Hormuz over two weeks. It said daily oil flow out of the Persian Gulf fell to an average of <b>8.5 million barrels</b>, from more than 20 million two weeks earlier. A tanker also exploded after hitting a mine, and the Houthis claimed strikes on Saudi energy sites. ING analysts said the market carries a large risk premium that will not fade until Gulf flows stay stable. Oil tied to the Iran war is the main driver of the inflation now pushing the Fed toward more rate hikes.",
+            jsc_angle: "Higher fuel and freight costs squeeze logistics and manufacturing tenants, and the inflation they feed keeps floating-rate debt expensive.",
+            source: { name: "OilPrice.com", title: "Brent tops $110 as tanker attacks threaten Persian Gulf supply", url: "https://oilprice.com/Latest-Energy-News/World-News/Brent-Tops-110-as-Tanker-Attacks-Threaten-Persian-Gulf-Supply.html" },
+            date: "2026-10-19"
+        },
+        {
+            headline: "Economists expect an October hold and a December Fed hike",
+            body: "In a Reuters poll of 100 economists taken October 16-20, <b>94 expect a hold</b> at the October 27-28 FOMC meeting. All 100 expect a quarter-point hike in December, up from fewer than half in the prior poll. The Fed raised its target range to <b>3.75% to 4.00%</b> in September, its first hike since 2023. Nearly 60% of forecasters see the policy rate peaking at 4.00% to 4.25%, though 38 of 92 expect at least two more hikes. Mizuho's Alex Pelle said the risk is greater that the Fed goes 50 basis points in December than that it does not hike at all. Core inflation is not expected to return to the 2% target until at least 2028.",
+            jsc_angle: "Floating-rate construction debt should price off a higher SOFR through year-end, since a December hike is now the consensus.",
+            source: { name: "Reuters via AOL", title: "Fed to skip October but raise rates again in December, nearly all economists say", url: "https://www.aol.com/articles/fed-skip-october-raise-rates-124314000.html" },
+            date: "2026-10-20"
+        },
+        {
+            headline: "Warsh declines to signal the next Fed move and flags AI-driven inflation",
+            body: "Fed Chair Kevin Warsh gave no fresh rate signal on Friday at the IMF and World Bank meetings in Bangkok. He said <b>\"I don't prejudge meetings\"</b> and named October and December as the decision points. He said events since the September hike have broadly matched the Fed's expectations. He called AI the most consequential change to the economy in his lifetime. He also said the AI investment boom is one factor pushing inflation higher. Minutes from the last meeting show most officials expect another increase this year.",
+            jsc_angle: "With no forward guidance, rate moves will arrive as surprises, so hedge floating-rate exposure on the data rather than on Fed signals.",
+            source: { name: "AP via PBS NewsHour", title: "Fed chair Warsh says price stability is key but shies away from signals about rates", url: "https://www.pbs.org/newshour/economy/fed-chair-warsh-says-price-stability-is-key-but-shies-away-from-signals-about-rates" },
+            date: "2026-10-16"
+        },
+        {
             headline: "Tech rebounds Monday while most other stocks slip",
             body: "The Nasdaq rose <b>1.1% to 26,431</b> on Monday as AI and tech names recovered part of the prior week's steep losses. The S&P 500 gained 0.4% to <b>7,691</b>, while the Dow slipped 0.1% to 51,966 because most stocks outside tech fell. The Russell 2000 added 0.3% to 2,728. European indexes fell more than 1% after weekend protests over possible government spending increases. Bond yields rose in markets worldwide.",
             jsc_angle: "A narrow, tech-led rally says little about credit appetite for construction loans, and rising global yields keep floating-rate costs elevated.",
@@ -39,16 +60,9 @@ const FRIDAY_FINANCE = {
             date: "2026-10-19"
         },
         {
-            headline: "Economists expect an October hold and a December Fed hike",
-            body: "In a Reuters poll of 100 economists taken October 16-20, <b>94 expect a hold</b> at the October 27-28 FOMC meeting. All 100 expect a quarter-point hike in December, up from fewer than half in the prior poll. The Fed raised its target range to <b>3.75% to 4.00%</b> in September, its first hike since 2023. Chair Kevin Warsh declined last week to signal what comes next and said he does not prejudge meetings. September CPI rose <b>3.7% from a year earlier</b> and core CPI 2.6%, with oil tied to the Iran war the main driver. The 10-year Treasury yield closed Friday at 5.09% on the Federal Reserve Bank of St. Louis series, down 15 basis points on the week. Nearly 60% of forecasters see the policy rate peaking at 4.00% to 4.25%, though 38 of 92 expect at least two more hikes.",
-            jsc_angle: "Floating-rate construction debt should price off a higher SOFR through year-end, since a December hike is now the consensus.",
-            source: { name: "Reuters via AOL", title: "Fed to skip October but raise rates again in December, nearly all economists say", url: "https://www.aol.com/articles/fed-skip-october-raise-rates-124314000.html" },
-            date: "2026-10-20"
-        },
-        {
             headline: "Fifth Third opens regional bank earnings with a beat; Huntington next",
-            body: "Fifth Third reported third-quarter results on Monday, October 19, with adjusted earnings of <b>$1.13 per share</b>. Reported EPS was $0.90 after $0.23 per share of merger-related charges tied to the Comerica deal. Net interest income rose 3% on the quarter to <b>$2.27 billion</b>, and the net interest margin eased to 3.34% from 3.36%. The net charge-off ratio was <b>0.31%</b>, and period-end loans reached $180.3 billion. Pinnacle reports Wednesday after the close and Huntington on Thursday morning. Commercial real estate credit quality is the line investors are watching across all of them.",
-            jsc_angle: "Three of the company's lenders report within days of each other, so their CRE credit and origination commentary is the best read on 2027 loan availability.",
+            body: "Fifth Third reported third-quarter results on Monday, October 19, with adjusted earnings of <b>$1.13 per share</b>. Reported EPS was $0.90 after $0.23 per share of charges tied to the Comerica deal. Net interest income rose 3% on the quarter to <b>$2.27 billion</b>. The net charge-off ratio was <b>0.31%</b>, against 1.09% a year earlier. Pinnacle reports Wednesday after the close and Huntington on Thursday morning. Commercial real estate credit quality is the line investors are watching across all of them.",
+            jsc_angle: "Two of the company's lenders report within a day of each other, so their CRE credit and origination commentary is the best read on 2027 loan availability.",
             source: { name: "SEC (Fifth Third 8-K)", title: "Fifth Third Bancorp third-quarter 2026 earnings release", url: "https://www.sec.gov/Archives/edgar/data/0000035527/000003552726000229/q32026earningsrelease.htm" },
             date: "2026-10-19"
         }
@@ -59,7 +73,7 @@ const FRIDAY_FINANCE = {
         { when: "Wed Oct 21", what: "<b>Pinnacle Financial Q3 earnings</b> after the close, with the call Thursday at 8 a.m. ET. Watch net interest margin and deposit costs." },
         { when: "Thu Oct 22", what: "<b>Huntington Bancshares Q3 earnings</b> before the open, with the call at 9 a.m. ET. First full quarter since the Cadence acquisition, so CRE credit is the focus." },
         { when: "Tue-Wed Oct 27-28", what: "<b>FOMC meeting.</b> A hold is the consensus, so the statement language on December is the real event." },
-        { when: "Wed Oct 28", what: "<b>International Paper Q3 earnings</b> are scheduled. Some calendars list October 29, so confirm the date." }
+        { when: "Wed Oct 28", what: "<b>International Paper Q3 earnings</b> before the NYSE opens, with a webcast at 10 a.m. ET. Watch for any further Texas facility closures." }
     ],
 
     // 3-5 non-paywalled links. No WSJ, FT, Bloomberg or Barron's.
@@ -71,10 +85,16 @@ const FRIDAY_FINANCE = {
             description: "Warsh in Bangkok on inflation, AI investment and why he will not prejudge the October and December meetings."
         },
         {
-            title: "Warsh won't prejudge rest of 2026, names October and December as decision points",
-            url: "https://investinglive.com/central-banks/warsh-won-t-prejudge-rest-of-2026-names-october-and-december-as-decision-points/",
-            source: "investingLive",
-            description: "A closer read of the Warsh remarks and what oil-driven inflation means for the rate path."
+            title: "Dallas/Fort Worth Industrial MarketBeat, Q3 2026",
+            url: "https://www.cushmanwakefield.com/en/united-states/insights/us-marketbeats/dallas-ft-worth-marketbeats/industrial",
+            source: "Cushman & Wakefield",
+            description: "Vacancy fell to 7.3%, the lowest since Q3 2023, and asking rents hit a record $9.76 per square foot NNN."
+        },
+        {
+            title: "U.S. Industrial MarketBeat, Q3 2026",
+            url: "https://www.cushmanwakefield.com/en/united-states/insights/us-marketbeats/us-industrial-marketbeat",
+            source: "Cushman & Wakefield",
+            description: "National vacancy of 6.8% and the strongest quarterly absorption since early 2023."
         },
         {
             title: "Adjusted quarterly net income, revenue rise at Simmons First",
