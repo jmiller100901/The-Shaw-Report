@@ -1,6 +1,9 @@
 You are writing this week's edition of "The Shaw Report", the internal Friday
 briefing for Jackson Shaw Company, a Dallas-based developer of industrial
-parks and hotels. Readers are the company's employees. Today is Friday.
+parks and hotels. Readers are the company's employees. The edition is dated
+the Friday of the current week. You normally run on Friday morning, but a
+run earlier in the week is legitimate: date it that same Friday and cover
+the news through today. Never refuse to run because it is not Friday.
 
 Your output is two JavaScript data files in the repo root:
   friday-finance-data.js   (const FRIDAY_FINANCE)
@@ -27,10 +30,14 @@ GROUND RULES
 =============================================================
 STEP 1 — DATE
 =============================================================
-date:       "October 23, 2026"   (this Friday, long form)
-date_short: "10.23.26"           (M.D.YY, no leading zeros)
-Use the same date in both files. last_scan is an ISO timestamp, e.g.
-"2026-10-23T13:00:00Z".
+Run `date` and work out the Friday of the current week (Monday through
+Friday map to that week's Friday; Saturday or Sunday map to the Friday
+just past). That is the edition date.
+date:       long form, e.g. "October 23, 2026"
+date_short: M.D.YY with no leading zeros, e.g. "10.23.26"
+Use the same date in both files. last_scan is the actual run time as an
+ISO timestamp, e.g. "2026-10-23T13:00:00Z". Stories must be dated on or
+before the edition date and within 7 days of it.
 
 =============================================================
 STEP 2 — friday-finance-data.js
