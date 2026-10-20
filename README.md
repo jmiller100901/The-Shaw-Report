@@ -3,10 +3,23 @@
 Weekly internal briefing for Jackson Shaw Company, published as a static
 GitHub Pages site: https://jmiller100901.github.io/The-Shaw-Report/
 
-Three tabs: **Friday Finance** (the week's big stories, what to watch, key
-rates, live FRED charts, weekend reading), **Stock Data** (live Finnhub
-quotes for a fixed ticker set) and **Tenant & Lender News** (alerts on the
-company's watchlist of tenants, lenders and equity partners).
+Four tabs: **Friday Finance** (week in numbers, the week's big stories,
+what to watch, live key rates, watchlist earnings calendar, live FRED
+charts, weekend reading), **Stock Data** (live Finnhub quotes for a fixed
+ticker set), **Tenant & Lender News** (alerts on the company's watchlist of
+tenants, lenders and equity partners) and **Archive** (every past edition,
+readable in place).
+
+## Live data on the page
+
+| What | Source | How |
+|---|---|---|
+| Key rates table | FRED | `scripts/build-rates.js` writes `data/rates.json`; `.github/workflows/rates.yml` runs it every weekday at 5:45 PM CT. FRED has no CORS, so the page cannot read it directly. |
+| Week in numbers | Finnhub | ETF proxies (SPY, QQQ, IWM, VNQ, KRE, TLT, USO, GLD) with 5-day return, plus the 10-year from `rates.json`. |
+| Stock table, ticker bar | Finnhub | Quotes and 52-week metrics. Requests are paced inside the free tier's 60-per-minute budget, so the table fills over about a minute. |
+| Watchlist earnings | Finnhub | Earnings calendar for the public watchlist tickers, next five weeks. |
+| Charts | FRED | `fredgraph.png` images, series and lookback set on the `<img>` tag. |
+| Archive | GitHub | Lists commits to `friday-finance-data.js`, loads any edition from `raw.githubusercontent.com`. `?edition=<sha>` deep-links one. |
 
 ## How it updates
 
@@ -29,6 +42,7 @@ Actions cron and no local scheduled task; the routine is the only writer.
 | `index.html`, `app.js`, `styles.css` | The page. Only data files change week to week. |
 | `.github/friday-brief-prompt.txt` | The routine's instructions. Edit this to change what gets written. |
 | `.github/workflows/validate.yml` | CI: syntax-check and validate the data files on every push. |
+| `.github/workflows/rates.yml`, `scripts/build-rates.js`, `data/rates.json` | Daily FRED refresh for the live rates table. |
 
 ## Content contract (enforced by the validator)
 

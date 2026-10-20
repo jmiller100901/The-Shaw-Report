@@ -935,3 +935,160 @@ a.ticker-item .pct.down { color: #f87171; }
     .stock-table th, .stock-table td { padding: 6px 6px; }
     .tl-stats { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ================================================================
+   Added October 2026: week strip, live rates, earnings, archive
+   ================================================================ */
+
+/* Edition banner (archived edition open) */
+.edition-banner {
+    max-width: 1200px;
+    margin: 14px auto 0;
+    padding: 10px 16px;
+    background: #FFF7ED;
+    border: 1px solid #FED7AA;
+    border-radius: var(--radius);
+    font-size: 0.82rem;
+    color: #9A3412;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.edition-banner-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.edition-banner-date { font-weight: 700; }
+.edition-back {
+    margin-left: auto;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+.edition-back:hover { text-decoration: underline; }
+
+/* Week in numbers */
+.week-strip { margin: 0 0 26px; }
+.week-strip-title {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-sec);
+    margin-bottom: 8px;
+}
+.week-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+    gap: 8px;
+}
+.week-tile {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 12px;
+    background: var(--surface);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid transparent;
+    transition: border-color 0.15s ease;
+}
+.week-tile:hover { border-color: var(--border); background: var(--bg); }
+.week-label {
+    font-size: 0.68rem;
+    color: var(--text-sec);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.week-value {
+    font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', Consolas, monospace;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+.week-chg {
+    font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', Consolas, monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+.week-chg.up   { color: var(--success); }
+.week-chg.down { color: var(--danger); }
+
+/* Rates table additions */
+.rate-table td.rate-cur { font-weight: 700; color: var(--text); }
+.rate-table tr.rate-spread td { border-top: 1px dashed var(--border); color: var(--text-sec); }
+.rate-table .muted { color: var(--text-ter); }
+.rate-note { text-align: left; margin-top: 10px; }
+
+/* Earnings calendar */
+.earnings { display: flex; flex-direction: column; }
+.earn-row {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    column-gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--surface);
+    font-size: 0.78rem;
+    line-height: 1.4;
+}
+.earn-row:last-child { border-bottom: none; }
+.earn-date {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    padding-top: 1px;
+}
+.earn-name a { color: var(--text); font-weight: 600; text-decoration: none; }
+.earn-name a:hover { color: var(--accent); text-decoration: underline; }
+.earn-sym {
+    font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', Consolas, monospace;
+    font-size: 0.65rem;
+    color: var(--text-ter);
+}
+.earn-meta {
+    grid-column: 2;
+    font-size: 0.7rem;
+    color: var(--text-sec);
+}
+.earn-empty { font-size: 0.78rem; color: var(--text-sec); padding: 4px 0; }
+
+/* Archive */
+.archive-wrap { max-width: 720px; }
+.archive-intro {
+    font-size: 0.875rem;
+    color: var(--text-sec);
+    margin: 0 0 18px;
+    line-height: 1.6;
+}
+.archive-list { display: flex; flex-direction: column; }
+.archive-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+.archive-item:hover { background: var(--accent-light); border-color: var(--accent); }
+.archive-item.current { background: var(--surface); }
+.archive-date {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.archive-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+}
+.archive-loading { font-size: 0.85rem; color: var(--text-sec); padding: 12px 0; }

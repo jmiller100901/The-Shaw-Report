@@ -1,0 +1,42 @@
+name: Refresh rates from FRED
+
+# Rebuilds data/rates.json every weekday evening (FRED posts daily
+# Treasury and money-market series around 4:15 PM ET) so the Key Rates
+# table is live all week, not just on Friday. No keys, no secrets.
+
+on:
+  schedule:
+    - cron: '45 22 * * 1-5'   # 5:45 PM CT / 6:45 PM ET, Mon-Fri
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rates-refresh
+  cancel-in-progress: false
+
+jobs:
+  rates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Build data/rates.json
+        run: node scripts/build-rates.js
+      - name: Commit if changed
+        run: |
+          git config user.name  "Shaw Report Rates Bot"
+          git config user.email "actions@github.com"
+          git add data/rates.json
+          if git diff --staged --quiet; then
+            echo "No change"
+          else
+            asof=$(node -e "console.log(require('./data/rates.json').as_of)")
+            git commit -m "Rates: FRED as of $asof"
+            git pull --rebase origin main
+            git push origin main
+          fi

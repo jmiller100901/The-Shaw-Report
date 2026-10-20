@@ -31,8 +31,12 @@
             <button class="nav-tab active" data-section="friday-finance">Friday Finance</button>
             <button class="nav-tab" data-section="stock-data">Stock Data</button>
             <button class="nav-tab" data-section="tenant-lender-news">Tenant &amp; Lender News</button>
+            <button class="nav-tab" data-section="archive">Archive</button>
         </div>
     </nav>
+
+    <!-- Shown only while an archived edition is open -->
+    <div id="edition-banner" class="edition-banner" style="display:none"></div>
 
     <main class="content-wrap">
 
@@ -44,6 +48,8 @@
 
                 <!-- Main Column -->
                 <div class="col-main">
+                    <div id="week-strip" class="week-strip" style="display:none"></div>
+
                     <h3 class="col-header">The week's big stories</h3>
                     <div id="ff-stories" class="stories"></div>
 
@@ -62,10 +68,17 @@
                         <h4 class="card-title">Key rates</h4>
                         <table class="rate-table">
                             <thead>
-                                <tr><th>Rate</th><th>Current</th><th>1M ago</th><th>1Y ago</th></tr>
+                                <tr><th>Rate</th><th>Current</th><th>1W</th><th>1M</th><th>1Y</th></tr>
                             </thead>
                             <tbody id="ff-rate-body"></tbody>
                         </table>
+                        <p class="chart-source rate-note" id="ff-rate-note"></p>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="card-title">Watchlist earnings &mdash; next 5 weeks</h4>
+                        <div id="ff-earnings" class="earnings"><div class="earn-empty">Loading&hellip;</div></div>
+                        <p class="chart-source">Live from Finnhub</p>
                     </div>
 
                     <div class="card">
@@ -137,6 +150,17 @@
                     <h3 class="tl-watchlist-title">Monitored companies</h3>
                     <div class="tl-watchlist-grid" id="tl-watchlist"></div>
                 </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ARCHIVE -->
+        <!-- ============================================================ -->
+        <section id="archive" class="section">
+            <div class="archive-wrap">
+                <h3 class="col-header">Past editions</h3>
+                <p class="archive-intro">Every Friday edition since launch. Open one to read it in place; the ticker bar and stock table stay live.</p>
+                <div id="archive-list" class="archive-list"></div>
             </div>
         </section>
 
