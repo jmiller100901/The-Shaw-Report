@@ -1,22 +1,22 @@
-// Friday Finance — Week of October 16, 2026
+// Friday Finance — Week of October 23, 2026
 // Rewritten each Friday by the auto-update. Schema and limits are enforced
 // by validate-data.js — run `node validate-data.js` before committing.
 
 const FRIDAY_FINANCE = {
-    date: "October 16, 2026",
-    date_short: "10.16.26",
+    date: "October 23, 2026",
+    date_short: "10.23.26",
 
     quote: {
-        text: "Know what you own, and know why you own it.",
-        author: "Peter Lynch"
+        text: "The investor's chief problem, and even his worst enemy, is likely to be himself.",
+        author: "Benjamin Graham"
     },
 
     // 10-12 symbols. Always SPX, DJIA, IXIC; the rest are the week's movers.
     // Live Finnhub data overwrites price/change on page load.
     ticker_bar: [
-        { symbol: "SPX",   price: "7,705",   change_pct: -0.51 },
-        { symbol: "DJIA",  price: "52,338",  change_pct:  0.31 },
-        { symbol: "IXIC",  price: "26,649",  change_pct: -0.24 },
+        { symbol: "SPX",   price: "7,691",   change_pct:  0.41 },
+        { symbol: "DJIA",  price: "51,966",  change_pct: -0.07 },
+        { symbol: "IXIC",  price: "26,431",  change_pct:  1.11 },
         { symbol: "JPM",   price: "236.80",  change_pct: -2.10 },
         { symbol: "WFC",   price: "62.50",   change_pct: -0.48 },
         { symbol: "NVDA",  price: "202.80",  change_pct: -5.02 },
@@ -32,62 +32,49 @@ const FRIDAY_FINANCE = {
     // to a Dallas industrial and hotel developer. One source per story.
     stories: [
         {
-            headline: "Hot September CPI knocks stocks off record highs",
-            body: "September CPI rose <b>0.6% month over month and 3.7% year over year</b>, above the 3.6% consensus and up from 3.4% in August. Core CPI rose 0.3% on the month, double the expected pace, and 2.6% on the year. Energy did most of the damage: the energy index jumped 5.2% in September and gasoline alone rose 9.1%, accounting for more than half of the headline increase. The timing stung because the S&P 500 had closed at a record 7,820 the day before on strong bank earnings. On release day the index fell 1.1% to 7,719 and the Nasdaq lost 1.9%, with rate-sensitive tech leading the decline. The two-year Treasury yield rose 12 basis points and futures briefly priced a 44% chance of a hike at the October 27-28 FOMC meeting. Cleveland Fed President Beth Hammack said the inflation pressure looked broad-based.",
-            jsc_angle: "Energy-driven inflation is a direct operating-cost headwind for the logistics and manufacturing tenants in the portfolio, and every extra hike widens the spread on construction debt.",
-            source: { name: "CNBC", title: "Treasury yields jump after hotter-than-expected September CPI", url: "https://www.cnbc.com/2026/10/14/us-treasury-yields-cpi-inflation-report.html" },
-            date: "2026-10-14"
+            headline: "Tech rebounds Monday after worst week since June",
+            body: "The Nasdaq rose <b>1.1% to 26,431</b> on Monday as AI and tech names bounced from last week's rout. The S&P 500 gained 0.4% to <b>7,691</b>, while the Dow slipped 0.1% to 51,966 because most stocks outside tech fell. Last week the S&P 500 lost nearly 2%, its biggest weekly drop since late June, on worries about companies borrowing heavily for AI build-outs. Oil rose more than 2% on reports of Houthi attacks on Saudi infrastructure, and gold fell 0.5%. The S&P 500 still sits about 2% below its early-October record near 7,845. Earnings season now turns to the regional banks and to industrial names.",
+            jsc_angle: "Oil above its recent range feeds fuel and freight costs for logistics and manufacturing tenants, and a narrow tech-led rally says little about credit appetite for construction loans.",
+            source: { name: "Yahoo Finance", title: "How major US stock indexes fared Monday 10/19/2026", url: "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-202016557.html" },
+            date: "2026-10-19"
         },
         {
             headline: "Warsh cools October hike talk and the 10-year slides to 5.09%",
-            body: "A day after the CPI shock, September producer prices rose <b>1.3% on the month</b>, the largest single-month jump since 2022. Markets looked past it because Fed Chair Kevin Warsh, speaking the same day, declined to signal any urgency about a hike at the October meeting. The dollar sold off, Treasury yields fell sharply from their 5.30% intraday peak, and the 10-year finished the week near <b>5.09%</b>, down 19 basis points from the prior Friday. October hike odds fell from 44% to roughly 16%, implying an 84% chance of a hold on October 28. Futures still price better than a 90% chance of at least one more 25 basis point increase by year end, so the debate is deferred rather than settled. The Dow gained 2.0% on the week while the S&P 500 lost 0.7% and the Nasdaq fell 2.0%, a rotation out of AI and into value and financials.",
-            jsc_angle: "The 19 basis point drop in the 10-year is the best single-week move for cap rates and refinancing math since the September hike, but a December increase is still the base case for underwriting.",
+            body: "A day after the hot September CPI, producer prices rose <b>1.3% on the month</b>, the largest jump since 2022. Markets looked past it because Fed Chair Kevin Warsh declined to signal any urgency about a hike at the October meeting. Treasury yields fell from their intraday peak, and the 10-year closed Friday at <b>5.09%</b>, down 15 basis points on the week. The Fed hiked to 3.75% to 4.00% in September, and the effective funds rate sits at 3.88%. Futures put the chance of a hold at the October 27-28 FOMC at about <b>84%</b>, with another 25 basis point hike still priced for December. Three September dissenters wanted a hike, including Dallas Fed President Lorie Logan.",
+            jsc_angle: "The pullback in the 10-year helps refinancing math, but a December hike remains the base case for floating-rate construction debt.",
             source: { name: "ActionForex", title: "Dollar extends slide as Fed Warsh refuses to revive October hike bets", url: "https://actionforex.com/action-insight/market-overview/657759-dollar-extends-slide-as-fed-warsh-refuses-to-revive-october-hike-bets" },
             date: "2026-10-15"
         },
         {
-            headline: "Big banks open Q3 earnings season with mixed results",
-            body: "JPMorgan reported third-quarter profit of <b>$15.3 billion</b>, up about 6% from a year ago, on revenue of roughly $50.2 billion. Earnings per share of $5.57 missed the $5.93 consensus, a rare miss for the bank, as weaker fixed-income trading offset strong equities. Wells Fargo earned $1.87 per share against a $1.85 estimate, but revenue of $21.87 billion fell short of the $22.31 billion expected and the shares dropped about 1.5%. Citigroup also reported, and the group's results were good enough to push the S&P 500 to a record before the CPI print reversed it. The regional banks report next, led by Huntington on October 22. Huntington's quarter is the first full one since it closed the Cadence Bank acquisition in February, which grew its commercial real estate book about 60% to $24.3 billion. Fifth Third follows with its first full quarter of Comerica integration.",
-            jsc_angle: "Three of the portfolio's construction lenders report in the next two weeks, so credit-quality commentary on CRE books will say more about 2027 financing appetite than anything the big banks said this week.",
-            source: { name: "CNBC", title: "JPMorgan Chase third-quarter 2026 earnings", url: "https://www.cnbc.com/2026/10/13/jpmorgan-chase-jpm-earnings-3q-2026.html" },
-            date: "2026-10-13"
-        },
-        {
-            headline: "DFW industrial vacancy tightens to 7.8% as construction pipeline leads the nation",
-            body: "Third-quarter data put Dallas-Fort Worth industrial vacancy at <b>7.8%</b>, down a full point from 8.8% at the end of the second quarter. The metro has 33.9 million square feet under construction, more than any other U.S. market, and absorbed 6.4 million square feet in the quarter. Leasing volume through the first half of the year reached a record 40.3 million square feet, with big-box users signing nearly a third of the 72 million square feet committed over the trailing twelve months. Average asking rents are up about 13% year over year. Data center and AI infrastructure users are a growing share of demand in the southern Dallas and I-30 corridor submarkets. Marcus & Millichap ranks DFW third in its 2026 National Industrial Index, with transaction volume up roughly 40% year over year.",
-            jsc_angle: "Falling vacancy against a record pipeline is the backdrop Jackson Shaw's DFW spec program needs, provided the rate environment holds exit caps near underwriting.",
-            source: { name: "CRE Daily", title: "DFW industrial leasing hits record highs as data centers fuel demand", url: "https://www.credaily.com/?p=221325" },
-            date: "2026-10-14"
+            headline: "Regional bank earnings begin with Fifth Third, Huntington next",
+            body: "Fifth Third reported third-quarter results on Monday, October 19, with analysts expecting <b>$0.82 per share</b>. Early coverage described a solid quarter with higher net interest income, steady deposit growth and stable credit. Huntington reports Thursday, October 22, with consensus near <b>$0.38 per share</b> and a net interest margin around 3.2%. Analysts have trimmed Huntington estimates about 7% over the past month. Pinnacle is expected to report October 21 after the close with consensus near $2.66 per share, though the date is not firmly confirmed. Commercial real estate credit quality is the line investors are watching across all three.",
+            jsc_angle: "Three of the company's construction lenders report within days of each other, so their CRE credit and origination commentary is the best read on 2027 loan availability.",
+            source: { name: "Yahoo Finance", title: "Earnings Preview: Huntington Bancshares (HBAN) Q3 Earnings Expected to Decline", url: "https://finance.yahoo.com/markets/stocks/articles/earnings-preview-huntington-bancshares-hban-130004310.html" },
+            date: "2026-10-19"
         }
     ],
 
     // 3-6 dated items. Short.
     watch_next_week: [
-        { when: "Wed Oct 22", what: "<b>Huntington Bancshares Q3 earnings</b> before the open. First full quarter post-Cadence: watch CRE delinquencies, NIM versus the 3.20% guide, and construction lending appetite." },
-        { when: "Week of Oct 19", what: "<b>Fifth Third and Pinnacle Q3 earnings.</b> Comerica integration cost saves and NIM trajectory for Fifth Third; Pinnacle's 3.44% NIM and deposit costs." },
-        { when: "Tue-Wed Oct 27-28", what: "<b>FOMC meeting.</b> Markets price an 84% hold after Warsh's October 15 remarks; the statement language on December is the real event." },
-        { when: "Wed Oct 28", what: "<b>International Paper Q3 earnings.</b> First full quarter after the Georgia mill closures; consensus EPS $0.48 after four straight misses." }
+        { when: "Wed Oct 21", what: "<b>Pinnacle Financial Q3 earnings</b> expected after the close, with the call the next morning. Watch net interest margin and deposit costs." },
+        { when: "Thu Oct 22", what: "<b>Huntington Bancshares Q3 earnings.</b> First full quarter after the Cadence deal: CRE delinquencies, margin versus the 3.20% guide and construction lending appetite." },
+        { when: "Tue-Wed Oct 27-28", what: "<b>FOMC meeting.</b> Markets price about an 84% hold, so the statement language on December is the real event." },
+        { when: "Wed Oct 28", what: "<b>International Paper Q3 earnings.</b> First full quarter after the Georgia mill closures." }
     ],
 
     // 3-5 non-paywalled links. No WSJ, FT, Bloomberg or Barron's.
     reading_links: [
         {
-            title: "10-year Treasury yield dips as traders look ahead to Thursday economic reports",
-            url: "https://www.cnbc.com/2026/10/14/us-treasury-yields-cpi-inflation-report.html",
-            source: "CNBC",
-            description: "How the CPI print moved the front end of the curve and briefly put an October hike back on the table."
+            title: "FOMC preview: Warsh's credibility is on the line but there's a 91% chance it doesn't matter",
+            url: "https://investinglive.com/central-banks/fomc-preview-warsh-s-credibility-is-on-the-line-but-there-s-a-91-chance-it-doesn-t-matter/",
+            source: "investingLive",
+            description: "A look at how little the October meeting is expected to change and why the December signal matters more."
         },
         {
             title: "U.S. Treasury yields inch lower as investors digest hot inflation data",
             url: "https://www.cnbc.com/amp/2026/10/16/us-treasury-yields-investors-hot-inflation-data-.html",
             source: "CNBC",
             description: "End-of-week recap of the 10-year's slide to 5.09% after the Warsh speech and the tech selloff."
-        },
-        {
-            title: "Dollar extends slide as Fed Warsh refuses to revive October hike bets",
-            url: "https://actionforex.com/action-insight/market-overview/657759-dollar-extends-slide-as-fed-warsh-refuses-to-revive-october-hike-bets",
-            source: "ActionForex",
-            description: "Why the market read Warsh's remarks as a hold signal despite two hot inflation prints in two days."
         },
         {
             title: "DFW industrial leasing hits record highs as data centers fuel demand",
@@ -98,19 +85,19 @@ const FRIDAY_FINANCE = {
     ],
 
     rates: {
-        "1-Mo Term SOFR":     { current: "3.950%", one_mo_ago: "3.640%", one_yr_ago: "4.350%" },
-        "10-Year Treasury":   { current: "5.090%", one_mo_ago: "5.110%", one_yr_ago: "4.450%" },
-        "Eff. Federal Funds": { current: "3.880%", one_mo_ago: "3.630%", one_yr_ago: "4.330%" },
-        "Prime Rate":         { current: "7.000%", one_mo_ago: "6.750%", one_yr_ago: "7.500%" }
+        "1-Mo Term SOFR":     { current: "3.886%", one_mo_ago: "3.655%", one_yr_ago: "4.177%" },
+        "10-Year Treasury":   { current: "5.090%", one_mo_ago: "5.010%", one_yr_ago: "3.990%" },
+        "Eff. Federal Funds": { current: "3.880%", one_mo_ago: "3.630%", one_yr_ago: "4.110%" },
+        "Prime Rate":         { current: "7.000%", one_mo_ago: "6.750%", one_yr_ago: "7.250%" }
     },
 
     // Fixed ticker set — see STOCK_TABLE in validate-data.js. Live Finnhub
     // data overwrites these on page load; keep them reasonably current.
     stocks: {
         "Indices": [
-            { company: "S&P 500",              ticker: "SPX",  price: 7705.00,  day_pct: -0.51, ytd_pct:  8.4,  high_52w: 7820.00,  vs_high: -1.5,  low_52w: 5101.63,  vs_low: 50.9 },
+            { company: "S&P 500",              ticker: "SPX",  price: 7691.00,  day_pct: 0.41, ytd_pct:  8.4,  high_52w: 7820.00,  vs_high: -1.5,  low_52w: 5101.63,  vs_low: 50.9 },
             { company: "Dow Jones Industrial", ticker: "DJI",  price: 52338.00, day_pct:  0.31, ytd_pct:  6.1,  high_52w: 54300.00, vs_high: -3.6,  low_52w: 37830.66, vs_low: 38.3 },
-            { company: "Nasdaq Composite",     ticker: "COMP", price: 26649.00, day_pct: -0.24, ytd_pct:  6.5,  high_52w: 27693.00, vs_high: -3.8,  low_52w: 15685.33, vs_low: 69.9 }
+            { company: "Nasdaq Composite",     ticker: "COMP", price: 26431.00, day_pct: 1.11, ytd_pct:  6.5,  high_52w: 27693.00, vs_high: -3.8,  low_52w: 15685.33, vs_low: 69.9 }
         ],
         "Industrial REITs": [
             { company: "Prologis",             ticker: "PLD",  price: 131.20, day_pct:  0.20, ytd_pct:   1.8, high_52w: 151.00, vs_high: -13.1, low_52w: 103.02, vs_low: 27.4 },
