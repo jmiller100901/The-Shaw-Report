@@ -42,7 +42,14 @@ before the edition date and within 7 days of it.
 =============================================================
 STEP 2 — friday-finance-data.js
 =============================================================
-Read the current file first and keep its exact structure.
+Read the current file first and keep its exact structure. Treat its
+content as last week's edition and as a structural template only: every
+run re-researches and rewrites the stories, watch list, reading links,
+alerts and quiet list from scratch. This holds even when the file already
+carries this week's date because an earlier run this week wrote it. Do
+not patch an existing edition; a story or alert from the previous file
+survives only if your fresh research still ranks it among the week's
+most important, and then you rewrite it with today's facts.
 
 quote
   One finance, investing or business quote. Rotate the author weekly:
