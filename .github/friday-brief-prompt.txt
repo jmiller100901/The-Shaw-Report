@@ -83,11 +83,14 @@ reading_links  (3 to 5)
   Longer reads worth a weekend. Non-paywalled, verified with WebFetch.
 
 rates  (exactly these 4 keys, values like "4.250%")
-  "1-Mo Term SOFR"      CME Term SOFR 1M (or FRED proxy if CME is unavailable)
-  "10-Year Treasury"    FRED DGS10
-  "Eff. Federal Funds"  FRED DFF
-  "Prime Rate"          fed funds target upper bound + 3.00%
-  Each: { current, one_mo_ago, one_yr_ago } from FRED history.
+  Do not research these. Read data/rates.json in the repo (rebuilt from
+  FRED every weekday evening) and copy current / one_mo_ago / one_yr_ago:
+  "30-Day Avg SOFR"     series SOFR30DAYAVG
+  "10-Year Treasury"    series DGS10
+  "Eff. Federal Funds"  series DFF
+  "Prime Rate"          series DPRIME
+  Format each as a percentage with three decimals, e.g. "5.090%". These
+  are the page's fallback; the live table reads rates.json directly.
 
 stocks
   Five fixed categories with a fixed ticker set — see STOCK_TABLE in
@@ -166,7 +169,10 @@ STEP 4 — VALIDATE AND COMMIT
    is any figure unsourced? Fix, then validate again.
 5. git add friday-finance-data.js tenant-lender-data.js
    git commit -m "Auto-update: Friday Brief <Month D, YYYY>"
-   git push origin main
+   git push origin HEAD:main
+   (The checkout may be a detached HEAD, which is why the refspec is
+   explicit. If the push is rejected because main moved, run
+   `git pull --rebase origin main`, re-run the validator, and push again.)
    Commit only those two files. If neither changed, do not commit.
 6. Report in a few lines: the story headlines, the rates, the alerts
    written, the quote author, and confirmation that validate-data.js

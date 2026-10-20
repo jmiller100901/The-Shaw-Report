@@ -65,7 +65,7 @@ const STOCK_TABLE = {
                                    'TSM', 'DAL', 'FERG', 'IP', 'TLF', 'GFF', 'LYV', 'KHNGY', 'DNPLY']
 };
 
-const RATE_KEYS = ['1-Mo Term SOFR', '10-Year Treasury', 'Eff. Federal Funds', 'Prime Rate'];
+const RATE_KEYS = ['30-Day Avg SOFR', '10-Year Treasury', 'Eff. Federal Funds', 'Prime Rate'];
 const LEVELS    = ['HIGH', 'MEDIUM', 'LOW', 'GENERAL'];
 const PAYWALLED = ['wsj.com', 'ft.com', 'bloomberg.com', 'barrons.com'];
 

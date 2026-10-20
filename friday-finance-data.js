@@ -85,7 +85,7 @@ const FRIDAY_FINANCE = {
     ],
 
     rates: {
-        "1-Mo Term SOFR":     { current: "3.886%", one_mo_ago: "3.655%", one_yr_ago: "4.177%" },
+        "30-Day Avg SOFR":    { current: "3.886%", one_mo_ago: "3.655%", one_yr_ago: "4.177%" },
         "10-Year Treasury":   { current: "5.090%", one_mo_ago: "5.010%", one_yr_ago: "3.990%" },
         "Eff. Federal Funds": { current: "3.880%", one_mo_ago: "3.630%", one_yr_ago: "4.110%" },
         "Prime Rate":         { current: "7.000%", one_mo_ago: "6.750%", one_yr_ago: "7.250%" }
