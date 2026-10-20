@@ -4,7 +4,7 @@
 
 const TENANT_LENDER_NEWS = {
     date: "October 23, 2026",
-    last_scan: "2026-10-20T15:45:00Z",
+    last_scan: "2026-10-20T16:10:00Z",
 
     // Jackson Shaw watchlist. Fixed — see WATCHLIST in validate-data.js.
     companies: [
@@ -41,41 +41,61 @@ const TENANT_LENDER_NEWS = {
     alerts: [
         {
             level: "MEDIUM",
-            company: "International Paper",
-            cat: "Tenant",
-            headline: "Q3 earnings due October 28 after four straight misses",
-            summary: "International Paper (<b>NYSE: IP</b>) reports third-quarter results on October 28, its first full quarter after closing the Savannah and Riceboro, Georgia mills. The company has missed estimates in each of the last four quarters. Consensus is for EPS of $0.48 on revenue down roughly 8% year over year. Guidance for European packaging EBITDA is $230-250 million for the quarter, up from $182 million in Q2. The 64-employee Carrollton South, Texas facility closure remains the only announced Texas action.",
-            relevance: "IP is a Centerpoint tenant, so the call is the next read on whether the restructuring reaches the San Antonio footprint. Any new Texas closure list is the item to watch.",
-            source: "International Paper IR / Zacks",
-            date: "2026-10-16"
+            company: "Industry",
+            cat: "Industry",
+            headline: "Reuters poll: all 100 economists expect a December Fed hike",
+            summary: "A Reuters poll of 100 economists taken October 16-20 finds <b>94 expect a hold</b> at the October 27-28 FOMC meeting. All 100 expect a 25 basis point hike in December. Nearly 60% see the policy rate peaking at 4.00% to 4.25%. The Fed's current range is <b>3.75% to 4.00%</b>.",
+            relevance: "Floating-rate borrowers across the watchlist should expect higher debt costs into 2027. Tenants in logistics and manufacturing face the same financing pressure.",
+            source: "Reuters / AOL",
+            date: "2026-10-20"
         },
         {
             level: "MEDIUM",
-            company: "Simmons Bank",
+            company: "Pinnacle Bank",
             cat: "Lender",
-            headline: "26 branch closures take effect December 4, six in Texas",
-            summary: "Simmons First National (<b>NASDAQ: SFNC</b>) is six weeks from its December 4 closure of 26 branches, which management expects to add <b>$37-42 million</b> of annual pre-tax benefit. About 100 employees are affected and roughly 70% are expected to be retained elsewhere in the bank. Six of the 26 locations are in Texas and the specific addresses have not been published. CEO Jay Brogdon has said there are no market exits. KBW carries a $26 price target against a share price near $22.",
-            relevance: "Simmons is an active Jackson Shaw construction lender, so confirm no DFW branch supporting company accounts is on the list before December 4.",
-            source: "Simmons First National IR / Arkansas Business",
-            date: "2026-10-16"
+            headline: "Pinnacle reports Q3 earnings Wednesday after the close",
+            summary: "Pinnacle Financial Partners (<b>NASDAQ: PNFP</b>) reports third-quarter results on October 21 after the market close. Management hosts a webcast Thursday, October 22, at 8 a.m. ET with CEO Kevin Blair and CFO Jamie Gregory.",
+            relevance: "Pinnacle is a lender to the company. Net interest margin, deposit costs and CRE credit comments are the items to watch.",
+            source: "Pinnacle Financial Partners / Business Wire",
+            date: "2026-10-21"
         },
         {
             level: "MEDIUM",
             company: "Huntington Bank",
             cat: "Lender",
-            headline: "Q3 report October 22 is the first full post-Cadence quarter",
-            summary: "Huntington Bancshares (<b>NASDAQ: HBAN</b>) reports third-quarter results on October 22, with consensus near <b>$0.38 per share</b>. The February Cadence Bank acquisition grew its commercial real estate book about 60% to <b>$24.3 billion</b>, and combined CRE delinquencies are at an eight-year high. Net interest margin guidance sits in the low-to-high 3.20% range after a cut to 2026 net interest income growth from 39-43% to about 35%. Brant Standridge became president of the holding company and the bank on September 9. A $3 billion buyback is active.",
-            relevance: "Huntington is a CrossPoint construction lender. Credit-quality disclosure on the CRE book and any comment on construction originations are the two things to listen for.",
-            source: "Huntington Bancshares IR / Yahoo Finance",
+            headline: "Huntington reports Q3 results Thursday, first full quarter after Cadence",
+            summary: "Huntington Bancshares (<b>NASDAQ: HBAN</b>) reports third-quarter results before the open on October 22, with a call at 9 a.m. ET. It is the first full quarter since the Cadence Bank acquisition. The company has about $284 billion in assets.",
+            relevance: "Huntington is a lender to the company. Credit quality on the combined CRE book and any comment on construction originations are the two things to listen for.",
+            source: "Huntington Bancshares IR",
+            date: "2026-09-30"
+        },
+        {
+            level: "MEDIUM",
+            company: "International Paper",
+            cat: "Tenant",
+            headline: "International Paper Q3 earnings are scheduled for October 28",
+            summary: "International Paper (<b>NYSE: IP</b>) is scheduled to report third-quarter results before the open on October 28, though one calendar lists October 29. The company announced in June a North America packaging reorganization that includes closing its <b>Carrollton South, Texas</b> facility by the end of Q3. Katherine Collins and Lori Ryerkerk joined the board on October 1.",
+            relevance: "IP is a Centerpoint tenant, so the call is the next read on whether the restructuring reaches other Texas sites. Any new closure list is the item to watch.",
+            source: "International Paper IR / Unusual Whales",
+            date: "2026-10-01"
+        },
+        {
+            level: "MEDIUM",
+            company: "Simmons Bank",
+            cat: "Lender",
+            headline: "Simmons adjusted profit rises 22% as 26 branch closures near",
+            summary: "Simmons First National (<b>NASDAQ: SFNC</b>) reported third-quarter adjusted net income of <b>$79 million</b> on October 16, up 21.7% from a year ago. Adjusted revenue rose 8% to $251.2 million. Items tied to branch rightsizing and severance totaled $43.1 million. The 26 branch closures take effect December 4, and six of them are in Arkansas. Deposits fell to $18.6 billion from $19.8 billion a year earlier.",
+            relevance: "Simmons is a lender to the company. Falling deposits and heavy restructuring costs are worth noting, though earnings are improving.",
+            source: "Talk Business & Politics / Simmons First National",
             date: "2026-10-16"
         },
         {
             level: "GENERAL",
             company: "Fifth Third Bank",
             cat: "Lender",
-            headline: "Q3 adjusted EPS of $1.13 beats as Comerica integration continues",
-            summary: "Fifth Third Bancorp (<b>NASDAQ: FITB</b>) reported third-quarter adjusted earnings of <b>$1.13 per share</b> on October 19, ahead of consensus near $1.09. Reported EPS was $0.90 after merger-related charges. Net interest income rose 3% on the quarter to $2.27 billion. The net charge-off ratio was <b>0.31%</b> and the nonperforming loan ratio 0.59%.",
-            relevance: "Fifth Third is a CrossPoint construction lender. Stable credit and 1% sequential loan growth point to continued appetite for well-capitalized borrowers.",
+            headline: "Fifth Third Q3 adjusted EPS of $1.13 as Comerica integration continues",
+            summary: "Fifth Third Bancorp (<b>NASDAQ: FITB</b>) reported third-quarter adjusted earnings of <b>$1.13 per share</b> on October 19. Reported EPS was $0.90 after merger-related charges. Net interest income rose 3% on the quarter to $2.27 billion. The net charge-off ratio was <b>0.31%</b> and period-end loans were $180.3 billion.",
+            relevance: "Fifth Third is a lender to the company. Stable credit and 1% sequential loan growth point to continued appetite for well-capitalized borrowers.",
             source: "Fifth Third SEC filing",
             date: "2026-10-19"
         }
@@ -102,7 +122,6 @@ const TENANT_LENDER_NEWS = {
         "Hall Group",
         "PACE Equity",
         "Hartford Insurance",
-        "Pinnacle Bank",
         "Compatriot Capital (Sammons)"
     ]
 };

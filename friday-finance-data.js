@@ -7,8 +7,8 @@ const FRIDAY_FINANCE = {
     date_short: "10.23.26",
 
     quote: {
-        text: "The investor's chief problem, and even his worst enemy, is likely to be himself.",
-        author: "Benjamin Graham"
+        text: "Price is what you pay. Value is what you get.",
+        author: "Warren Buffett"
     },
 
     // 10-12 symbols. Always SPX, DJIA, IXIC; the rest are the week's movers.
@@ -32,23 +32,23 @@ const FRIDAY_FINANCE = {
     // to a Dallas industrial and hotel developer. One source per story.
     stories: [
         {
-            headline: "Tech rebounds Monday after worst week since June",
-            body: "The Nasdaq rose <b>1.1% to 26,431</b> on Monday as AI and tech names bounced from last week's rout. The S&P 500 gained 0.4% to <b>7,691</b>, while the Dow slipped 0.1% to 51,966 because most stocks outside tech fell. Last week the S&P 500 lost nearly 2%, its biggest weekly drop since late June, on worries about companies borrowing heavily for AI build-outs. Oil rose more than 2% on reports of Houthi attacks on Saudi infrastructure, and gold fell 0.5%. The S&P 500 still sits about 2% below its early-October record near 7,845. Earnings season now turns to the regional banks and to industrial names.",
-            jsc_angle: "Oil above its recent range feeds fuel and freight costs for logistics and manufacturing tenants, and a narrow tech-led rally says little about credit appetite for construction loans.",
-            source: { name: "Yahoo Finance", title: "How major US stock indexes fared Monday 10/19/2026", url: "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-202016557.html" },
+            headline: "Tech rebounds Monday while most other stocks slip",
+            body: "The Nasdaq rose <b>1.1% to 26,431</b> on Monday as AI and tech names recovered part of the prior week's steep losses. The S&P 500 gained 0.4% to <b>7,691</b>, while the Dow slipped 0.1% to 51,966 because most stocks outside tech fell. The Russell 2000 added 0.3% to 2,728. European indexes fell more than 1% after weekend protests over possible government spending increases. Bond yields rose in markets worldwide.",
+            jsc_angle: "A narrow, tech-led rally says little about credit appetite for construction loans, and rising global yields keep floating-rate costs elevated.",
+            source: { name: "AP via Yahoo Finance", title: "How major US stock indexes fared Monday 10/19/2026", url: "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-202016557.html" },
             date: "2026-10-19"
         },
         {
-            headline: "Warsh cools October hike talk and the 10-year slides to 5.09%",
-            body: "A day after the hot September CPI, producer prices rose <b>1.3% on the month</b>, the largest jump since 2022. Markets looked past it because Fed Chair Kevin Warsh declined to signal any urgency about a hike at the October meeting. Treasury yields fell from their intraday peak, and the 10-year closed Friday at <b>5.09%</b>, down 15 basis points on the week. The Fed hiked to 3.75% to 4.00% in September, and the effective funds rate sits at 3.88%. Futures put the chance of a hold at the October 27-28 FOMC at about <b>84%</b>, with another 25 basis point hike still priced for December. Three September dissenters wanted a hike, including Dallas Fed President Lorie Logan.",
-            jsc_angle: "The pullback in the 10-year helps refinancing math, but a December hike remains the base case for floating-rate construction debt.",
-            source: { name: "ActionForex", title: "Dollar extends slide as Fed Warsh refuses to revive October hike bets", url: "https://actionforex.com/action-insight/market-overview/657759-dollar-extends-slide-as-fed-warsh-refuses-to-revive-october-hike-bets" },
-            date: "2026-10-15"
+            headline: "Economists expect an October hold and a December Fed hike",
+            body: "In a Reuters poll of 100 economists taken October 16-20, <b>94 expect a hold</b> at the October 27-28 FOMC meeting. All 100 expect a quarter-point hike in December, up from fewer than half in the prior poll. The Fed raised its target range to <b>3.75% to 4.00%</b> in September, its first hike since 2023. Chair Kevin Warsh declined last week to signal what comes next and said he does not prejudge meetings. September CPI rose <b>3.7% from a year earlier</b> and core CPI 2.6%, with oil tied to the Iran war the main driver. The 10-year Treasury yield closed Friday at 5.09% on the Federal Reserve Bank of St. Louis series, down 15 basis points on the week. Nearly 60% of forecasters see the policy rate peaking at 4.00% to 4.25%, though 38 of 92 expect at least two more hikes.",
+            jsc_angle: "Floating-rate construction debt should price off a higher SOFR through year-end, since a December hike is now the consensus.",
+            source: { name: "Reuters via AOL", title: "Fed to skip October but raise rates again in December, nearly all economists say", url: "https://www.aol.com/articles/fed-skip-october-raise-rates-124314000.html" },
+            date: "2026-10-20"
         },
         {
             headline: "Fifth Third opens regional bank earnings with a beat; Huntington next",
-            body: "Fifth Third reported third-quarter results on Monday, October 19, with adjusted earnings of <b>$1.13 per share</b> against consensus near $1.09. Reported EPS was $0.90 after $0.23 of merger-related charges tied to the Comerica deal. Net interest income rose 3% on the quarter to <b>$2.27 billion</b>, and the net interest margin eased 2 basis points to 3.34%. The net charge-off ratio held near <b>0.31%</b>, and period-end loans reached $180.3 billion. Huntington reports Thursday, October 22, with consensus near $0.38 per share, and Pinnacle follows on Wednesday after the close. Commercial real estate credit quality is the line investors are watching across all three.",
-            jsc_angle: "Three of the company's construction lenders report within days of each other, so their CRE credit and origination commentary is the best read on 2027 loan availability.",
+            body: "Fifth Third reported third-quarter results on Monday, October 19, with adjusted earnings of <b>$1.13 per share</b>. Reported EPS was $0.90 after $0.23 per share of merger-related charges tied to the Comerica deal. Net interest income rose 3% on the quarter to <b>$2.27 billion</b>, and the net interest margin eased to 3.34% from 3.36%. The net charge-off ratio was <b>0.31%</b>, and period-end loans reached $180.3 billion. Pinnacle reports Wednesday after the close and Huntington on Thursday morning. Commercial real estate credit quality is the line investors are watching across all of them.",
+            jsc_angle: "Three of the company's lenders report within days of each other, so their CRE credit and origination commentary is the best read on 2027 loan availability.",
             source: { name: "SEC (Fifth Third 8-K)", title: "Fifth Third Bancorp third-quarter 2026 earnings release", url: "https://www.sec.gov/Archives/edgar/data/0000035527/000003552726000229/q32026earningsrelease.htm" },
             date: "2026-10-19"
         }
@@ -56,31 +56,31 @@ const FRIDAY_FINANCE = {
 
     // 3-6 dated items. Short.
     watch_next_week: [
-        { when: "Wed Oct 21", what: "<b>Pinnacle Financial Q3 earnings</b> confirmed for after the close, with the call Thursday at 8 a.m. ET. Watch net interest margin and deposit costs." },
-        { when: "Thu Oct 22", what: "<b>Huntington Bancshares Q3 earnings.</b> First full quarter after the Cadence deal: CRE delinquencies, margin versus the 3.20% guide and construction lending appetite." },
-        { when: "Tue-Wed Oct 27-28", what: "<b>FOMC meeting.</b> Markets price about an 84% hold, so the statement language on December is the real event." },
-        { when: "Wed Oct 28", what: "<b>International Paper Q3 earnings.</b> First full quarter after the Georgia mill closures." }
+        { when: "Wed Oct 21", what: "<b>Pinnacle Financial Q3 earnings</b> after the close, with the call Thursday at 8 a.m. ET. Watch net interest margin and deposit costs." },
+        { when: "Thu Oct 22", what: "<b>Huntington Bancshares Q3 earnings</b> before the open, with the call at 9 a.m. ET. First full quarter since the Cadence acquisition, so CRE credit is the focus." },
+        { when: "Tue-Wed Oct 27-28", what: "<b>FOMC meeting.</b> A hold is the consensus, so the statement language on December is the real event." },
+        { when: "Wed Oct 28", what: "<b>International Paper Q3 earnings</b> are scheduled. Some calendars list October 29, so confirm the date." }
     ],
 
     // 3-5 non-paywalled links. No WSJ, FT, Bloomberg or Barron's.
     reading_links: [
         {
-            title: "FOMC preview: Warsh's credibility is on the line but there's a 91% chance it doesn't matter",
-            url: "https://investinglive.com/central-banks/fomc-preview-warsh-s-credibility-is-on-the-line-but-there-s-a-91-chance-it-doesn-t-matter/",
+            title: "Fed chair Warsh says price stability is key but shies away from signals about rates",
+            url: "https://www.pbs.org/newshour/economy/fed-chair-warsh-says-price-stability-is-key-but-shies-away-from-signals-about-rates",
+            source: "AP via PBS NewsHour",
+            description: "Warsh in Bangkok on inflation, AI investment and why he will not prejudge the October and December meetings."
+        },
+        {
+            title: "Warsh won't prejudge rest of 2026, names October and December as decision points",
+            url: "https://investinglive.com/central-banks/warsh-won-t-prejudge-rest-of-2026-names-october-and-december-as-decision-points/",
             source: "investingLive",
-            description: "A look at how little the October meeting is expected to change and why the December signal matters more."
+            description: "A closer read of the Warsh remarks and what oil-driven inflation means for the rate path."
         },
         {
-            title: "U.S. Treasury yields inch lower as investors digest hot inflation data",
-            url: "https://www.cnbc.com/amp/2026/10/16/us-treasury-yields-investors-hot-inflation-data-.html",
-            source: "CNBC",
-            description: "End-of-week recap of the 10-year's slide to 5.09% after the Warsh speech and the tech selloff."
-        },
-        {
-            title: "DFW industrial leasing hits record highs as data centers fuel demand",
-            url: "https://www.credaily.com/?p=221325",
-            source: "CRE Daily",
-            description: "Q3 2026 DFW industrial fundamentals: vacancy, pipeline, rents and who is signing the big leases."
+            title: "Adjusted quarterly net income, revenue rise at Simmons First",
+            url: "https://talkbusiness.net/2026/10/adjusted-quarterly-net-income-revenue-rise-at-simmons-first/",
+            source: "Talk Business & Politics",
+            description: "Third-quarter results for a regional lender, including the cost of its 26-branch closure plan."
         }
     ],
 
@@ -95,8 +95,8 @@ const FRIDAY_FINANCE = {
     // data overwrites these on page load; keep them reasonably current.
     stocks: {
         "Indices": [
-            { company: "S&P 500",              ticker: "SPX",  price: 7691.00,  day_pct: 0.41, ytd_pct:  8.4,  high_52w: 7820.00,  vs_high: -1.5,  low_52w: 5101.63,  vs_low: 50.9 },
-            { company: "Dow Jones Industrial", ticker: "DJI",  price: 52338.00, day_pct:  0.31, ytd_pct:  6.1,  high_52w: 54300.00, vs_high: -3.6,  low_52w: 37830.66, vs_low: 38.3 },
+            { company: "S&P 500",              ticker: "SPX",  price: 7690.73,  day_pct: 0.41, ytd_pct:  8.4,  high_52w: 7820.00,  vs_high: -1.5,  low_52w: 5101.63,  vs_low: 50.9 },
+            { company: "Dow Jones Industrial", ticker: "DJI",  price: 51966.00, day_pct: -0.07, ytd_pct:  6.1,  high_52w: 54300.00, vs_high: -3.6,  low_52w: 37830.66, vs_low: 38.3 },
             { company: "Nasdaq Composite",     ticker: "COMP", price: 26431.00, day_pct: 1.11, ytd_pct:  6.5,  high_52w: 27693.00, vs_high: -3.8,  low_52w: 15685.33, vs_low: 69.9 }
         ],
         "Industrial REITs": [
