@@ -20,8 +20,11 @@ GROUND RULES
 - All news must be from the past 7 days.
 - Links must be non-paywalled: no WSJ, FT, Bloomberg or Barron's. Prefer
   CNBC, Reuters, AP, Federal Reserve, BLS, CBRE, JLL, Cushman & Wakefield,
-  CoStar, Bisnow, GlobeSt, CRE Daily, company investor-relations pages and
-  GlobeNewswire / PR Newswire. Verify each URL loads with WebFetch.
+  CoStar, Bisnow, GlobeSt, CRE Daily, company investor-relations pages,
+  SEC filings and GlobeNewswire / PR Newswire. Verify each URL loads with
+  WebFetch; a URL that returns 403 or fails to load is not publishable,
+  find another source for the same story. (CNBC and Forbes block the
+  fetcher; AP via PBS or Yahoo, Reuters and SEC EDGAR do not.)
 - Write prose. Short declarative sentences. No bullet dumps inside a
   paragraph, no ALL-CAPS headlines, no chains of semicolons.
 - Less is more. The validator (node validate-data.js) enforces every limit
@@ -156,10 +159,15 @@ alerts  (real news only)
     relevance  1 or 2 sentences on the specific implication for a
                landlord or borrower of this company
     source     publisher names, slash-separated
-    date       "YYYY-MM-DD" of the news event (not the scan date)
+    date       "YYYY-MM-DD" the news was published. Never a future date:
+               for an upcoming catalyst such as an earnings call, use the
+               date the schedule was announced or today's date, and put
+               the event date in the headline or summary.
   Order HIGH → MEDIUM → LOW → GENERAL. Remove anything older than 75
   days. Do not repeat last week's alert unless there is a new
   development; if the story is simply still pending, shorten it.
+  When the validator rejects something, fix the underlying fact or
+  drop the item. Never alter a date, number or name just to pass.
 
 quiet
   Every watchlist name that has no alert this week, as a plain array of
