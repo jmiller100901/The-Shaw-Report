@@ -7,21 +7,22 @@ const FRIDAY_FINANCE = {
     date_short: "10.23.26",
 
     quote: {
-        text: "Don't look for the needle in the haystack. Just buy the haystack!",
-        author: "John C. Bogle"
+        text: "The big money is not in the buying and selling, but in the waiting.",
+        author: "Charlie Munger"
     },
 
     // 10-12 symbols. Always SPX, DJIA, IXIC; the rest are the week's movers.
     // Live Finnhub data overwrites price/change on page load.
     ticker_bar: [
-        { symbol: "SPX",   price: "7,691",   change_pct:  0.41 },
-        { symbol: "DJIA",  price: "51,966",  change_pct: -0.07 },
-        { symbol: "IXIC",  price: "26,431",  change_pct:  1.11 },
+        { symbol: "SPX",   price: "7,663",   change_pct: -1.21 },
+        { symbol: "DJIA",  price: "52,868",  change_pct:  0.02 },
+        { symbol: "IXIC",  price: "26,009",  change_pct: -2.60 },
+        { symbol: "BX",    price: "116.53",  change_pct:  6.00 },
+        { symbol: "SFNC",  price: "22.26",   change_pct:  0.09 },
         { symbol: "JPM",   price: "236.80",  change_pct: -2.10 },
         { symbol: "WFC",   price: "62.50",   change_pct: -0.48 },
         { symbol: "NVDA",  price: "202.80",  change_pct: -5.02 },
         { symbol: "XOM",   price: "159.20",  change_pct: -0.82 },
-        { symbol: "C",     price: "65.30",   change_pct: -0.49 },
         { symbol: "GS",    price: "570.40",  change_pct:  1.18 },
         { symbol: "HBAN",  price: "16.10",   change_pct: -0.62 },
         { symbol: "IP",    price: "32.40",   change_pct: -1.22 }
@@ -32,48 +33,48 @@ const FRIDAY_FINANCE = {
     // to a Dallas industrial and hotel developer. One source per story.
     stories: [
         {
-            headline: "Brent hits a five-month high near $110 as Hormuz tanker attacks mount",
-            body: "Brent crude settled at <b>$109.55 a barrel</b> on Monday, within a few cents of a five-month high. U.S. crude traded near <b>$98</b>. Kpler counted at least 18 tanker attacks in the Strait of Hormuz over two weeks. It said daily oil flow out of the Persian Gulf fell to an average of <b>8.5 million barrels</b>, from more than 20 million two weeks earlier. A tanker also exploded after hitting a mine, and the Houthis claimed strikes on Saudi energy sites. ING analysts said the market carries a large risk premium that will not fade until Gulf flows stay stable. Oil tied to the Iran war is the main driver of the inflation now pushing the Fed toward more rate hikes.",
-            jsc_angle: "Higher fuel and freight costs squeeze logistics and manufacturing tenants, and the inflation they feed keeps floating-rate debt expensive.",
-            source: { name: "OilPrice.com", title: "Brent tops $110 as tanker attacks threaten Persian Gulf supply", url: "https://oilprice.com/Latest-Energy-News/World-News/Brent-Tops-110-as-Tanker-Attacks-Threaten-Persian-Gulf-Supply.html" },
-            date: "2026-10-19"
+            headline: "AI spending worries hit tech: Nasdaq falls 2.6% and Meta drops 7%",
+            body: "The Nasdaq fell <b>2.6% to 26,009</b> on Thursday, its worst session since June. The S&P 500 lost <b>1.2% to 7,663</b>, while the Dow finished flat at 52,868. Meta fell nearly 7% after earnings and a 2-for-1 stock split announcement. Lam Research warned of supply constraints and a CoreWeave downgrade added to the pressure on AI names. Investors moved into bonds, and the 10-year Treasury yield fell 11 basis points to <b>5.02%</b>. Weekly jobless claims fell to 194,000, a three-month low. Alphabet, Microsoft and Amazon report next, and investors want to see whether AI spending is paying off.",
+            jsc_angle: "A tech-led sell-off does not by itself close the credit window for industrial construction loans, but a 10-year yield near 5% keeps permanent financing expensive.",
+            source: { name: "Yahoo Finance", title: "Stock market today: S&P 500, Nasdaq tank as tech sinks amid AI trade worries, Meta plummets", url: "https://finance.yahoo.com/markets/article/stock-market-today-thursday-october-22-dow-sp-500-nasdaq-tesla-meta-112217857.html" },
+            date: "2026-10-22"
         },
         {
-            headline: "Economists expect an October hold and a December Fed hike",
-            body: "In a Reuters poll of 100 economists taken October 16-20, <b>94 expect a hold</b> at the October 27-28 FOMC meeting. All 100 expect a quarter-point hike in December, up from fewer than half in the prior poll. The Fed raised its target range to <b>3.75% to 4.00%</b> in September, its first hike since 2023. Nearly 60% of forecasters see the policy rate peaking at 4.00% to 4.25%, though 38 of 92 expect at least two more hikes. Mizuho's Alex Pelle said the risk is greater that the Fed goes 50 basis points in December than that it does not hike at all. Core inflation is not expected to return to the 2% target until at least 2028.",
+            headline: "Oil climbs to a five-month high as Iran war risk builds",
+            body: "Brent crude traded above <b>$111 a barrel</b> on Thursday and U.S. crude neared <b>$100</b>, the highest since May. Attacks on a Saudi airport and oil field added to supply fears. Reports that the U.S. and Israel are preparing new strikes on Iran after the November 3 midterm elections added a further risk premium. Energy is already the main driver of U.S. inflation. September CPI showed energy prices up <b>20.4%</b> from a year earlier and gasoline up 34.2%.",
+            jsc_angle: "Fuel and freight costs squeeze logistics and manufacturing tenants, and the inflation they feed keeps floating-rate debt expensive.",
+            source: { name: "Yahoo Finance", title: "Stock market today: oil surges to a five-month high as AI trade worries hit tech", url: "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-22-dow-sp-500-nasdaq-tesla-meta-112217857.html" },
+            date: "2026-10-22"
+        },
+        {
+            headline: "Economists expect an October Fed hold and a December hike",
+            body: "In a Reuters poll of 100 economists taken October 16-20, <b>94 expect a hold</b> at the October 27-28 FOMC meeting. All 100 expect a quarter-point hike in December, up from fewer than half in the prior poll. The Fed raised its target range to <b>3.75% to 4.00%</b> in September, its first hike since 2023. Nearly 60% see the policy rate peaking at 4.00% to 4.25%, and 38 of 92 expect at least two more hikes. Inflation is not expected to return to the 2% target until at least 2028.",
             jsc_angle: "Floating-rate construction debt should price off a higher SOFR through year-end, since a December hike is now the consensus.",
             source: { name: "Reuters via AOL", title: "Fed to skip October but raise rates again in December, nearly all economists say", url: "https://www.aol.com/articles/fed-skip-october-raise-rates-124314000.html" },
             date: "2026-10-20"
         },
         {
-            headline: "Warsh declines to signal the next Fed move and flags AI-driven inflation",
-            body: "Fed Chair Kevin Warsh gave no fresh rate signal on Friday at the IMF and World Bank meetings in Bangkok. He said <b>\"I don't prejudge meetings\"</b> and named October and December as the decision points. He said events since the September hike have broadly matched the Fed's expectations. He called AI the most consequential change to the economy in his lifetime. He also said the AI investment boom is one factor pushing inflation higher. Minutes from the last meeting show most officials expect another increase this year.",
-            jsc_angle: "With no forward guidance, rate moves will arrive as surprises, so hedge floating-rate exposure on the data rather than on Fed signals.",
-            source: { name: "AP via PBS NewsHour", title: "Fed chair Warsh says price stability is key but shies away from signals about rates", url: "https://www.pbs.org/newshour/economy/fed-chair-warsh-says-price-stability-is-key-but-shies-away-from-signals-about-rates" },
-            date: "2026-10-16"
+            headline: "Blackstone jumps 6% as inflows hit $63 billion despite weaker profit",
+            body: "Blackstone shares rose about <b>6%</b> on Thursday even as the broader market fell. Distributable earnings were <b>$1.32 per share</b>, above the $1.26 consensus but down from $1.52 a year earlier. Inflows reached <b>$63.3 billion</b> in the quarter. Net realizations fell 34% to $332 million as the firm sold fewer assets. Revenue of $3.06 billion came in below estimates. The market rewarded the fundraising rather than the asset sales.",
+            jsc_angle: "Heavy inflows to the largest private capital manager show equity is still available for real assets, even while asset sales stay slow.",
+            source: { name: "Yahoo Finance", title: "Blackstone soars 6% on earnings beat as Schwarzman says inflows reached $63 billion", url: "https://finance.yahoo.com/markets/stocks/articles/blackstone-soars-6-earnings-beat-165213049.html" },
+            date: "2026-10-22"
         },
         {
-            headline: "Tech rebounds Monday while most other stocks slip",
-            body: "The Nasdaq rose <b>1.1% to 26,431</b> on Monday as AI and tech names recovered part of the prior week's steep losses. The S&P 500 gained 0.4% to <b>7,691</b>, while the Dow slipped 0.1% to 51,966 because most stocks outside tech fell. The Russell 2000 added 0.3% to 2,728. European indexes fell more than 1% after weekend protests over possible government spending increases. Bond yields rose in markets worldwide.",
-            jsc_angle: "A narrow, tech-led rally says little about credit appetite for construction loans, and rising global yields keep floating-rate costs elevated.",
-            source: { name: "AP via Yahoo Finance", title: "How major US stock indexes fared Monday 10/19/2026", url: "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-202016557.html" },
-            date: "2026-10-19"
-        },
-        {
-            headline: "Fifth Third opens regional bank earnings with a beat; Huntington next",
-            body: "Fifth Third reported third-quarter results on Monday, October 19, with adjusted earnings of <b>$1.13 per share</b>. Reported EPS was $0.90 after $0.23 per share of charges tied to the Comerica deal. Net interest income rose 3% on the quarter to <b>$2.27 billion</b>. The net charge-off ratio was <b>0.31%</b>, against 1.09% a year earlier. Pinnacle reports Wednesday after the close and Huntington on Thursday morning. Commercial real estate credit quality is the line investors are watching across all of them.",
-            jsc_angle: "Two of the company's lenders report within a day of each other, so their CRE credit and origination commentary is the best read on 2027 loan availability.",
-            source: { name: "SEC (Fifth Third 8-K)", title: "Fifth Third Bancorp third-quarter 2026 earnings release", url: "https://www.sec.gov/Archives/edgar/data/0000035527/000003552726000229/q32026earningsrelease.htm" },
-            date: "2026-10-19"
+            headline: "Huntington and Pinnacle report: net charge-offs edge up, margins split",
+            body: "Pinnacle reported third-quarter results on October 21 with net income of <b>$364 million</b> to common shareholders and adjusted EPS of $2.69. Its net interest margin slipped 4 basis points to 3.40% on higher deposit costs. Huntington reported on Thursday with adjusted EPS of <b>$0.38</b>, down a cent from the second quarter. Its margin rose 4 basis points to 3.25%. Huntington's net charge-offs rose to <b>0.31%</b> of loans from 0.25% last quarter, and average commercial real estate loans fell 4% to $23.1 billion. Pinnacle's charge-off ratio was 0.23%.",
+            jsc_angle: "Two of the company's lenders show stable credit but cautious commercial real estate growth, a reminder that construction loan terms will stay disciplined.",
+            source: { name: "SEC (Huntington 8-K)", title: "Huntington Bancshares third-quarter 2026 earnings release", url: "https://www.sec.gov/Archives/edgar/data/0000049196/000004919626000084/hban20260930_8kex991.htm" },
+            date: "2026-10-22"
         }
     ],
 
     // 3-6 dated items. Short.
     watch_next_week: [
-        { when: "Wed Oct 21", what: "<b>Pinnacle Financial Q3 earnings</b> after the close, with the call Thursday at 8 a.m. ET. Watch net interest margin and deposit costs." },
-        { when: "Thu Oct 22", what: "<b>Huntington Bancshares Q3 earnings</b> before the open, with the call at 9 a.m. ET. First full quarter since the Cadence acquisition, so CRE credit is the focus." },
+        { when: "Mon Oct 26", what: "<b>The Hartford Q3 earnings</b> after the close, with a webcast Tuesday at 9 a.m. ET. Watch commercial underwriting and investment income." },
         { when: "Tue-Wed Oct 27-28", what: "<b>FOMC meeting.</b> A hold is the consensus, so the statement language on December is the real event." },
-        { when: "Wed Oct 28", what: "<b>International Paper Q3 earnings</b> before the NYSE opens, with a webcast at 10 a.m. ET. Watch for any further Texas facility closures." }
+        { when: "Wed Oct 28", what: "<b>International Paper Q3 earnings</b> before the NYSE opens, with a webcast at 10 a.m. ET. Watch for any new facility closures." },
+        { when: "Tue Nov 3", what: "<b>U.S. midterm elections.</b> Oil markets are pricing in the risk of renewed strikes on Iran afterward." }
     ],
 
     // 3-5 non-paywalled links. No WSJ, FT, Bloomberg or Barron's.
@@ -85,16 +86,16 @@ const FRIDAY_FINANCE = {
             description: "Warsh in Bangkok on inflation, AI investment and why he will not prejudge the October and December meetings."
         },
         {
+            title: "September CPI: inflation trended higher as energy prices hit consumers",
+            url: "https://foxbusiness.com/economy/cpi-inflation-september-2026",
+            source: "Fox Business",
+            description: "Headline CPI of 3.7% and core of 2.6%, with gasoline up 34.2% from a year ago."
+        },
+        {
             title: "Dallas/Fort Worth Industrial MarketBeat, Q3 2026",
             url: "https://www.cushmanwakefield.com/en/united-states/insights/us-marketbeats/dallas-ft-worth-marketbeats/industrial",
             source: "Cushman & Wakefield",
             description: "Vacancy fell to 7.3%, the lowest since Q3 2023, and asking rents hit a record $9.76 per square foot NNN."
-        },
-        {
-            title: "U.S. Industrial MarketBeat, Q3 2026",
-            url: "https://www.cushmanwakefield.com/en/united-states/insights/us-marketbeats/us-industrial-marketbeat",
-            source: "Cushman & Wakefield",
-            description: "National vacancy of 6.8% and the strongest quarterly absorption since early 2023."
         },
         {
             title: "Adjusted quarterly net income, revenue rise at Simmons First",
@@ -105,19 +106,19 @@ const FRIDAY_FINANCE = {
     ],
 
     rates: {
-        "30-Day Avg SOFR":    { current: "3.886%", one_mo_ago: "3.655%", one_yr_ago: "4.177%" },
-        "10-Year Treasury":   { current: "5.090%", one_mo_ago: "5.010%", one_yr_ago: "3.990%" },
-        "Eff. Federal Funds": { current: "3.880%", one_mo_ago: "3.630%", one_yr_ago: "4.110%" },
-        "Prime Rate":         { current: "7.000%", one_mo_ago: "6.750%", one_yr_ago: "7.250%" }
+        "30-Day Avg SOFR":    { current: "3.888%", one_mo_ago: "3.683%", one_yr_ago: "4.180%" },
+        "10-Year Treasury":   { current: "5.130%", one_mo_ago: "4.960%", one_yr_ago: "3.980%" },
+        "Eff. Federal Funds": { current: "3.880%", one_mo_ago: "3.880%", one_yr_ago: "4.110%" },
+        "Prime Rate":         { current: "7.000%", one_mo_ago: "7.000%", one_yr_ago: "7.250%" }
     },
 
     // Fixed ticker set — see STOCK_TABLE in validate-data.js. Live Finnhub
     // data overwrites these on page load; keep them reasonably current.
     stocks: {
         "Indices": [
-            { company: "S&P 500",              ticker: "SPX",  price: 7690.73,  day_pct: 0.41, ytd_pct:  8.4,  high_52w: 7820.00,  vs_high: -1.5,  low_52w: 5101.63,  vs_low: 50.9 },
-            { company: "Dow Jones Industrial", ticker: "DJI",  price: 51966.00, day_pct: -0.07, ytd_pct:  6.1,  high_52w: 54300.00, vs_high: -3.6,  low_52w: 37830.66, vs_low: 38.3 },
-            { company: "Nasdaq Composite",     ticker: "COMP", price: 26431.00, day_pct: 1.11, ytd_pct:  6.5,  high_52w: 27693.00, vs_high: -3.8,  low_52w: 15685.33, vs_low: 69.9 }
+            { company: "S&P 500",              ticker: "SPX",  price: 7663.43, day_pct: -1.21, ytd_pct:  8.4,  high_52w: 7820.00,  vs_high: -2.0, low_52w: 5101.63,  vs_low: 50.2 },
+            { company: "Dow Jones Industrial", ticker: "DJI",  price: 52867.98, day_pct: 0.02, ytd_pct:  6.1,  high_52w: 54300.00, vs_high: -2.6, low_52w: 37830.66, vs_low: 39.7 },
+            { company: "Nasdaq Composite",     ticker: "COMP", price: 26008.86, day_pct: -2.6, ytd_pct:  6.5,  high_52w: 27693.00, vs_high: -6.1, low_52w: 15685.33, vs_low: 65.8 }
         ],
         "Industrial REITs": [
             { company: "Prologis",             ticker: "PLD",  price: 131.20, day_pct:  0.20, ytd_pct:   1.8, high_52w: 151.00, vs_high: -13.1, low_52w: 103.02, vs_low: 27.4 },
@@ -142,12 +143,12 @@ const FRIDAY_FINANCE = {
             { company: "Ryman Hospitality",       ticker: "RHP",  price: 105.30, day_pct:  0.24, ytd_pct:   2.4, high_52w: 118.00, vs_high: -10.8, low_52w: 80.20, vs_low: 31.3 }
         ],
         "Lenders": [
-            { company: "Blackstone",                  ticker: "BX",   price: 125.80, day_pct:  0.48, ytd_pct: -16.8, high_52w: 190.09, vs_high: -33.8, low_52w: 101.73, vs_low: 23.7 },
+            { company: "Blackstone",                  ticker: "BX",   price: 116.53, day_pct: 6.0, ytd_pct: -16.8, high_52w: 190.09, vs_high: -38.7, low_52w: 101.73, vs_low: 14.5 },
             { company: "Fifth Third Bancorp",         ticker: "FITB", price: 52.80,  day_pct:  1.37, ytd_pct:  12.1, high_52w: 59.80,  vs_high: -11.7, low_52w: 31.20,  vs_low: 69.2 },
             { company: "Huntington Bancshares",       ticker: "HBAN", price: 16.10,  day_pct:  0.87, ytd_pct:  -4.2, high_52w: 19.50,  vs_high: -17.4, low_52w: 11.91,  vs_low: 35.2 },
             { company: "BancFirst",                   ticker: "BANF", price: 114.20, day_pct:  0.27, ytd_pct:  -2.9, high_52w: 138.77, vs_high: -17.7, low_52w: 97.02,  vs_low: 17.7 },
             { company: "First Busey",                 ticker: "BUSE", price: 27.80,  day_pct:  0.18, ytd_pct:   3.8, high_52w: 28.60,  vs_high:  -2.8, low_52w: 18.40,  vs_low: 51.1 },
-            { company: "Simmons First National",      ticker: "SFNC", price: 22.22,  day_pct:  0.00, ytd_pct:   0.0, high_52w: 26.00,  vs_high: -14.5, low_52w: 17.00,  vs_low: 30.7 },
+            { company: "Simmons First National",      ticker: "SFNC", price: 22.26, day_pct: 0.09, ytd_pct:   0.0, high_52w: 26.00,  vs_high: -14.4, low_52w: 17.00,  vs_low: 30.9 },
             { company: "Pinnacle Financial Partners", ticker: "PNFP", price: 93.90,  day_pct:  0.00, ytd_pct:   0.0, high_52w: 130.00, vs_high: -27.8, low_52w: 85.00,  vs_low: 10.5 },
             { company: "The Hartford",                ticker: "HIG",  price: 146.20, day_pct:  0.28, ytd_pct:  14.7, high_52w: 146.20, vs_high:   0.0, low_52w: 119.61, vs_low: 22.2 }
         ],

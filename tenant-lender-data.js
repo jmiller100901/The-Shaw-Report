@@ -4,7 +4,7 @@
 
 const TENANT_LENDER_NEWS = {
     date: "October 23, 2026",
-    last_scan: "2026-10-20T16:30:00Z",
+    last_scan: "2026-10-23T13:30:00Z",
 
     // Jackson Shaw watchlist. Fixed — see WATCHLIST in validate-data.js.
     companies: [
@@ -44,70 +44,70 @@ const TENANT_LENDER_NEWS = {
             company: "Industry",
             cat: "Industry",
             headline: "Economists see an October Fed hold and a December hike",
-            summary: "A Reuters poll of 100 economists taken October 16-20 finds <b>94 expect a hold</b> at the October 27-28 FOMC meeting. All 100 expect a 25 basis point hike in December. Nearly 60% see the policy rate peaking at 4.00% to 4.25%. The Fed's current range is <b>3.75% to 4.00%</b>.",
+            summary: "A Reuters poll of 100 economists taken October 16-20 finds <b>94 expect a hold</b> at the October 27-28 FOMC meeting. All 100 expect a 25 basis point hike in December. The 10-year Treasury yield closed near <b>5.02%</b> on Thursday.",
             relevance: "Floating-rate borrowers across the watchlist should expect higher debt costs into 2027. Tenants in logistics and manufacturing face the same financing pressure.",
             source: "Reuters / AOL",
             date: "2026-10-20"
         },
         {
             level: "MEDIUM",
-            company: "Pinnacle Bank",
+            company: "Hartford Insurance",
             cat: "Lender",
-            headline: "Pinnacle reports Q3 earnings Wednesday after the close",
-            summary: "Pinnacle Financial Partners (<b>NASDAQ: PNFP</b>) reports third-quarter results on October 21 after the market close. Management hosts a webcast Thursday, October 22, at 8 a.m. ET with CEO Kevin Blair and CFO Jamie Gregory. It is the company's integration year after the Synovus merger.",
-            relevance: "Pinnacle is a lender to the company. Net interest margin, deposit costs and CRE credit comments are the items to watch.",
-            source: "Pinnacle Financial Partners / Business Wire",
-            date: "2026-10-20"
-        },
-        {
-            level: "MEDIUM",
-            company: "Huntington Bank",
-            cat: "Lender",
-            headline: "Huntington reports Q3 results Thursday, first full quarter after Cadence",
-            summary: "Huntington Bancshares (<b>NASDAQ: HBAN</b>) reports third-quarter results before the open on October 22, with a call at 9 a.m. ET. It is the first full quarter since the Cadence Bank acquisition. Consensus expects roughly <b>$0.39 per share</b>.",
-            relevance: "Huntington is a lender to the company. Credit quality on the combined CRE book and any comment on construction originations are the two things to listen for.",
-            source: "Huntington Bancshares IR / Benzinga",
-            date: "2026-09-30"
+            headline: "Hartford reports Q3 earnings Monday after the close",
+            summary: "The Hartford (<b>NYSE: HIG</b>) releases third-quarter results on October 26 after the market close. A webcast follows on Tuesday, October 27, at 9 a.m. ET.",
+            relevance: "Hartford is a lender to the company. Investment income and commercial underwriting trends are the items to watch.",
+            source: "The Hartford IR",
+            date: "2026-10-23"
         },
         {
             level: "MEDIUM",
             company: "International Paper",
             cat: "Tenant",
             headline: "International Paper reports Q3 earnings October 28",
-            summary: "International Paper (<b>NYSE: IP</b>) reports third-quarter results before the NYSE opens on October 28, with a webcast at 10 a.m. ET. The company announced in June a North America packaging reorganization that includes closing its <b>Carrollton South, Texas</b> facility by the end of Q3.",
+            summary: "International Paper (<b>NYSE: IP</b>) reports third-quarter results before the NYSE opens on October 28, with a webcast at 10 a.m. ET. The company announced in June a North America packaging reorganization that includes several plant closures by the end of the third quarter.",
             relevance: "IP is a Centerpoint tenant, so the call is the next read on whether the restructuring reaches other Texas sites. Any new closure list is the item to watch.",
             source: "International Paper IR / PR Newswire",
             date: "2026-09-24"
         },
         {
-            level: "MEDIUM",
+            level: "LOW",
+            company: "Huntington Bank",
+            cat: "Lender",
+            headline: "Huntington Q3 adjusted EPS $0.38 as charge-offs rise to 0.31%",
+            summary: "Huntington Bancshares (<b>NASDAQ: HBAN</b>) reported third-quarter adjusted earnings of <b>$0.38 per share</b> on October 22, down a cent from the second quarter. Net charge-offs were 0.31% of loans, up from 0.25%. Average commercial real estate loans fell 4% on the quarter to <b>$23.1 billion</b>, and the release cites higher CRE nonaccrual loans.",
+            relevance: "Huntington is a lender to the company. Rising CRE nonaccruals and shrinking CRE balances point to tighter credit for new construction.",
+            source: "Huntington Bancshares / SEC",
+            date: "2026-10-22"
+        },
+        {
+            level: "LOW",
             company: "Simmons Bank",
             cat: "Lender",
             headline: "Simmons adjusted profit rises 22% as 26 branch closures near",
-            summary: "Simmons First National (<b>NASDAQ: SFNC</b>) reported third-quarter adjusted net income of <b>$79 million</b> on October 16, up 21.7% from a year ago. Adjusted revenue rose 8% to $251.2 million. Items tied to branch rightsizing and severance totaled $43.1 million. Deposits fell to $18.6 billion from $19.8 billion a year earlier.",
+            summary: "Simmons First National (<b>NASDAQ: SFNC</b>) reported third-quarter adjusted net income of <b>$79 million</b> on October 16, up 21.7% from a year ago. Branch rightsizing and severance items totaled $43.1 million. Deposits fell to $18.6 billion from $19.8 billion a year earlier.",
             relevance: "Simmons is a lender to the company. Falling deposits and heavy restructuring costs are worth noting, though earnings are improving.",
             source: "Talk Business & Politics / Simmons First National",
             date: "2026-10-16"
         },
         {
             level: "GENERAL",
-            company: "Fifth Third Bank",
-            cat: "Lender",
-            headline: "Fifth Third Q3 adjusted EPS of $1.13 as Comerica integration continues",
-            summary: "Fifth Third Bancorp (<b>NASDAQ: FITB</b>) reported third-quarter adjusted earnings of <b>$1.13 per share</b> on October 19. Reported EPS was $0.90 after merger-related charges. Net interest income rose 3% on the quarter to $2.27 billion. The net charge-off ratio was <b>0.31%</b>.",
-            relevance: "Fifth Third is a lender to the company. Stable credit points to continued appetite for well-capitalized borrowers.",
-            source: "Fifth Third SEC filing",
-            date: "2026-10-19"
+            company: "Kuehne + Nagel",
+            cat: "Tenant",
+            headline: "Kuehne + Nagel Q3 profit jumps 53% and guidance is raised again",
+            summary: "Kuehne+Nagel reported third-quarter EBIT up <b>53% to CHF 435 million</b> on October 22. Net turnover rose 22% to CHF 7.4 billion, led by air logistics. The company now expects recurring 2026 EBIT of <b>CHF 1.5 to 1.6 billion</b>.",
+            relevance: "K+N is a Landis Ridge tenant. Rising volumes and a raised outlook point to a healthy counterparty.",
+            source: "Kuehne+Nagel newsroom",
+            date: "2026-10-22"
         },
         {
             level: "GENERAL",
-            company: "Industry",
-            cat: "Industry",
-            headline: "Dallas-Fort Worth industrial vacancy falls to 7.3%, lowest since 2023",
-            summary: "Cushman & Wakefield reports Dallas-Fort Worth industrial vacancy fell <b>70 basis points</b> in the third quarter to <b>7.3%</b>. Net absorption was 13.9 million square feet and asking rents reached a record $9.76 per square foot NNN. Nationally, vacancy is 6.8% and quarterly absorption was the strongest since early 2023.",
-            relevance: "Tightening Texas industrial markets support occupancy and rent growth for landlords in Georgetown, Austin, San Antonio and Houston. New supply of 30.6 million square feet under construction in DFW is the counterweight.",
-            source: "Cushman & Wakefield",
-            date: "2026-10-14"
+            company: "Pinnacle Bank",
+            cat: "Lender",
+            headline: "Pinnacle Q3 net income of $364 million, margin dips to 3.40%",
+            summary: "Pinnacle Financial Partners (<b>NASDAQ: PNFP</b>) reported third-quarter net income to common shareholders of <b>$364 million</b> on October 21, with adjusted EPS of $2.69. Loans grew 2% to $89.8 billion. The net interest margin fell 4 basis points to 3.40% on higher deposit costs, and the charge-off ratio was 0.23%.",
+            relevance: "Pinnacle is a lender to the company. Loan growth and stable credit show continued appetite to lend.",
+            source: "Pinnacle Financial Partners / SEC",
+            date: "2026-10-21"
         }
     ],
 
@@ -123,15 +123,14 @@ const TENANT_LENDER_NEWS = {
         "DNP Imagingcomm America",
         "Duroshox",
         "Grander Distribution",
-        "Kuehne + Nagel",
         "W Industries",
         "Xingyu Lighting",
         "Busey Bank",
+        "Fifth Third Bank",
         "Inwood National Bank",
         "Barings",
         "Hall Group",
         "PACE Equity",
-        "Hartford Insurance",
         "Compatriot Capital (Sammons)"
     ]
 };
