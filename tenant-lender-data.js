@@ -1,10 +1,10 @@
-// Tenant & Lender News — Week of October 23, 2026
+// Tenant & Lender News — Week of October 30, 2026
 // Rewritten each Friday by the auto-update. Schema and limits are enforced
 // by validate-data.js — run `node validate-data.js` before committing.
 
 const TENANT_LENDER_NEWS = {
-    date: "October 23, 2026",
-    last_scan: "2026-10-23T13:30:00Z",
+    date: "October 30, 2026",
+    last_scan: "2026-10-30T13:30:00Z",
 
     // Jackson Shaw watchlist. Fixed — see WATCHLIST in validate-data.js.
     companies: [
@@ -43,71 +43,51 @@ const TENANT_LENDER_NEWS = {
             level: "MEDIUM",
             company: "Industry",
             cat: "Industry",
-            headline: "Economists see an October Fed hold and a December hike",
-            summary: "A Reuters poll of 100 economists taken October 16-20 finds <b>94 expect a hold</b> at the October 27-28 FOMC meeting. All 100 expect a 25 basis point hike in December. The 10-year Treasury yield closed near <b>5.02%</b> on Thursday.",
+            headline: "Fed holds rates with two dissents for a hike; December hike priced",
+            summary: "The FOMC voted <b>10 to 2</b> on October 28 to keep the target range at <b>3.75% to 4.00%</b>. Governor Cook and Cleveland Fed President Hammack preferred a quarter-point hike. Futures price about an <b>85% chance</b> of a hike on December 9, and the 10-year Treasury yield is near 5.05%.",
             relevance: "Floating-rate borrowers across the watchlist should expect higher debt costs into 2027. Tenants in logistics and manufacturing face the same financing pressure.",
-            source: "Reuters / AOL",
-            date: "2026-10-20"
-        },
-        {
-            level: "MEDIUM",
-            company: "Hartford Insurance",
-            cat: "Lender",
-            headline: "Hartford reports Q3 earnings Monday after the close",
-            summary: "The Hartford (<b>NYSE: HIG</b>) releases third-quarter results on October 26 after the market close. A webcast follows on Tuesday, October 27, at 9 a.m. ET.",
-            relevance: "Hartford is a lender to the company. Investment income and commercial underwriting trends are the items to watch.",
-            source: "The Hartford IR",
-            date: "2026-10-23"
+            source: "Federal Reserve / Admiral Markets",
+            date: "2026-10-28"
         },
         {
             level: "MEDIUM",
             company: "International Paper",
             cat: "Tenant",
-            headline: "International Paper reports Q3 earnings October 28",
-            summary: "International Paper (<b>NYSE: IP</b>) reports third-quarter results before the NYSE opens on October 28, with a webcast at 10 a.m. ET. The company announced in June a North America packaging reorganization that includes several plant closures by the end of the third quarter.",
-            relevance: "IP is a Centerpoint tenant, so the call is the next read on whether the restructuring reaches other Texas sites. Any new closure list is the item to watch.",
-            source: "International Paper IR / PR Newswire",
-            date: "2026-09-24"
+            headline: "International Paper books $1.38 billion impairment; Capital Markets Day November 3",
+            summary: "International Paper (<b>NYSE: IP</b>) reported a third-quarter loss from continuing operations of <b>$1.10 billion</b> on October 28, driven by a $1.38 billion non-cash impairment on its European business. North America operating profit rose to <b>$427 million</b> from $204 million in the second quarter. The company guided fourth-quarter North America profit to $460 million to $500 million. The European unit will be spun off as DS Smith plc, with a Capital Markets Day on November 3.",
+            relevance: "IP is a Centerpoint tenant. The improving North America business is the relevant part, and the November 3 event is the next read on the restructuring.",
+            source: "International Paper / SEC",
+            date: "2026-10-28"
         },
         {
-            level: "LOW",
-            company: "Huntington Bank",
-            cat: "Lender",
-            headline: "Huntington Q3 adjusted EPS $0.38 as charge-offs rise to 0.31%",
-            summary: "Huntington Bancshares (<b>NASDAQ: HBAN</b>) reported third-quarter adjusted earnings of <b>$0.38 per share</b> on October 22, down a cent from the second quarter. Net charge-offs were 0.31% of loans, up from 0.25%. Average commercial real estate loans fell 4% on the quarter to <b>$23.1 billion</b>, and the release cites higher CRE nonaccrual loans.",
-            relevance: "Huntington is a lender to the company. Rising CRE nonaccruals and shrinking CRE balances point to tighter credit for new construction.",
-            source: "Huntington Bancshares / SEC",
-            date: "2026-10-22"
-        },
-        {
-            level: "LOW",
-            company: "Simmons Bank",
-            cat: "Lender",
-            headline: "Simmons adjusted profit rises 22% as 26 branch closures near",
-            summary: "Simmons First National (<b>NASDAQ: SFNC</b>) reported third-quarter adjusted net income of <b>$79 million</b> on October 16, up 21.7% from a year ago. Branch rightsizing and severance items totaled $43.1 million. Deposits fell to $18.6 billion from $19.8 billion a year earlier.",
-            relevance: "Simmons is a lender to the company. Falling deposits and heavy restructuring costs are worth noting, though earnings are improving.",
-            source: "Talk Business & Politics / Simmons First National",
-            date: "2026-10-16"
-        },
-        {
-            level: "GENERAL",
-            company: "Kuehne + Nagel",
+            level: "MEDIUM",
+            company: "C3 Presents",
             cat: "Tenant",
-            headline: "Kuehne + Nagel Q3 profit jumps 53% and guidance is raised again",
-            summary: "Kuehne+Nagel reported third-quarter EBIT up <b>53% to CHF 435 million</b> on October 22. Net turnover rose 22% to CHF 7.4 billion, led by air logistics. The company now expects recurring 2026 EBIT of <b>CHF 1.5 to 1.6 billion</b>.",
-            relevance: "K+N is a Landis Ridge tenant. Rising volumes and a raised outlook point to a healthy counterparty.",
-            source: "Kuehne+Nagel newsroom",
-            date: "2026-10-22"
+            headline: "Live Nation, parent of C3 Presents, reports Q3 earnings November 5",
+            summary: "Live Nation (<b>NYSE: LYV</b>) will release third-quarter results after the close on November 5. The call is at 2 p.m. PT, and an investor presentation follows on November 10.",
+            relevance: "C3 Presents is an ATX 130 tenant and a Live Nation unit. The results are the next read on parent-company strength.",
+            source: "Live Nation IR",
+            date: "2026-10-30"
+        },
+        {
+            level: "LOW",
+            company: "Busey Bank",
+            cat: "Lender",
+            headline: "Busey Q3 margin falls to 3.58% and provision rises to $9.6 million",
+            summary: "First Busey (<b>NASDAQ: BUSE</b>) reported third-quarter net income of <b>$55.8 million</b> on October 27, down from $63.2 million in the second quarter. Adjusted EPS was $0.63. The net interest margin fell to 3.58% from 3.72%. The provision for credit losses rose to <b>$9.6 million</b> from $2.2 million, and non-performing assets were 0.45% of total assets.",
+            relevance: "Busey is a lender to the company. A higher provision and a thinner margin could make it more selective on new loans.",
+            source: "First Busey / SEC",
+            date: "2026-10-27"
         },
         {
             level: "GENERAL",
-            company: "Pinnacle Bank",
+            company: "Hartford Insurance",
             cat: "Lender",
-            headline: "Pinnacle Q3 net income of $364 million, margin dips to 3.40%",
-            summary: "Pinnacle Financial Partners (<b>NASDAQ: PNFP</b>) reported third-quarter net income to common shareholders of <b>$364 million</b> on October 21, with adjusted EPS of $2.69. Loans grew 2% to $89.8 billion. The net interest margin fell 4 basis points to 3.40% on higher deposit costs, and the charge-off ratio was 0.23%.",
-            relevance: "Pinnacle is a lender to the company. Loan growth and stable credit show continued appetite to lend.",
-            source: "Pinnacle Financial Partners / SEC",
-            date: "2026-10-21"
+            headline: "Hartford Q3 net income rises 23% to $1.3 billion and dividend rises 12%",
+            summary: "The Hartford (<b>NYSE: HIG</b>) reported third-quarter net income of <b>$1.3 billion</b>, or $4.82 per share, on October 26. Core earnings were $956 million, down 6%. The quarterly dividend rises 12% to <b>$0.67</b>. Mo Tooker succeeds Christopher Swift as CEO on March 1.",
+            relevance: "Hartford is a lender to the company. Strong capital returns and a planned CEO transition point to a stable counterparty.",
+            source: "The Hartford / SEC",
+            date: "2026-10-26"
         }
     ],
 
@@ -116,21 +96,23 @@ const TENANT_LENDER_NEWS = {
         "Aalo Atomics",
         "Baer Manufacturing / Hunt Electric",
         "Bright Events",
-        "C3 Presents",
         "Canteen",
         "Clopay",
         "Control Panels",
         "DNP Imagingcomm America",
         "Duroshox",
         "Grander Distribution",
+        "Kuehne + Nagel",
         "W Industries",
         "Xingyu Lighting",
-        "Busey Bank",
+        "Huntington Bank",
         "Fifth Third Bank",
         "Inwood National Bank",
+        "Simmons Bank",
         "Barings",
         "Hall Group",
         "PACE Equity",
+        "Pinnacle Bank",
         "Compatriot Capital (Sammons)"
     ]
 };
