@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-30T02:08:45.288Z",
+  "updated": "2026-10-31T01:47:55.583Z",
   "source": "FRED, Federal Reserve Bank of St. Louis",
   "series": {
     "DFF": {
       "label": "Eff. Federal Funds",
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "current": 3.88,
       "one_wk_ago": 3.88,
       "one_mo_ago": 3.88,
@@ -12,19 +12,19 @@
     },
     "SOFR": {
       "label": "SOFR (overnight)",
-      "date": "2026-10-28",
+      "date": "2026-10-29",
       "current": 3.94,
-      "one_wk_ago": 3.88,
-      "one_mo_ago": 3.9,
-      "one_yr_ago": 4.31
+      "one_wk_ago": 3.9,
+      "one_mo_ago": 3.88,
+      "one_yr_ago": 4.27
     },
     "SOFR30DAYAVG": {
       "label": "30-Day Avg SOFR",
-      "date": "2026-10-29",
-      "current": 3.89656,
-      "one_wk_ago": 3.88787,
-      "one_mo_ago": 3.73909,
-      "one_yr_ago": 4.20386
+      "date": "2026-10-30",
+      "current": 3.89857,
+      "one_wk_ago": 3.88887,
+      "one_mo_ago": 3.74678,
+      "one_yr_ago": 4.20854
     },
     "DPRIME": {
       "label": "Prime Rate",
@@ -36,44 +36,44 @@
     },
     "DGS2": {
       "label": "2-Year Treasury",
-      "date": "2026-10-28",
-      "current": 4.67,
-      "one_wk_ago": 4.81,
-      "one_mo_ago": 4.92,
-      "one_yr_ago": 3.47
+      "date": "2026-10-29",
+      "current": 4.61,
+      "one_wk_ago": 4.65,
+      "one_mo_ago": 4.89,
+      "one_yr_ago": 3.59
     },
     "DGS5": {
       "label": "5-Year Treasury",
-      "date": "2026-10-28",
-      "current": 4.85,
-      "one_wk_ago": 4.95,
+      "date": "2026-10-29",
+      "current": 4.78,
+      "one_wk_ago": 4.78,
       "one_mo_ago": 5.06,
-      "one_yr_ago": 3.6
+      "one_yr_ago": 3.7
     },
     "DGS10": {
       "label": "10-Year Treasury",
-      "date": "2026-10-28",
-      "current": 5.05,
-      "one_wk_ago": 5.13,
-      "one_mo_ago": 5.24,
-      "one_yr_ago": 3.99
+      "date": "2026-10-29",
+      "current": 4.98,
+      "one_wk_ago": 4.96,
+      "one_mo_ago": 5.26,
+      "one_yr_ago": 4.08
     },
     "DGS30": {
       "label": "30-Year Treasury",
-      "date": "2026-10-28",
-      "current": 5.37,
-      "one_wk_ago": 5.42,
-      "one_mo_ago": 5.56,
-      "one_yr_ago": 4.55
+      "date": "2026-10-29",
+      "current": 5.32,
+      "one_wk_ago": 5.29,
+      "one_mo_ago": 5.59,
+      "one_yr_ago": 4.61
     },
     "T10Y2Y": {
       "label": "10Y − 2Y Spread",
-      "date": "2026-10-29",
-      "current": 0.37,
+      "date": "2026-10-30",
+      "current": 0.38,
       "one_wk_ago": 0.31,
-      "one_mo_ago": 0.37,
-      "one_yr_ago": 0.49
+      "one_mo_ago": 0.41,
+      "one_yr_ago": 0.5
     }
   },
-  "as_of": "2026-10-29"
+  "as_of": "2026-10-30"
 }
