@@ -1,10 +1,10 @@
-// Tenant & Lender News — Week of October 30, 2026
+// Tenant & Lender News — Week of November 6, 2026
 // Rewritten each Friday by the auto-update. Schema and limits are enforced
 // by validate-data.js — run `node validate-data.js` before committing.
 
 const TENANT_LENDER_NEWS = {
-    date: "October 30, 2026",
-    last_scan: "2026-10-30T13:30:00Z",
+    date: "November 6, 2026",
+    last_scan: "2026-11-06T13:30:00Z",
 
     // Jackson Shaw watchlist. Fixed — see WATCHLIST in validate-data.js.
     companies: [
@@ -43,51 +43,41 @@ const TENANT_LENDER_NEWS = {
             level: "MEDIUM",
             company: "Industry",
             cat: "Industry",
-            headline: "Fed holds rates with two dissents for a hike; December hike priced",
-            summary: "The FOMC voted <b>10 to 2</b> on October 28 to keep the target range at <b>3.75% to 4.00%</b>. Governor Cook and Cleveland Fed President Hammack preferred a quarter-point hike. Futures price about an <b>85% chance</b> of a hike on December 9, and the 10-year Treasury yield is near 5.05%.",
-            relevance: "Floating-rate borrowers across the watchlist should expect higher debt costs into 2027. Tenants in logistics and manufacturing face the same financing pressure.",
-            source: "Federal Reserve / Admiral Markets",
-            date: "2026-10-28"
+            headline: "December Fed hike priced at 82% as 10-year yield eases to 4.87%",
+            summary: "Futures show about an <b>82% chance</b> the Fed raises rates on December 9, after it held at <b>3.75% to 4.00%</b> on October 28. The 10-year Treasury yield fell 6 basis points to <b>4.87%</b> after Democrats won Congress. Initial jobless claims fell to 189,000, and the October jobs report is due today.",
+            relevance: "Floating-rate borrowers across the watchlist should plan for higher debt costs. Tenants in logistics and manufacturing face the same financing pressure.",
+            source: "Discovery Alert / Investing.com",
+            date: "2026-11-05"
         },
         {
             level: "MEDIUM",
             company: "International Paper",
             cat: "Tenant",
-            headline: "International Paper books $1.38 billion impairment; Capital Markets Day November 3",
-            summary: "International Paper (<b>NYSE: IP</b>) reported a third-quarter loss from continuing operations of <b>$1.10 billion</b> on October 28, driven by a $1.38 billion non-cash impairment on its European business. North America operating profit rose to <b>$427 million</b> from $204 million in the second quarter. The company guided fourth-quarter North America profit to $460 million to $500 million. The European unit will be spun off as DS Smith plc, with a Capital Markets Day on November 3.",
-            relevance: "IP is a Centerpoint tenant. The improving North America business is the relevant part, and the November 3 event is the next read on the restructuring.",
-            source: "International Paper / SEC",
-            date: "2026-10-28"
-        },
-        {
-            level: "MEDIUM",
-            company: "C3 Presents",
-            cat: "Tenant",
-            headline: "Live Nation, parent of C3 Presents, reports Q3 earnings November 5",
-            summary: "Live Nation (<b>NYSE: LYV</b>) will release third-quarter results after the close on November 5. The call is at 2 p.m. PT, and an investor presentation follows on November 10.",
-            relevance: "C3 Presents is an ATX 130 tenant and a Live Nation unit. The results are the next read on parent-company strength.",
-            source: "Live Nation IR",
-            date: "2026-10-30"
-        },
-        {
-            level: "LOW",
-            company: "Busey Bank",
-            cat: "Lender",
-            headline: "Busey Q3 margin falls to 3.58% and provision rises to $9.6 million",
-            summary: "First Busey (<b>NASDAQ: BUSE</b>) reported third-quarter net income of <b>$55.8 million</b> on October 27, down from $63.2 million in the second quarter. Adjusted EPS was $0.63. The net interest margin fell to 3.58% from 3.72%. The provision for credit losses rose to <b>$9.6 million</b> from $2.2 million, and non-performing assets were 0.45% of total assets.",
-            relevance: "Busey is a lender to the company. A higher provision and a thinner margin could make it more selective on new loans.",
-            source: "First Busey / SEC",
-            date: "2026-10-27"
+            headline: "International Paper's European spin-off targeted for December to March",
+            summary: "The European packaging business held its Capital Markets Day in London on <b>November 3</b>. The new company will be DS Smith plc, listed in London with American depositary receipts in New York. It guided 2026 adjusted EBITDA of <b>EUR730 million to EUR780 million</b> and expects one-off costs of EUR120 million to EUR130 million. International Paper shares fell 3.6% in London that day.",
+            relevance: "IP is a Centerpoint tenant. The spin-off is on its original 12 to 15 month timeline, which keeps the restructuring story on track.",
+            source: "AJ Bell",
+            date: "2026-11-03"
         },
         {
             level: "GENERAL",
-            company: "Hartford Insurance",
-            cat: "Lender",
-            headline: "Hartford Q3 net income rises 23% to $1.3 billion and dividend rises 12%",
-            summary: "The Hartford (<b>NYSE: HIG</b>) reported third-quarter net income of <b>$1.3 billion</b>, or $4.82 per share, on October 26. Core earnings were $956 million, down 6%. The quarterly dividend rises 12% to <b>$0.67</b>. Mo Tooker succeeds Christopher Swift as CEO on March 1.",
-            relevance: "Hartford is a lender to the company. Strong capital returns and a planned CEO transition point to a stable counterparty.",
-            source: "The Hartford / SEC",
-            date: "2026-10-26"
+            company: "C3 Presents",
+            cat: "Tenant",
+            headline: "Live Nation, parent of C3 Presents, posts record Q3 with revenue up 19%",
+            summary: "Live Nation (<b>NYSE: LYV</b>) reported third-quarter revenue of <b>$10.1 billion</b>, up 19%, on November 5. Operating income rose 13% to <b>$892 million</b> and adjusted operating income rose 14% to about $1.18 billion. Attendance grew 19% to 61 million. The company expects double-digit adjusted operating income growth in Concerts and Sponsorship for 2026.",
+            relevance: "C3 Presents is an ATX 130 tenant and a Live Nation unit. Record results point to a strong parent.",
+            source: "Live Nation / SEC",
+            date: "2026-11-05"
+        },
+        {
+            level: "GENERAL",
+            company: "Industry",
+            cat: "Industry",
+            headline: "CMBS delinquency eases to 7.87%; industrial 1.10%, lodging 5.94%",
+            summary: "Trepp's overall CMBS delinquency rate fell 15 basis points in October to <b>7.87%</b>. Industrial eased to <b>1.10%</b> and lodging improved 24 basis points to <b>5.94%</b>. Office rose to 12.33% and retail rose to 7.21%.",
+            relevance: "Industrial credit remains the healthiest property type, which supports lender appetite. Lodging is improving but still carries more risk.",
+            source: "CRE Daily / Trepp",
+            date: "2026-11-03"
         }
     ],
 
@@ -105,6 +95,7 @@ const TENANT_LENDER_NEWS = {
         "Kuehne + Nagel",
         "W Industries",
         "Xingyu Lighting",
+        "Busey Bank",
         "Huntington Bank",
         "Fifth Third Bank",
         "Inwood National Bank",
@@ -112,6 +103,7 @@ const TENANT_LENDER_NEWS = {
         "Barings",
         "Hall Group",
         "PACE Equity",
+        "Hartford Insurance",
         "Pinnacle Bank",
         "Compatriot Capital (Sammons)"
     ]

@@ -1,29 +1,29 @@
-// Friday Finance — Week of October 30, 2026
+// Friday Finance — Week of November 6, 2026
 // Rewritten each Friday by the auto-update. Schema and limits are enforced
 // by validate-data.js — run `node validate-data.js` before committing.
 
 const FRIDAY_FINANCE = {
-    date: "October 30, 2026",
-    date_short: "10.30.26",
+    date: "November 6, 2026",
+    date_short: "11.6.26",
 
     quote: {
-        text: "Know what you own, and know why you own it.",
-        author: "Peter Lynch"
+        text: "The four most dangerous words in investing are: this time it's different.",
+        author: "Sir John Templeton"
     },
 
     // 10-12 symbols. Always SPX, DJIA, IXIC; the rest are the week's movers.
     // Live Finnhub data overwrites price/change on page load.
     ticker_bar: [
-        { symbol: "SPX",   price: "7,720",   change_pct: -0.30 },
-        { symbol: "DJIA",  price: "52,348",  change_pct: -0.25 },
-        { symbol: "IXIC",  price: "26,185",  change_pct: -1.38 },
-        { symbol: "GOOGL", price: "288.00",  change_pct: -12.64 },
-        { symbol: "MSFT",  price: "540.00",  change_pct:  2.61 },
-        { symbol: "META",  price: "618.00",  change_pct:  1.00 },
-        { symbol: "AMZN",  price: "250.00",  change_pct: -2.00 },
+        { symbol: "SPX",   price: "7,354",   change_pct: -4.36 },
+        { symbol: "DJIA",  price: "51,523",  change_pct: -3.44 },
+        { symbol: "IXIC",  price: "24,315",  change_pct: -5.52 },
+        { symbol: "NVDA",  price: "181.60",  change_pct: -9.26 },
+        { symbol: "META",  price: "—",       change_pct: -3.96 },
+        { symbol: "GOOGL", price: "—",       change_pct: -2.20 },
+        { symbol: "AMZN",  price: "—",       change_pct: -2.19 },
+        { symbol: "LYV",   price: "170.80",  change_pct:  0.00 },
         { symbol: "IP",    price: "32.40",   change_pct:  0.00 },
-        { symbol: "HIG",   price: "146.20",  change_pct:  0.00 },
-        { symbol: "BUSE",  price: "27.80",   change_pct:  0.00 }
+        { symbol: "HIG",   price: "146.20",  change_pct:  0.00 }
     ],
 
     // 3-6 big stories: finance, economics, geopolitics. Each body is prose,
@@ -31,76 +31,86 @@ const FRIDAY_FINANCE = {
     // to a Dallas industrial and hotel developer. One source per story.
     stories: [
         {
-            headline: "Alphabet suffers its worst day ever as AI spending erases $500 billion",
-            body: "Alphabet fell <b>12.6%</b> on Thursday, its worst session since it listed, and lost nearly <b>$500 billion</b> in market value. Revenue rose 25% to $127.6 billion and Google Cloud grew 103%. But capital spending hit <b>$51.3 billion</b> and free cash flow turned negative for a second straight quarter. Microsoft beat estimates and held up far better. The S&P 500 slipped 0.3% to <b>7,720</b>, the Dow lost 0.25% and the Nasdaq fell <b>1.4% to 26,185</b>. About 80% of S&P 500 stocks still closed higher, so the damage was concentrated in mega-cap tech. Amazon then fell after hours on a $220 billion capital spending plan and a $42.4 billion trailing free cash flow outflow.",
-            jsc_angle: "The AI build-out is also what drives demand for data-center-adjacent industrial space in Texas, so investor doubts about spending returns are worth tracking.",
-            source: { name: "Yahoo Finance", title: "Stock market today: Dow, S&P 500, Nasdaq slip as Alphabet stock sinks 12% and AI jitters return", url: "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-29-dow-sp-500-nasdaq-alphabet-microsoft-earnings-130305714.html" },
-            date: "2026-10-29"
+            headline: "Nasdaq falls 5.5% into correction as chip stocks suffer a 12% rout",
+            body: "U.S. stocks sold off hard on Thursday. The Nasdaq Composite fell <b>5.5%</b> to about 24,315, its worst day since April 2025 and more than 10% below its October 6 record. The S&P 500 lost <b>4.4%</b> to 7,354 and the Dow dropped <b>1,833 points, or 3.4%</b>, to 51,523. The Philadelphia Semiconductor Index plunged more than 12% and Nvidia fell about 9%. Investors worried that a Democratic Congress could push tighter AI rules and slow data center construction. Arm and Qualcomm also fell on weak guidance. Analysts warned the selling could continue after a second straight down day for tech.",
+            jsc_angle: "Data center and chip investment drives a good share of Texas industrial demand, so a lasting pullback would be worth watching. Wider risk-off moves can also push lenders to tighten.",
+            source: { name: "Fox Business", title: "Stocks fall sharply on Nov. 5, 2026", url: "https://foxbusiness.com/markets/stocks-nov-5-2026" },
+            date: "2026-11-05"
         },
         {
-            headline: "Fed holds at 3.75% to 4.00% with two dissents for a hike",
-            body: "The Federal Open Market Committee voted <b>10 to 2</b> on Wednesday to keep the target range at <b>3.75% to 4.00%</b>. Governor Lisa Cook and Cleveland Fed President Beth Hammack dissented in favor of a quarter-point hike. The statement upgraded economic activity to growing at a strong pace and said inflation remains elevated. Futures price about an <b>85% chance</b> of a hike on December 9. The 10-year Treasury yield sat near <b>5.05%</b>. Chair Kevin Warsh also said the Fed will hold a strategy-focused meeting with no rate vote starting in 2027.",
-            jsc_angle: "Floating-rate construction debt should keep repricing off a higher SOFR into year-end, and a 10-year yield above 5% keeps permanent loans expensive.",
-            source: { name: "Federal Reserve", title: "Federal Reserve issues FOMC statement, October 28, 2026", url: "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm" },
-            date: "2026-10-28"
+            headline: "Democrats sweep Congress, yields ease and a December Fed hike stays at 82%",
+            body: "Democrats won control of both chambers in Tuesday's midterms. Stocks rallied on Wednesday as the uncertainty lifted. Investors then read the result as making big tax cuts and extra borrowing less likely, and the 10-year Treasury yield fell 6 basis points to <b>4.87%</b>. Futures still show about an <b>82% chance</b> that the Fed raises rates on December 9. Initial jobless claims fell to 189,000. The October jobs report is due at 8:30 a.m. ET today, after September payrolls rose only 29,000.",
+            jsc_angle: "A lower 10-year helps permanent loan pricing a little, but floating-rate construction debt still tracks SOFR. A December hike would push that cost higher.",
+            source: { name: "Discovery Alert", title: "Gold price jumps above $4,100 as midterms drag dollar and yields lower", url: "https://discoveryalert.com/news/gold-price-dollar-yields-fed-hike-november-2026/" },
+            date: "2026-11-05"
         },
         {
-            headline: "Third-quarter GDP grows 3.4%, topping forecasts and the second quarter's 2.2%",
-            body: "The Bureau of Economic Analysis reported on Thursday that real GDP grew at a <b>3.4% annual rate</b> in the third quarter. Growth was 2.2% in the second quarter. Reports on the release put business investment up <b>12.7%</b> and consumer spending up 3.8%. The strength is the reason the Fed sees room to keep tightening. The September jobs report showed payroll growth of only 29,000, so the economy is growing fast without adding many workers. The October jobs report arrives next Friday.",
-            jsc_angle: "Strong growth supports demand from logistics and manufacturing tenants, but it also keeps rates higher for longer.",
-            source: { name: "Bureau of Economic Analysis", title: "Gross Domestic Product", url: "https://www.bea.gov/data/gdp/gross-domestic-product" },
-            date: "2026-10-29"
+            headline: "Brent drops below $100 as hopes build for a U.S.-Iran deal",
+            body: "Oil fell sharply this week on signs that Washington and Tehran may be heading toward talks. Brent dropped about <b>7.6%</b> on Monday to roughly $104.77, its lowest in two weeks. It then slipped below <b>$100</b> on Wednesday for the first time since early October, after trading above $110 the week before. Iran's supreme leader gave the government powers to pursue peace talks and President Trump hinted at progress. Analysts remain wary of false dawns, and some noted that the White House had floated new strikes after the election.",
+            jsc_angle: "Lower diesel and freight costs would ease pressure on logistics and manufacturing tenants and take some heat out of inflation. The relief only holds if talks do.",
+            source: { name: "Yahoo Finance", title: "Oil prices fall on US-Iran negotiations", url: "https://finance.yahoo.com/energy/articles/oil-prices-fall-us-iran-222505483.html" },
+            date: "2026-11-02"
         },
         {
-            headline: "Brent holds near $115 as Iran talks and midterm strike fears collide",
-            body: "Brent settled at <b>$115.32</b> on Wednesday and slipped to about <b>$114</b> on Thursday. U.S. crude closed Wednesday at $102.78. The Wall Street Journal reported that Vice President JD Vance sent a letter to Iran's security chief to revive peace talks. It also reported that Washington warned Gulf states to prepare for a possible renewed U.S. military campaign after the <b>November 3</b> midterms. President Trump downplayed the letter. UBS expects Brent near $110 at year-end on tight inventories and high freight costs.",
-            jsc_angle: "Diesel and freight costs hit logistics and manufacturing tenants, and the inflation they feed keeps floating-rate debt expensive.",
-            source: { name: "The National", title: "Oil prices decline after diplomatic push in Iran war", url: "https://thenationalnews.com/business/energy/2026/10/29/oil-prices-decline-after-diplomatic-push-in-iran-war" },
-            date: "2026-10-29"
+            headline: "Live Nation posts record third quarter on 19% revenue growth",
+            body: "Live Nation reported third-quarter revenue of <b>$10.1 billion</b>, up 19%, after the close on Thursday. Operating income rose 13% to <b>$892 million</b> and adjusted operating income rose 14% to about $1.18 billion. Fan attendance grew 19% to 61 million. The company expects nearly 180 million fans in 2026 and double-digit adjusted operating income growth in Concerts and Sponsorship. It plans capital spending of nearly $1.1 billion this year.",
+            source: { name: "SEC (Live Nation 8-K)", title: "Live Nation third-quarter 2026 earnings release", url: "https://www.sec.gov/Archives/edgar/data/0001335258/000133525826000052/lyv-2026q3xex991er.htm" },
+            date: "2026-11-05"
         },
         {
-            headline: "International Paper takes $1.38 billion impairment as EMEA spin-off nears",
-            body: "International Paper reported a third-quarter loss from continuing operations of <b>$1.10 billion</b> on Wednesday. The driver was a <b>$1.38 billion</b> non-cash goodwill impairment on its European business. Net sales were flat at $6.20 billion and adjusted EBITDA was $843 million. North America operating profit rose to <b>$427 million</b> from $204 million in the second quarter. The company guided fourth-quarter North America profit to $460 million to $500 million. The European unit will be spun off as DS Smith plc, and a Capital Markets Day is set for November 3 in London.",
-            jsc_angle: "The North America business is improving, which is the part that matters for a logistics tenant, but the restructuring is not finished.",
-            source: { name: "SEC (International Paper 8-K)", title: "International Paper third-quarter 2026 earnings release", url: "https://www.sec.gov/Archives/edgar/data/0000051434/000005143426000147/nextgenip-20260930ex991.htm" },
-            date: "2026-10-28"
+            headline: "International Paper's European spin-off is on track for December to March",
+            body: "The European packaging business that International Paper is spinning off held its Capital Markets Day in London on Tuesday. The new company will be called <b>DS Smith plc</b>, listed in London with American depositary receipts in New York. Management guided 2026 adjusted EBITDA of <b>EUR730 million to EUR780 million</b>. It aims for a mid-teens EBITDA margin over time and expects one-off costs of EUR120 million to EUR130 million. International Paper shares fell 3.6% in London on the day.",
+            source: { name: "AJ Bell", title: "International Paper Co nears completion of spin-off of DS Smith", url: "https://www.ajbell.co.uk/news/articles/international-paper-co-nears-completion-spin-ds-smith" },
+            date: "2026-11-03"
+        },
+        {
+            headline: "CMBS delinquency eases to 7.87% as industrial stays near 1.1%",
+            body: "Trepp's overall CMBS delinquency rate fell 15 basis points in October to <b>7.87%</b>. The industrial rate eased 4 basis points to <b>1.10%</b>, by far the lowest of any property type. Lodging improved 24 basis points to 5.94%. Office rose to 12.33% and retail jumped 63 basis points to 7.21%. The stress is concentrated in office and retail, not in the sectors where tenants and borrowers on our watchlist operate.",
+            jsc_angle: "Industrial credit is holding up well, which supports lender appetite for the asset type. Lodging is improving but still carries more risk.",
+            source: { name: "CRE Daily", title: "CMBS delinquency rate dips to 7.87% as retail jumps 63 bps", url: "https://www.credaily.com/?p=224934" },
+            date: "2026-11-03"
         }
     ],
 
     // 3-6 dated items. Short.
     watch_next_week: [
-        { when: "Tue Nov 3", what: "<b>U.S. midterm elections.</b> Oil markets are pricing in the risk of renewed strikes on Iran afterward." },
-        { when: "Tue Nov 3", what: "<b>International Paper Capital Markets Day</b> in London, with details on the European spin-off." },
-        { when: "Thu Nov 5", what: "<b>Live Nation Q3 earnings</b> after the close, with a call at 2 p.m. PT. Watch concert demand and cash flow." },
-        { when: "Fri Nov 6", what: "<b>October jobs report</b> at 8:30 a.m. ET. September payrolls rose just 29,000, so the labor read matters for the December Fed decision." }
+        { when: "Fri Nov 6", what: "<b>October jobs report</b> at 8:30 a.m. ET. September payrolls rose just 29,000, and the result shapes the December Fed decision." },
+        { when: "Tue Nov 10", what: "<b>October CPI</b> at 8:30 a.m. ET. Inflation is the other input to the December 9 rate call." },
+        { when: "Tue Nov 10", what: "<b>Live Nation investor presentation</b> following its record third quarter results." }
     ],
 
     // 3-5 non-paywalled links. No WSJ, FT, Bloomberg or Barron's.
     reading_links: [
         {
-            title: "The full statement from the October 2026 FOMC rate decision",
-            url: "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
-            source: "Federal Reserve",
-            description: "The primary text behind the week's biggest rates story, including the two dissents."
+            title: "Nasdaq falls into correction as chip stocks plunge",
+            url: "https://investing.com/news/stock-market-news/us-stock-index-futures-steady-after-midterms-rally-5001919",
+            source: "Investing.com",
+            description: "A fuller look at the AI and chip unwind, including the Arm and Qualcomm guidance and the policy worries."
         },
         {
-            title: "Multifamily CMBS delinquency rate leads overall rate higher in September",
-            url: "https://yieldpro.com/2026/10/multifamily-cmbs-delinquency-rate-leads-overall-rate-higher-in-september/",
-            source: "Yield PRO (Trepp)",
-            description: "Overall CMBS delinquency hit 8.02%. Lodging rose to 6.18% while industrial held at 1.14%."
+            title: "CMBS delinquency rate dips to 7.87% as retail jumps 63 bps",
+            url: "https://www.credaily.com/?p=224934",
+            source: "CRE Daily (Trepp)",
+            description: "October delinquency by property type. Industrial held at 1.10% and lodging improved."
         },
         {
-            title: "Oil prices decline after diplomatic push in Iran war",
-            url: "https://thenationalnews.com/business/energy/2026/10/29/oil-prices-decline-after-diplomatic-push-in-iran-war",
-            source: "The National",
-            description: "How the Vance letter and the post-midterm strike warnings are moving Brent."
+            title: "Oil prices fall on US-Iran negotiations",
+            url: "https://finance.yahoo.com/energy/articles/oil-prices-fall-us-iran-222505483.html",
+            source: "Yahoo Finance",
+            description: "Why traders are betting on talks, and why analysts still doubt it."
+        },
+        {
+            title: "International Paper Co nears completion of spin-off of DS Smith",
+            url: "https://www.ajbell.co.uk/news/articles/international-paper-co-nears-completion-spin-ds-smith",
+            source: "AJ Bell",
+            description: "Guidance, costs and timeline from the DS Smith Capital Markets Day."
         }
     ],
 
     rates: {
-        "30-Day Avg SOFR":    { current: "3.897%", one_mo_ago: "3.739%", one_yr_ago: "4.204%" },
-        "10-Year Treasury":   { current: "5.050%", one_mo_ago: "5.240%", one_yr_ago: "3.990%" },
-        "Eff. Federal Funds": { current: "3.880%", one_mo_ago: "3.880%", one_yr_ago: "4.120%" },
+        "30-Day Avg SOFR":    { current: "3.912%", one_mo_ago: "3.784%", one_yr_ago: "4.197%" },
+        "10-Year Treasury":   { current: "4.900%", one_mo_ago: "5.280%", one_yr_ago: "4.100%" },
+        "Eff. Federal Funds": { current: "3.880%", one_mo_ago: "3.880%", one_yr_ago: "3.870%" },
         "Prime Rate":         { current: "7.000%", one_mo_ago: "7.000%", one_yr_ago: "7.250%" }
     },
 
@@ -108,9 +118,9 @@ const FRIDAY_FINANCE = {
     // data overwrites these on page load; keep them reasonably current.
     stocks: {
         "Indices": [
-            { company: "S&P 500",              ticker: "SPX",  price: 7720.39, day_pct: -0.30, ytd_pct:  8.4,  high_52w: 7820.00,  vs_high: -2.0, low_52w: 5101.63,  vs_low: 50.2 },
-            { company: "Dow Jones Industrial", ticker: "DJI",  price: 52348.24, day_pct: -0.25, ytd_pct:  6.1,  high_52w: 54300.00, vs_high: -2.6, low_52w: 37830.66, vs_low: 39.7 },
-            { company: "Nasdaq Composite",     ticker: "COMP", price: 26184.72, day_pct: -1.38, ytd_pct:  6.5,  high_52w: 27693.00, vs_high: -6.1, low_52w: 15685.33, vs_low: 65.8 }
+            { company: "S&P 500",              ticker: "SPX",  price: 7353.73, day_pct: -4.36, ytd_pct:  8.4,  high_52w: 7820.00,  vs_high: -6.0, low_52w: 5101.63,  vs_low: 44.1 },
+            { company: "Dow Jones Industrial", ticker: "DJI",  price: 51523.06, day_pct: -3.44, ytd_pct:  6.1,  high_52w: 54300.00, vs_high: -5.1, low_52w: 37830.66, vs_low: 36.2 },
+            { company: "Nasdaq Composite",     ticker: "COMP", price: 24315.00, day_pct: -5.52, ytd_pct:  6.5,  high_52w: 27693.00, vs_high: -12.2, low_52w: 15685.33, vs_low: 55.0 }
         ],
         "Industrial REITs": [
             { company: "Prologis",             ticker: "PLD",  price: 131.20, day_pct:  0.20, ytd_pct:   1.8, high_52w: 151.00, vs_high: -13.1, low_52w: 103.02, vs_low: 27.4 },
@@ -145,7 +155,7 @@ const FRIDAY_FINANCE = {
             { company: "The Hartford",                ticker: "HIG",  price: 146.20, day_pct:  0.28, ytd_pct:  14.7, high_52w: 146.20, vs_high:   0.0, low_52w: 119.61, vs_low: 22.2 }
         ],
         "Industry-related companies": [
-            { company: "Amazon",                   ticker: "AMZN",  price: 250.00, day_pct: -2.00, ytd_pct:   5.8, high_52w: 273.07, vs_high: -10.0, low_52w: 165.29, vs_low:  48.7 },
+            { company: "Amazon",                   ticker: "AMZN",  price: 250.00, day_pct: -2.19, ytd_pct:   5.8, high_52w: 273.07, vs_high: -10.0, low_52w: 165.29, vs_low:  48.7 },
             { company: "United Parcel Service",    ticker: "UPS",   price: 98.20,  day_pct:  0.10, ytd_pct: -11.3, high_52w: 122.41, vs_high: -19.8, low_52w: 82.00,  vs_low:  19.8 },
             { company: "FedEx Corporation",        ticker: "FDX",   price: 318.40, day_pct:  0.15, ytd_pct: -14.4, high_52w: 404.03, vs_high: -21.2, low_52w: 194.30, vs_low:  63.9 },
             { company: "Target Corporation",       ticker: "TGT",   price: 162.50, day_pct:  0.19, ytd_pct:  54.9, high_52w: 162.50, vs_high:   0.0, low_52w: 83.44,  vs_low:  94.8 },
