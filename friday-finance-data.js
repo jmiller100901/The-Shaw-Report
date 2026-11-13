@@ -1,126 +1,116 @@
-// Friday Finance — Week of November 6, 2026
+// Friday Finance — Week of November 13, 2026
 // Rewritten each Friday by the auto-update. Schema and limits are enforced
 // by validate-data.js — run `node validate-data.js` before committing.
 
 const FRIDAY_FINANCE = {
-    date: "November 6, 2026",
-    date_short: "11.6.26",
+    date: "November 13, 2026",
+    date_short: "11.13.26",
 
     quote: {
-        text: "The four most dangerous words in investing are: this time it's different.",
-        author: "Sir John Templeton"
+        text: "The investor's chief problem, and even his worst enemy, is likely to be himself.",
+        author: "Benjamin Graham"
     },
 
-    // 10-12 symbols. Always SPX, DJIA, IXIC; the rest are the week's movers.
-    // Live Finnhub data overwrites price/change on page load.
+    // 10-12 symbols. Always SPX, DJIA, IXIC. Live Finnhub data overwrites on page load.
     ticker_bar: [
-        { symbol: "SPX",   price: "7,354",   change_pct: -4.36 },
-        { symbol: "DJIA",  price: "51,523",  change_pct: -3.44 },
-        { symbol: "IXIC",  price: "24,315",  change_pct: -5.52 },
-        { symbol: "NVDA",  price: "181.60",  change_pct: -9.26 },
-        { symbol: "META",  price: "—",       change_pct: -3.96 },
-        { symbol: "GOOGL", price: "—",       change_pct: -2.20 },
-        { symbol: "AMZN",  price: "—",       change_pct: -2.19 },
-        { symbol: "LYV",   price: "170.80",  change_pct:  0.00 },
-        { symbol: "IP",    price: "32.40",   change_pct:  0.00 },
-        { symbol: "HIG",   price: "146.20",  change_pct:  0.00 }
+        { symbol: "SPX",   price: "7,592",   change_pct: -0.35 },
+        { symbol: "DJIA",  price: "52,297",  change_pct: -0.36 },
+        { symbol: "IXIC",  price: "25,366",  change_pct: -0.39 },
+        { symbol: "AAPL",  price: "355.63",  change_pct:  2.00 },
+        { symbol: "BX",    price: "—",       change_pct:  0.00 },
+        { symbol: "HIG",   price: "—",       change_pct:  0.00 },
+        { symbol: "FITB",  price: "—",       change_pct:  0.00 },
+        { symbol: "PLD",   price: "—",       change_pct:  0.00 },
+        { symbol: "IP",    price: "—",       change_pct:  0.00 },
+        { symbol: "LYV",   price: "—",       change_pct:  0.00 }
     ],
 
-    // 3-6 big stories: finance, economics, geopolitics. Each body is prose,
-    // 3-10 sentences. jsc_angle is one or two sentences on why it matters
-    // to a Dallas industrial and hotel developer. One source per story.
     stories: [
         {
-            headline: "Nasdaq falls 5.5% into correction as chip stocks suffer a 12% rout",
-            body: "U.S. stocks sold off hard on Thursday. The Nasdaq Composite fell <b>5.5%</b> to about 24,315, its worst day since April 2025 and more than 10% below its October 6 record. The S&P 500 lost <b>4.4%</b> to 7,354 and the Dow dropped <b>1,833 points, or 3.4%</b>, to 51,523. The Philadelphia Semiconductor Index plunged more than 12% and Nvidia fell about 9%. Investors worried that a Democratic Congress could push tighter AI rules and slow data center construction. Arm and Qualcomm also fell on weak guidance. Analysts warned the selling could continue after a second straight down day for tech.",
-            jsc_angle: "Data center and chip investment drives a good share of Texas industrial demand, so a lasting pullback would be worth watching. Wider risk-off moves can also push lenders to tighten.",
-            source: { name: "Fox Business", title: "Stocks fall sharply on Nov. 5, 2026", url: "https://foxbusiness.com/markets/stocks-nov-5-2026" },
-            date: "2026-11-05"
+            headline: "Stocks climb for the week, with the S&P 500 up about 2.9%",
+            body: "Wall Street ended a choppy week higher despite a small pullback on Thursday. The S&P 500 closed at <b>7,592.40</b>, down 0.35% on the day. The Nasdaq Composite finished at <b>25,366.09</b>, down 0.39%, and the Dow at <b>52,297.09</b>, down 0.36%. Since the November 6 close, that works out to gains of about 2.9% for the S&P 500, 3.2% for the Nasdaq and 2.0% for the Dow. Small caps lagged, with the Russell 2000 down 1.66% on Thursday. Energy led the sectors while materials and industrials fell. Cisco beat earnings estimates and said its AI infrastructure revenue will double this fiscal year.",
+            jsc_angle: "Industrial stocks slipped even as the broad market rose. Equity strength has not lowered borrowing costs, because floating-rate debt still follows the Fed.",
+            source: { name: "Dean FI", title: "Market Pulse, November 12, 2026", url: "https://deanfi.com/insights/marketpulse/2026-11-12/" },
+            date: "2026-11-12"
         },
         {
-            headline: "Democrats sweep Congress, yields ease and a December Fed hike stays at 82%",
-            body: "Democrats won control of both chambers in Tuesday's midterms. Stocks rallied on Wednesday as the uncertainty lifted. Investors then read the result as making big tax cuts and extra borrowing less likely, and the 10-year Treasury yield fell 6 basis points to <b>4.87%</b>. Futures still show about an <b>82% chance</b> that the Fed raises rates on December 9. Initial jobless claims fell to 189,000. The October jobs report is due at 8:30 a.m. ET today, after September payrolls rose only 29,000.",
-            jsc_angle: "A lower 10-year helps permanent loan pricing a little, but floating-rate construction debt still tracks SOFR. A December hike would push that cost higher.",
-            source: { name: "Discovery Alert", title: "Gold price jumps above $4,100 as midterms drag dollar and yields lower", url: "https://discoveryalert.com/news/gold-price-dollar-yields-fed-hike-november-2026/" },
-            date: "2026-11-05"
+            headline: "October CPI rises 0.4%, hotter than forecast, with no annual rate published",
+            body: "Consumer prices rose <b>0.4%</b> in October, above the 0.3% forecast, after a 0.6% gain in September. Core prices, which exclude food and energy, rose <b>0.3%</b>. That beat the 0.2% forecast and matched the pace of August and September. Energy rose 0.7%, food rose 0.5% and shelter rose 0.3%. The Bureau of Labor Statistics did not publish a 12-month rate for most series, because the 2025 government shutdown left October 2025 prices uncollected. The last official annual rate was <b>3.7%</b> in September. The November report is due December 10.",
+            jsc_angle: "Sticky inflation keeps a December rate hike on the table, which would lift the cost of SOFR-based construction loans.",
+            source: { name: "Bureau of Labor Statistics", title: "Consumer Price Index news release, October 2026", url: "https://www.bls.gov/news.release/cpi.htm" },
+            date: "2026-11-10"
         },
         {
-            headline: "Brent drops below $100 as hopes build for a U.S.-Iran deal",
-            body: "Oil fell sharply this week on signs that Washington and Tehran may be heading toward talks. Brent dropped about <b>7.6%</b> on Monday to roughly $104.77, its lowest in two weeks. It then slipped below <b>$100</b> on Wednesday for the first time since early October, after trading above $110 the week before. Iran's supreme leader gave the government powers to pursue peace talks and President Trump hinted at progress. Analysts remain wary of false dawns, and some noted that the White House had floated new strikes after the election.",
-            jsc_angle: "Lower diesel and freight costs would ease pressure on logistics and manufacturing tenants and take some heat out of inflation. The relief only holds if talks do.",
-            source: { name: "Yahoo Finance", title: "Oil prices fall on US-Iran negotiations", url: "https://finance.yahoo.com/energy/articles/oil-prices-fall-us-iran-222505483.html" },
-            date: "2026-11-02"
+            headline: "Fed's Waller leans toward a December hike and floats a half-point move",
+            body: "Fed Governor Christopher Waller said Tuesday in London that he leans toward a quarter-point rate hike at the <b>December 8-9</b> meeting. He said a half-point increase should be considered if core CPI keeps rising about 0.3% a month. He argued that a 25 basis point move alone would put the Fed's credibility at risk. The Fed held its target range at <b>3.75% to 4.00%</b> on October 28 in a 10-2 vote. Governor Lisa Cook and Cleveland Fed President Beth Hammack dissented in favor of a hike. After the jobs report, CME FedWatch put the odds of a December hike near <b>77%</b>.",
+            jsc_angle: "A hike would raise SOFR and the cost of floating-rate construction debt. A half-point move would be a bigger step than many borrowers have planned for.",
+            source: { name: "StockAnalysis", title: "Fed's Waller favors a December rate hike, welcomes a half-point increase if inflation runs hot", url: "https://stockanalysis.com/news/fed-waller-december-rate-hike-half-point/" },
+            date: "2026-11-10"
         },
         {
-            headline: "Live Nation posts record third quarter on 19% revenue growth",
-            body: "Live Nation reported third-quarter revenue of <b>$10.1 billion</b>, up 19%, after the close on Thursday. Operating income rose 13% to <b>$892 million</b> and adjusted operating income rose 14% to about $1.18 billion. Fan attendance grew 19% to 61 million. The company expects nearly 180 million fans in 2026 and double-digit adjusted operating income growth in Concerts and Sponsorship. It plans capital spending of nearly $1.1 billion this year.",
-            source: { name: "SEC (Live Nation 8-K)", title: "Live Nation third-quarter 2026 earnings release", url: "https://www.sec.gov/Archives/edgar/data/0001335258/000133525826000052/lyv-2026q3xex991er.htm" },
-            date: "2026-11-05"
+            headline: "Brent heads for a second weekly drop near $96 on Iran standoff",
+            body: "Oil is set for a second straight weekly decline. Brent traded near <b>$96.21</b> and WTI near <b>$88.62</b> on Friday, both down about 2% for the week. Last week Brent fell 16%. President Trump said a deal with Iran is not needed to end the war, which suggested more reliance on the blockade and sanctions than on military action. Iran said four tankers were hit by explosions in the Strait of Hormuz, and Yemen's Houthis attacked Saudi oil infrastructure. U.S. crude and fuel inventories rose last week as demand weakened. Analyst Jeff Currie called the market roughly balanced.",
+            jsc_angle: "Lower diesel costs help logistics and manufacturing tenants. Hormuz headlines can reverse the move quickly.",
+            source: { name: "Reuters via Business Recorder", title: "Oil prices set for second weekly decline as Trump sticks with Iran blockade", url: "https://www.brecorder.com/news/40448723/oil-prices-set-for-second-weekly-decline-as-trump-sticks-with-iran-blockade" },
+            date: "2026-11-13"
         },
         {
-            headline: "International Paper's European spin-off is on track for December to March",
-            body: "The European packaging business that International Paper is spinning off held its Capital Markets Day in London on Tuesday. The new company will be called <b>DS Smith plc</b>, listed in London with American depositary receipts in New York. Management guided 2026 adjusted EBITDA of <b>EUR730 million to EUR780 million</b>. It aims for a mid-teens EBITDA margin over time and expects one-off costs of EUR120 million to EUR130 million. International Paper shares fell 3.6% in London on the day.",
-            source: { name: "AJ Bell", title: "International Paper Co nears completion of spin-off of DS Smith", url: "https://www.ajbell.co.uk/news/articles/international-paper-co-nears-completion-spin-ds-smith" },
-            date: "2026-11-03"
-        },
-        {
-            headline: "CMBS delinquency eases to 7.87% as industrial stays near 1.1%",
-            body: "Trepp's overall CMBS delinquency rate fell 15 basis points in October to <b>7.87%</b>. The industrial rate eased 4 basis points to <b>1.10%</b>, by far the lowest of any property type. Lodging improved 24 basis points to 5.94%. Office rose to 12.33% and retail jumped 63 basis points to 7.21%. The stress is concentrated in office and retail, not in the sectors where tenants and borrowers on our watchlist operate.",
-            jsc_angle: "Industrial credit is holding up well, which supports lender appetite for the asset type. Lodging is improving but still carries more risk.",
-            source: { name: "CRE Daily", title: "CMBS delinquency rate dips to 7.87% as retail jumps 63 bps", url: "https://www.credaily.com/?p=224934" },
-            date: "2026-11-03"
+            headline: "Employers add 165,000 jobs in October, far above forecasts",
+            body: "Payrolls rose <b>165,000</b> in October against a forecast of about 65,000. Revisions added 84,000 jobs to August and September. The unemployment rate fell to <b>4.1%</b>. Average hourly earnings rose 0.4% for the month and 3.1% from a year earlier. The report lifted the odds of a December Fed hike, with CME FedWatch at 76.8% versus 66.9% a week earlier.",
+            jsc_angle: "A strong labor market supports tenant demand but also keeps the Fed on a hiking path.",
+            source: { name: "Fox Business", title: "US economy adds 165,000 jobs in October, blowing past expectations", url: "https://foxbusiness.com/economy/us-jobs-report-october-2026" },
+            date: "2026-11-06"
         }
     ],
 
-    // 3-6 dated items. Short.
     watch_next_week: [
-        { when: "Fri Nov 6", what: "<b>October jobs report</b> at 8:30 a.m. ET. September payrolls rose just 29,000, and the result shapes the December Fed decision." },
-        { when: "Tue Nov 10", what: "<b>October CPI</b> at 8:30 a.m. ET. Inflation is the other input to the December 9 rate call." },
-        { when: "Tue Nov 10", what: "<b>Live Nation investor presentation</b> following its record third quarter results." }
+        { when: "Wed Nov 18", what: "<b>Fed minutes</b> from the October 27-28 meeting, due at 2:00 p.m. ET. Watch how many officials back a December hike." },
+        { when: "Late Nov", what: "<b>Griffon fiscal fourth-quarter results.</b> The parent of Clopay reported last year on November 19, and this year's date has not been announced." },
+        { when: "Wed Dec 9", what: "<b>FOMC decision.</b> The two-day meeting starts December 8, and a quarter-point or half-point hike is in play." },
+        { when: "Thu Dec 10", what: "<b>November CPI</b> at 8:30 a.m. ET, the last major inflation reading before the year ends." }
     ],
 
-    // 3-5 non-paywalled links. No WSJ, FT, Bloomberg or Barron's.
     reading_links: [
         {
-            title: "Nasdaq falls into correction as chip stocks plunge",
-            url: "https://investing.com/news/stock-market-news/us-stock-index-futures-steady-after-midterms-rally-5001919",
-            source: "Investing.com",
-            description: "A fuller look at the AI and chip unwind, including the Arm and Qualcomm guidance and the policy worries."
+            title: "Dallas-Fort Worth industrial figures, Q3 2026",
+            url: "https://www.cbre.com/insights/figures/dallas-fort-worth-industrial-figures-q3-2026",
+            source: "CBRE",
+            description: "Vacancy fell to 7.8% from 8.9% a year earlier. Leasing reached 23.5 million square feet and DFW leads the nation in space under construction."
         },
         {
-            title: "CMBS delinquency rate dips to 7.87% as retail jumps 63 bps",
-            url: "https://www.credaily.com/?p=224934",
-            source: "CRE Daily (Trepp)",
-            description: "October delinquency by property type. Industrial held at 1.10% and lodging improved."
+            title: "Dallas-Fort Worth industrial market report, Q3 2026",
+            url: "https://www.matthews.com/insights/dallas-fort-worth-industrial-market-report-q3-2026",
+            source: "Matthews",
+            description: "Average asking rent hit a record $10.36 per square foot. About 50 million square feet is under construction."
         },
         {
-            title: "Oil prices fall on US-Iran negotiations",
-            url: "https://finance.yahoo.com/energy/articles/oil-prices-fall-us-iran-222505483.html",
-            source: "Yahoo Finance",
-            description: "Why traders are betting on talks, and why analysts still doubt it."
+            title: "Fed's Waller favors a December rate hike",
+            url: "https://stockanalysis.com/news/fed-waller-december-rate-hike-half-point/",
+            source: "StockAnalysis",
+            description: "Waller's full argument for a December hike, and why he would consider a half-point move."
         },
         {
-            title: "International Paper Co nears completion of spin-off of DS Smith",
-            url: "https://www.ajbell.co.uk/news/articles/international-paper-co-nears-completion-spin-ds-smith",
-            source: "AJ Bell",
-            description: "Guidance, costs and timeline from the DS Smith Capital Markets Day."
+            title: "Oil prices set for second weekly decline as Trump sticks with Iran blockade",
+            url: "https://www.brecorder.com/news/40448723/oil-prices-set-for-second-weekly-decline-as-trump-sticks-with-iran-blockade",
+            source: "Reuters via Business Recorder",
+            description: "Where oil stands after a 16% drop last week, and what could move it next."
         }
     ],
 
     rates: {
-        "30-Day Avg SOFR":    { current: "3.912%", one_mo_ago: "3.784%", one_yr_ago: "4.197%" },
-        "10-Year Treasury":   { current: "4.900%", one_mo_ago: "5.280%", one_yr_ago: "4.100%" },
+        "30-Day Avg SOFR":    { current: "3.916%", one_mo_ago: "3.816%", one_yr_ago: "4.148%" },
+        "10-Year Treasury":   { current: "4.980%", one_mo_ago: "5.240%", one_yr_ago: "4.130%" },
         "Eff. Federal Funds": { current: "3.880%", one_mo_ago: "3.880%", one_yr_ago: "3.870%" },
-        "Prime Rate":         { current: "7.000%", one_mo_ago: "7.000%", one_yr_ago: "7.250%" }
+        "Prime Rate":         { current: "7.000%", one_mo_ago: "7.000%", one_yr_ago: "7.000%" }
     },
 
     // Fixed ticker set — see STOCK_TABLE in validate-data.js. Live Finnhub
     // data overwrites these on page load; keep them reasonably current.
     stocks: {
         "Indices": [
-            { company: "S&P 500",              ticker: "SPX",  price: 7353.73, day_pct: -4.36, ytd_pct:  8.4,  high_52w: 7820.00,  vs_high: -6.0, low_52w: 5101.63,  vs_low: 44.1 },
-            { company: "Dow Jones Industrial", ticker: "DJI",  price: 51523.06, day_pct: -3.44, ytd_pct:  6.1,  high_52w: 54300.00, vs_high: -5.1, low_52w: 37830.66, vs_low: 36.2 },
-            { company: "Nasdaq Composite",     ticker: "COMP", price: 24315.00, day_pct: -5.52, ytd_pct:  6.5,  high_52w: 27693.00, vs_high: -12.2, low_52w: 15685.33, vs_low: 55.0 }
+            { company: "S&P 500",              ticker: "SPX",  price: 7592.40, day_pct: -0.35, ytd_pct:  8.4,  high_52w: 7820.00,  vs_high: -2.9, low_52w: 5101.63,  vs_low: 48.8 },
+            { company: "Dow Jones Industrial", ticker: "DJI",  price: 52297.09, day_pct: -0.36, ytd_pct:  6.1,  high_52w: 54300.00, vs_high: -3.7, low_52w: 37830.66, vs_low: 38.2 },
+            { company: "Nasdaq Composite",     ticker: "COMP", price: 25366.09, day_pct: -0.39, ytd_pct:  6.5,  high_52w: 27693.00, vs_high: -8.4, low_52w: 15685.33, vs_low: 61.7 }
         ],
         "Industrial REITs": [
             { company: "Prologis",             ticker: "PLD",  price: 131.20, day_pct:  0.20, ytd_pct:   1.8, high_52w: 151.00, vs_high: -13.1, low_52w: 103.02, vs_low: 27.4 },
