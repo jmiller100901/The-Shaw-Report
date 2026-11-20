@@ -1,106 +1,98 @@
-// Friday Finance — Week of November 13, 2026
+// Friday Finance — Week of November 20, 2026
 // Rewritten each Friday by the auto-update. Schema and limits are enforced
 // by validate-data.js — run `node validate-data.js` before committing.
 
 const FRIDAY_FINANCE = {
-    date: "November 13, 2026",
-    date_short: "11.13.26",
+    date: "November 20, 2026",
+    date_short: "11.20.26",
 
     quote: {
-        text: "The investor's chief problem, and even his worst enemy, is likely to be himself.",
-        author: "Benjamin Graham"
+        text: "Be fearful when others are greedy, and greedy when others are fearful.",
+        author: "Warren Buffett"
     },
 
     // 10-12 symbols. Always SPX, DJIA, IXIC. Live Finnhub data overwrites on page load.
     ticker_bar: [
-        { symbol: "SPX",   price: "7,592",   change_pct: -0.35 },
-        { symbol: "DJIA",  price: "52,297",  change_pct: -0.36 },
-        { symbol: "IXIC",  price: "25,366",  change_pct: -0.39 },
-        { symbol: "AAPL",  price: "355.63",  change_pct:  2.00 },
+        { symbol: "SPX",   price: "7,176",   change_pct: -2.02 },
+        { symbol: "DJIA",  price: "49,097",  change_pct: -2.19 },
+        { symbol: "IXIC",  price: "23,879",  change_pct: -2.25 },
+        { symbol: "NVDA",  price: "—",       change_pct:  0.00 },
+        { symbol: "GFF",   price: "—",       change_pct:  0.00 },
+        { symbol: "HD",    price: "—",       change_pct:  0.00 },
+        { symbol: "TGT",   price: "—",       change_pct:  0.00 },
         { symbol: "BX",    price: "—",       change_pct:  0.00 },
-        { symbol: "HIG",   price: "—",       change_pct:  0.00 },
         { symbol: "FITB",  price: "—",       change_pct:  0.00 },
-        { symbol: "PLD",   price: "—",       change_pct:  0.00 },
-        { symbol: "IP",    price: "—",       change_pct:  0.00 },
-        { symbol: "LYV",   price: "—",       change_pct:  0.00 }
+        { symbol: "PLD",   price: "—",       change_pct:  0.00 }
     ],
 
     stories: [
         {
-            headline: "Stocks climb for the week, with the S&P 500 up about 2.9%",
-            body: "Wall Street ended a choppy week higher despite a small pullback on Thursday. The S&P 500 closed at <b>7,592.40</b>, down 0.35% on the day. The Nasdaq Composite finished at <b>25,366.09</b>, down 0.39%, and the Dow at <b>52,297.09</b>, down 0.36%. Since the November 6 close, that works out to gains of about 2.9% for the S&P 500, 3.2% for the Nasdaq and 2.0% for the Dow. Small caps lagged, with the Russell 2000 down 1.66% on Thursday. Energy led the sectors while materials and industrials fell. Cisco beat earnings estimates and said its AI infrastructure revenue will double this fiscal year.",
-            jsc_angle: "Industrial stocks slipped even as the broad market rose. Equity strength has not lowered borrowing costs, because floating-rate debt still follows the Fed.",
-            source: { name: "Dean FI", title: "Market Pulse, November 12, 2026", url: "https://deanfi.com/insights/marketpulse/2026-11-12/" },
-            date: "2026-11-12"
+            headline: "S&P 500 falls 2% as its losing streak reaches six sessions",
+            body: "Stocks sold off hard on Thursday with almost no place to hide. The S&P 500 closed at <b>7,175.83</b>, down 2.02%. The Nasdaq fell 2.25% to <b>23,879.20</b> and the Dow lost 2.19% to <b>49,097.06</b>. Decliners beat advancers 464 to 38, and the S&P 500 finished below its 200-day average. The VIX volatility index jumped to <b>28.44</b> from 24.56. Consumer discretionary was the weakest sector, and even energy slipped. The selloff followed Fed minutes showing officials expect more rate hikes, with the 10-year Treasury yield above 5%.",
+            jsc_angle: "Falling equity values and higher yields make lenders more cautious on new construction loans. Borrowers should expect tighter terms.",
+            source: { name: "Dean FI", title: "Market Pulse, November 19, 2026", url: "https://deanfi.com/insights/marketpulse/2026-11-19/" },
+            date: "2026-11-19"
         },
         {
-            headline: "October CPI rises 0.4%, hotter than forecast, with no annual rate published",
-            body: "Consumer prices rose <b>0.4%</b> in October, above the 0.3% forecast, after a 0.6% gain in September. Core prices, which exclude food and energy, rose <b>0.3%</b>. That beat the 0.2% forecast and matched the pace of August and September. Energy rose 0.7%, food rose 0.5% and shelter rose 0.3%. The Bureau of Labor Statistics did not publish a 12-month rate for most series, because the 2025 government shutdown left October 2025 prices uncollected. The last official annual rate was <b>3.7%</b> in September. The November report is due December 10.",
-            jsc_angle: "Sticky inflation keeps a December rate hike on the table, which would lift the cost of SOFR-based construction loans.",
-            source: { name: "Bureau of Labor Statistics", title: "Consumer Price Index news release, October 2026", url: "https://www.bls.gov/news.release/cpi.htm" },
-            date: "2026-11-10"
+            headline: "Fed minutes show officials expect more hikes, with December a near-lock",
+            body: "Minutes of the Fed's October 27-28 meeting, released Wednesday, showed almost all officials expect further rate increases. The committee held at <b>3.75% to 4.00%</b> in a 10-2 vote, and the minutes called the decision a close call. Some officials wanted to hike in October. A couple said a move larger than a quarter point could be worth considering in December if inflation data disappoints. Many officials flagged the AI investment boom as a source of inflation risk. They also flagged AI-related debt as a financial stability concern. CME FedWatch futures fully price a quarter-point hike at the <b>December 8-9</b> meeting. Governor Waller said he favors a hike and would consider a half-point.",
+            jsc_angle: "A December hike would lift SOFR and the cost of floating-rate construction debt. A larger move would hit harder.",
+            source: { name: "StockAnalysis", title: "Fed minutes, October 2026", url: "https://stockanalysis.com/news/fed-minutes-october-2026/" },
+            date: "2026-11-18"
         },
         {
-            headline: "Fed's Waller leans toward a December hike and floats a half-point move",
-            body: "Fed Governor Christopher Waller said Tuesday in London that he leans toward a quarter-point rate hike at the <b>December 8-9</b> meeting. He said a half-point increase should be considered if core CPI keeps rising about 0.3% a month. He argued that a 25 basis point move alone would put the Fed's credibility at risk. The Fed held its target range at <b>3.75% to 4.00%</b> on October 28 in a 10-2 vote. Governor Lisa Cook and Cleveland Fed President Beth Hammack dissented in favor of a hike. After the jobs report, CME FedWatch put the odds of a December hike near <b>77%</b>.",
-            jsc_angle: "A hike would raise SOFR and the cost of floating-rate construction debt. A half-point move would be a bigger step than many borrowers have planned for.",
-            source: { name: "StockAnalysis", title: "Fed's Waller favors a December rate hike, welcomes a half-point increase if inflation runs hot", url: "https://stockanalysis.com/news/fed-waller-december-rate-hike-half-point/" },
-            date: "2026-11-10"
+            headline: "Nvidia posts record $115.8 billion quarter as CEO Huang resigns",
+            body: "Nvidia reported revenue of <b>$115.8 billion</b> for the quarter ended October 25, up 103% from a year earlier. That beat the company's own forecast midpoint by $7.8 billion. Non-GAAP earnings were $2.68 a share. Nvidia guided to about <b>$130 billion</b> next quarter and again assumed no Data Center compute revenue from China. Shares rose only about 4% after hours and remain roughly 35% below their October 6 record close. Jensen Huang resigned as CEO and director, as announced November 12. CFO Colette Kress is interim CEO while the board searches for a permanent one.",
+            jsc_angle: "AI data center demand keeps feeding Texas power and industrial construction, but Nvidia's muted reaction shows investors are wary of the AI trade.",
+            source: { name: "Stock Titan", title: "Nvidia Q3 fiscal 2027 earnings, revenue and outlook", url: "https://www.stocktitan.net/articles/nvidia-q3-fiscal-2027-earnings-revenue-outlook" },
+            date: "2026-11-17"
         },
         {
-            headline: "Brent heads for a second weekly drop near $96 on Iran standoff",
-            body: "Oil is set for a second straight weekly decline. Brent traded near <b>$96.21</b> and WTI near <b>$88.62</b> on Friday, both down about 2% for the week. Last week Brent fell 16%. President Trump said a deal with Iran is not needed to end the war, which suggested more reliance on the blockade and sanctions than on military action. Iran said four tankers were hit by explosions in the Strait of Hormuz, and Yemen's Houthis attacked Saudi oil infrastructure. U.S. crude and fuel inventories rose last week as demand weakened. Analyst Jeff Currie called the market roughly balanced.",
-            jsc_angle: "Lower diesel costs help logistics and manufacturing tenants. Hormuz headlines can reverse the move quickly.",
-            source: { name: "Reuters via Business Recorder", title: "Oil prices set for second weekly decline as Trump sticks with Iran blockade", url: "https://www.brecorder.com/news/40448723/oil-prices-set-for-second-weekly-decline-as-trump-sticks-with-iran-blockade" },
-            date: "2026-11-13"
+            headline: "Home Depot misses while Target and Lowe's beat in a mixed retail week",
+            body: "Big retailers reported uneven third-quarter results. Home Depot missed on both earnings, by about <b>2.4%</b>, and revenue, by about 1.5%. Target beat earnings estimates by about <b>27%</b>, with revenue 0.9% above forecasts. Lowe's beat earnings by about 6.5%.. Mortgage rates have recently topped 7%, which keeps home sales soft.",
+            jsc_angle: "Retail and housing demand feed logistics tenants' volumes. A soft home-improvement read is a mild caution for distribution users.",
+            source: { name: "Dean FI", title: "Market Pulse, November 18, 2026", url: "https://deanfi.com/insights/marketpulse/2026-11-18/" },
+            date: "2026-11-18"
         },
         {
-            headline: "Employers add 165,000 jobs in October, far above forecasts",
-            body: "Payrolls rose <b>165,000</b> in October against a forecast of about 65,000. Revisions added 84,000 jobs to August and September. The unemployment rate fell to <b>4.1%</b>. Average hourly earnings rose 0.4% for the month and 3.1% from a year earlier. The report lifted the odds of a December Fed hike, with CME FedWatch at 76.8% versus 66.9% a week earlier.",
-            jsc_angle: "A strong labor market supports tenant demand but also keeps the Fed on a hiking path.",
-            source: { name: "Fox Business", title: "US economy adds 165,000 jobs in October, blowing past expectations", url: "https://foxbusiness.com/economy/us-jobs-report-october-2026" },
-            date: "2026-11-06"
+            headline: "Griffon lifts its dividend 14% and adds $400 million to its buyback",
+            body: "Griffon, the parent of garage door maker Clopay, reported fiscal fourth-quarter revenue of <b>$490.9 million</b>, up 3%. Price and mix added 6% while volume fell 3%. Adjusted EBITDA from continuing operations rose 4% to <b>$127.8 million</b>. The board raised the quarterly dividend 14% to $0.25 a share and added $400 million to the repurchase authorization. Griffon guided fiscal 2027 to about $1.85 billion of revenue and $460 million of adjusted EBITDA, both flat with fiscal 2026.",
+            source: { name: "SEC EDGAR", title: "Griffon fourth quarter and fiscal 2026 results (8-K exhibit)", url: "https://www.sec.gov/Archives/edgar/data/0000050725/000162828026074359/gffearningsreleaseq42026ex.htm" },
+            date: "2026-11-17"
         }
     ],
 
     watch_next_week: [
-        { when: "Wed Nov 18", what: "<b>Fed minutes</b> from the October 27-28 meeting, due at 2:00 p.m. ET. Watch how many officials back a December hike." },
-        { when: "Late Nov", what: "<b>Griffon fiscal fourth-quarter results.</b> The parent of Clopay reported last year on November 19, and this year's date has not been announced." },
-        { when: "Wed Dec 9", what: "<b>FOMC decision.</b> The two-day meeting starts December 8, and a quarter-point or half-point hike is in play." },
+        { when: "Thu Nov 26", what: "<b>Thanksgiving.</b> U.S. markets are closed, and Friday trading ends early." },
+        { when: "Tue Dec 8", what: "<b>FOMC meeting begins.</b> The decision comes December 9, and futures fully price a quarter-point hike." },
         { when: "Thu Dec 10", what: "<b>November CPI</b> at 8:30 a.m. ET, the last major inflation reading before the year ends." }
     ],
 
     reading_links: [
         {
-            title: "Dallas-Fort Worth industrial figures, Q3 2026",
-            url: "https://www.cbre.com/insights/figures/dallas-fort-worth-industrial-figures-q3-2026",
-            source: "CBRE",
-            description: "Vacancy fell to 7.8% from 8.9% a year earlier. Leasing reached 23.5 million square feet and DFW leads the nation in space under construction."
+            title: "Industrial absorption hits 83M SF, the strongest quarter since 2022",
+            url: "https://www.credaily.com/?p=225272",
+            source: "CRE Daily",
+            description: "Colliers data shows vacancy at 7.2% and Dallas-Fort Worth leading the nation with 15.4 million square feet of absorption."
         },
         {
-            title: "Dallas-Fort Worth industrial market report, Q3 2026",
-            url: "https://www.matthews.com/insights/dallas-fort-worth-industrial-market-report-q3-2026",
-            source: "Matthews",
-            description: "Average asking rent hit a record $10.36 per square foot. About 50 million square feet is under construction."
+            title: "Research brief: November industrial markets",
+            url: "https://www.marcusmillichap.com/research/research-brief/2026/11/research-brief-november-industrial-markets",
+            source: "Marcus & Millichap",
+            description: "National vacancy fell for the first time since 2022. Manufacturing leasing softened even as warehouse demand grew."
         },
         {
-            title: "Fed's Waller favors a December rate hike",
-            url: "https://stockanalysis.com/news/fed-waller-december-rate-hike-half-point/",
-            source: "StockAnalysis",
-            description: "Waller's full argument for a December hike, and why he would consider a half-point move."
-        },
-        {
-            title: "Oil prices set for second weekly decline as Trump sticks with Iran blockade",
-            url: "https://www.brecorder.com/news/40448723/oil-prices-set-for-second-weekly-decline-as-trump-sticks-with-iran-blockade",
-            source: "Reuters via Business Recorder",
-            description: "Where oil stands after a 16% drop last week, and what could move it next."
+            title: "Fed minutes: higher interest rates needed in December as inflation worries mount",
+            url: "https://www.adn.com/business-economy/2026/11/18/fed-minutes-higher-interest-rates-needed-in-december-as-inflation-worries-mount/",
+            source: "Anchorage Daily News",
+            description: "How the committee is split on a quarter-point versus half-point hike, and what individual officials said."
         }
     ],
 
     rates: {
-        "30-Day Avg SOFR":    { current: "3.916%", one_mo_ago: "3.816%", one_yr_ago: "4.148%" },
-        "10-Year Treasury":   { current: "4.980%", one_mo_ago: "5.240%", one_yr_ago: "4.130%" },
-        "Eff. Federal Funds": { current: "3.880%", one_mo_ago: "3.880%", one_yr_ago: "3.870%" },
+        "30-Day Avg SOFR":    { current: "3.922%", one_mo_ago: "3.885%", one_yr_ago: "4.091%" },
+        "10-Year Treasury":   { current: "5.070%", one_mo_ago: "5.090%", one_yr_ago: "4.120%" },
+        "Eff. Federal Funds": { current: "3.880%", one_mo_ago: "3.880%", one_yr_ago: "3.880%" },
         "Prime Rate":         { current: "7.000%", one_mo_ago: "7.000%", one_yr_ago: "7.000%" }
     },
 
@@ -108,9 +100,9 @@ const FRIDAY_FINANCE = {
     // data overwrites these on page load; keep them reasonably current.
     stocks: {
         "Indices": [
-            { company: "S&P 500",              ticker: "SPX",  price: 7592.40, day_pct: -0.35, ytd_pct:  8.4,  high_52w: 7820.00,  vs_high: -2.9, low_52w: 5101.63,  vs_low: 48.8 },
-            { company: "Dow Jones Industrial", ticker: "DJI",  price: 52297.09, day_pct: -0.36, ytd_pct:  6.1,  high_52w: 54300.00, vs_high: -3.7, low_52w: 37830.66, vs_low: 38.2 },
-            { company: "Nasdaq Composite",     ticker: "COMP", price: 25366.09, day_pct: -0.39, ytd_pct:  6.5,  high_52w: 27693.00, vs_high: -8.4, low_52w: 15685.33, vs_low: 61.7 }
+            { company: "S&P 500",              ticker: "SPX",  price: 7175.83, day_pct: -2.02, ytd_pct:  2.5,  high_52w: 7820.00,  vs_high: -8.2, low_52w: 5101.63,  vs_low: 40.7 },
+            { company: "Dow Jones Industrial", ticker: "DJI",  price: 49097.06, day_pct: -2.19, ytd_pct: -0.4,  high_52w: 54300.00, vs_high: -9.6, low_52w: 37830.66, vs_low: 29.8 },
+            { company: "Nasdaq Composite",     ticker: "COMP", price: 23879.20, day_pct: -2.25, ytd_pct:  0.3,  high_52w: 27693.00, vs_high: -13.8, low_52w: 15685.33, vs_low: 52.2 }
         ],
         "Industrial REITs": [
             { company: "Prologis",             ticker: "PLD",  price: 131.20, day_pct:  0.20, ytd_pct:   1.8, high_52w: 151.00, vs_high: -13.1, low_52w: 103.02, vs_low: 27.4 },
