@@ -1,10 +1,10 @@
-// Tenant & Lender News — Week of November 20, 2026
+// Tenant & Lender News — Week of November 27, 2026
 // Rewritten each Friday by the auto-update. Schema and limits are enforced
 // by validate-data.js — run `node validate-data.js` before committing.
 
 const TENANT_LENDER_NEWS = {
-    date: "November 20, 2026",
-    last_scan: "2026-11-20T13:30:00Z",
+    date: "November 27, 2026",
+    last_scan: "2026-11-27T13:30:00Z",
 
     // Jackson Shaw watchlist. Fixed — see WATCHLIST in validate-data.js.
     companies: [
@@ -43,21 +43,21 @@ const TENANT_LENDER_NEWS = {
             level: "MEDIUM",
             company: "Industry",
             cat: "Industry",
-            headline: "Fed minutes point to a December hike as stocks sell off",
-            summary: "Minutes released November 18 showed almost all officials expect more rate hikes, and futures fully price a quarter-point move on <b>December 9</b>. The Fed held at <b>3.75% to 4.00%</b> in October. On Thursday the S&P 500 fell <b>2.02%</b> and the 10-year yield stood above 5%.",
+            headline: "Fed decision December 9 looms as officials signal more rate hikes",
+            summary: "Fed Governor Williams said this week that higher rates may be needed over time. Markets expect a quarter-point hike at the <b>December 8-9</b> meeting, after the Fed held at <b>3.75% to 4.00%</b> in October. The 10-year Treasury yield was <b>4.91%</b> on November 24.",
             relevance: "Floating-rate borrowers across the watchlist should plan for higher debt costs. Tenants in logistics and manufacturing face the same financing pressure.",
-            source: "StockAnalysis / Dean FI",
-            date: "2026-11-18"
+            source: "Dean FI / StockAnalysis",
+            date: "2026-11-23"
         },
         {
             level: "GENERAL",
-            company: "Clopay",
-            cat: "Tenant",
-            headline: "Clopay's parent Griffon raises dividend 14% and expands buyback",
-            summary: "Griffon reported fourth-quarter revenue of <b>$490.9 million</b>, up 3%, with volume down 3%. Net leverage fell to <b>2.0x</b> from 2.4x. The board added <b>$400 million</b> to the buyback and raised the quarterly dividend to $0.25. Fiscal 2027 guidance of $1.85 billion in revenue is flat.",
-            relevance: "A CrossPoint tenant's parent is delevering and returning cash, which supports its credit profile. Flat guidance points to steady rather than expanding demand.",
-            source: "SEC EDGAR / Griffon",
-            date: "2026-11-17"
+            company: "Industry",
+            cat: "Industry",
+            headline: "Data center suppliers drive 14% of U.S. industrial leasing",
+            summary: "Cushman & Wakefield reports data center suppliers took <b>14%</b> of U.S. industrial leasing in the third quarter. They signed about <b>50 million square feet</b> through September. Dallas-Fort Worth is a top market, and Austin-San Antonio is emerging.",
+            relevance: "Demand tied to AI equipment supports industrial tenants and landlords across Texas parks. Lenders are also seeing debt access improve while equity stays cautious.",
+            source: "CRE Daily / Bisnow",
+            date: "2026-11-25"
         }
     ],
 
@@ -68,6 +68,7 @@ const TENANT_LENDER_NEWS = {
         "Bright Events",
         "C3 Presents",
         "Canteen",
+        "Clopay",
         "Control Panels",
         "DNP Imagingcomm America",
         "Duroshox",
